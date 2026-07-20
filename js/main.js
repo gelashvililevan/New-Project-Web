@@ -408,7 +408,7 @@ const partnersData = [
     website: "#",
   },
   {
-    logo: "../images/partners/question mark.png",
+    logo: "../images/partners/question_mark.png",
     name: "NEXT TO STAND HERE",
     year: "The Journey Continues With You.",
     role: "Become Part Of It.",
