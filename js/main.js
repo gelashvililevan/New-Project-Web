@@ -249,15 +249,15 @@ const galleryImages = [
     title: "Super Copa De Espana Absolut Jaca Quarter-Final",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final.jpg",
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
-    src: "../images/gallery/training/teams_pokemon_competition.png",
+    src: "./images/gallery/training/teams_pokemon_competition.png",
     title: "Teams Pokemon Competition",
   },
   {
