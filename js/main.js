@@ -265,11 +265,11 @@ const galleryImages = [
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
-    src: "../images/gallery/competitions/copa_catalunya_absolut_final.jpeg",
+    src: "./images/gallery/competitions/copa_catalunya_absolut_final.jpeg",
     title: "Copa Catalunya Absolut Final",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_2.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_2.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
@@ -285,15 +285,15 @@ const galleryImages = [
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_absolut_jaca_round_1.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_round_1.jpg",
     title: "Super Copa De Espana Absolut Jaca Round 1",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_4.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_4.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
@@ -301,27 +301,27 @@ const galleryImages = [
     title: "Copa Catalunya Juniors Podium",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
     title: "Super Copa De Espana Absolut Jaca Podium",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_1.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_1.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Podium",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_2.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_2.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Podium",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_3.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_3.jpg",
     title: "Super Copa De Espana Ciutat De Barcelona Podium",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_1.jpeg",
+    src: "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_1.jpeg",
     title: "Super Copa De Espana Juniors Tortosa Podium",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_2.jpeg",
+    src: "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_2.jpeg",
     title: "Super Copa De Espana Juniors Tortosa Podium",
   },
 ];
@@ -400,7 +400,7 @@ if (aboutSection) {
 
 const partnersData = [
   {
-    logo: "../images/partners/mizuno.png",
+    logo: "./images/partners/mizuno.png",
     name: "MIZUNO",
     year: "Part Of The Journey Since 2026.",
     role: "Official Equipment Partner.",
@@ -408,7 +408,7 @@ const partnersData = [
     website: "#",
   },
   {
-    logo: "../images/partners/question_mark.png",
+    logo: "./images/partners/question_mark.png",
     name: "NEXT TO STAND HERE",
     year: "The Journey Continues With You.",
     role: "Become Part Of It.",
