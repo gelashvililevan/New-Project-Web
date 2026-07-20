@@ -261,7 +261,7 @@ const galleryImages = [
     title: "Teams Pokemon Competition",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_2.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_2.jpg",
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
