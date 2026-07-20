@@ -689,9 +689,9 @@ header {
 
 .about-line {
   width: 95%;
-  height: .5px;
+  height: 0.5px;
   margin: 0 auto;
-  background: rgba(255,255,255,.3);
+  background: rgba(255, 255, 255, 0.3);
   opacity: 0;
   transition: 1s;
 }
@@ -738,7 +738,7 @@ header {
   display: block;
   width: 100%;
   object-fit: cover;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
 }
 
@@ -748,12 +748,12 @@ header {
 
 .about-text p {
   margin-bottom: 28px;
-  color: rgba(255,255,255,.82);
+  color: rgba(255, 255, 255, 0.82);
   font: 1.4rem/2.1rem Oswald;
   letter-spacing: 1px;
   opacity: 0;
   transform: translateX(70px);
-  transition: .9s;
+  transition: 0.9s;
 }
 
 .about-btn {
@@ -773,8 +773,8 @@ header {
   pointer-events: none;
   transform: translateY(30px);
   transition:
-    opacity .8s ease,
-    transform .8s ease,
+    opacity 0.8s ease,
+    transform 0.8s ease,
     background var(--transition),
     color var(--transition),
     box-shadow var(--transition);
@@ -784,12 +784,12 @@ header {
   background: var(--gold);
   color: var(--bg);
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(212,175,55,.25);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
 }
 
 .about.show .about-line.top,
 .about.show .about-line.bottom {
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .about.show .about-subtitle,
@@ -810,11 +810,11 @@ header {
 }
 
 .about.show .about-title {
-  transition-delay: .2s;
+  transition-delay: 0.2s;
 }
 
 .about.show .about-image {
-  transition-delay: .6s;
+  transition-delay: 0.6s;
 }
 
 .about.show .about-text p:nth-child(1) {
@@ -828,7 +828,7 @@ header {
 }
 
 .about.show .about-btn {
-  animation: buttonReveal .8s ease forwards;
+  animation: buttonReveal 0.8s ease forwards;
   animation-delay: 3s;
   pointer-events: auto;
 }
@@ -856,10 +856,10 @@ header {
 @keyframes imageShadow {
   0%,
   100% {
-    box-shadow: 0 5px 160px rgba(255,255,255,.4);
+    box-shadow: 0 5px 160px rgba(255, 255, 255, 0.4);
   }
   50% {
-    box-shadow: 0 5px 160pxpx rgba(212,175,55,.6);
+    box-shadow: 0 5px 160pxpx rgba(212, 175, 55, 0.6);
   }
 }
 
@@ -886,7 +886,7 @@ header {
   width: 95%;
   height: 1px;
   margin: 0 auto;
-  background: rgba(255,255,255,.22);
+  background: rgba(255, 255, 255, 0.22);
   opacity: 0;
   transition: 1s;
 }
@@ -915,24 +915,23 @@ header {
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin: 35px 50px;
 }
-
 
 .partner-card {
   position: relative;
   height: 430px;
   overflow: hidden;
   border-radius: 30px;
-  border: 1px solid rgba(255,255,255,.08);
-  background: rgba(0,0,0,.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   cursor: pointer;
   opacity: 0;
   transform: translateY(40px);
-  transition: .45s;
+  transition: 0.45s;
 }
 
 .partner-card img {
@@ -940,7 +939,7 @@ header {
   inset: 0;
   margin: auto;
   max-width: 420px;
-  transition: .6s;
+  transition: 0.6s;
 }
 
 .partner-overlay {
@@ -951,9 +950,9 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: 25px;
-  background: rgba(0,0,0,.62);
+  background: rgba(0, 0, 0, 0.62);
   opacity: 0;
-  transition: .45s;
+  transition: 0.45s;
 }
 
 .partner-name,
@@ -961,7 +960,7 @@ header {
 .partner-role,
 .partner-link {
   opacity: 0;
-  transition: .45s;
+  transition: 0.45s;
 }
 
 .partner-name {
@@ -999,15 +998,15 @@ header {
   letter-spacing: 3px;
   transform: translateY(35px);
   transition:
-    .35s,
-    opacity .45s,
-    transform .45s;
+    0.35s,
+    opacity 0.45s,
+    transform 0.45s;
 }
 
 .partner-link:hover {
   background: var(--gold);
   color: var(--bg);
-  box-shadow: 0 15px 35px rgba(212,175,55,.25);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
 }
 
 .partner-card:hover {
@@ -1017,8 +1016,8 @@ header {
 }
 
 .partner-card:hover img {
-  transform: scale(.88);
-  filter: brightness(.35);
+  transform: scale(0.88);
+  filter: brightness(0.35);
 }
 
 .partner-card:hover .partner-overlay {
@@ -1034,11 +1033,11 @@ header {
 }
 
 .partner-card:hover .partner-role {
-  transition-delay: .12s;
+  transition-delay: 0.12s;
 }
 
 .partner-card:hover .partner-link {
-  transition-delay: .22s;
+  transition-delay: 0.22s;
 }
 
 .partners-cta {
@@ -1048,11 +1047,11 @@ header {
 .partners-cta p {
   margin-bottom: 14px;
   font: 200 1.2rem Oswald;
-  color: rgba(255,255,255,.78);
+  color: rgba(255, 255, 255, 0.78);
   letter-spacing: 5px;
 }
 
-.partners-btn {
+.partners-btn a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1062,14 +1061,14 @@ header {
   color: var(--gold);
   font: 1.4rem Oswald;
   letter-spacing: 4px;
-  transition: .35s;
+  transition: 0.35s;
 }
 
 .partners-btn:hover {
   background: var(--gold);
   color: var(--bg);
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(212,175,55,.25);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
 }
 
 .partners-line.bottom {
@@ -1078,7 +1077,7 @@ header {
 
 .partners.show .partners-line.top,
 .partners.show .partners-line.bottom {
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .partners.show .partners-subtitle,
@@ -1089,7 +1088,7 @@ header {
 }
 
 .partners.show .partners-description {
-  transition-delay: .2s;
+  transition-delay: 0.2s;
 }
 
 .partner-card.show {
@@ -1108,7 +1107,7 @@ header {
 .quote {
   margin: 10px 0;
   text-align: center;
-  font: 100 .55rem Oswald;
+  font: 100 0.55rem Oswald;
   color: var(--white);
   letter-spacing: 18px;
 }
