@@ -1,0 +1,569 @@
+@media (max-width: 1200px) {
+  .hero-container,
+  .analytics,
+  .gallery {
+    max-width: 95%;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+  .hero-image {
+    transform: translate(10px, -11px);
+  }
+
+  .analytics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 770px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .analytics-card {
+    min-width: 350px;
+    border-radius: 50px;
+  }
+  .analytics-card h3 {
+    font-weight: 300;
+  }
+  .analytics-card p {
+    margin-top: 2px;
+    letter-spacing: 1px;
+    font-weight: 200;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 2px;
+    font-size: 1rem;
+  }
+
+  .scroll {
+    margin: 30px 0;
+    font-size: 1rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-content,
+  .hero-image {
+    width: 100%;
+  }
+  .hero-description {
+    margin: 0 auto;
+  }
+  .hero-line {
+    margin: 20px auto;
+  }
+  .hero-stats,
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-image {
+    justify-content: center;
+  }
+  .hero-image img {
+    max-height: 400px;
+    transform: translateY(14px);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 80%;
+    gap: 30px;
+  }
+
+  .about-content {
+    grid-template-columns: 320px 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+  .about-text p {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .about-btn {
+    display: flex;
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .partner-card img {
+    max-width: 320px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  .footer-left {
+    text-align: center;
+  }
+  .footer-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 75px;
+  }
+  .footer-right a {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 840px) {
+  .analytics-grid {
+    gap: 20px;
+  }
+  .analytics-card {
+    min-width: 318px;
+  }
+  .analytics-card h3 {
+    font-weight: 300;
+  }
+  .analytics-card p {
+    margin-top: 2px;
+    letter-spacing: 1px;
+    font-weight: 200;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+  .about-btn {
+    max-width: 60%;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 18px 0;
+  }
+  .navbar {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "logo logo logo"
+      "journey results gallery"
+      "about partners contact";
+    justify-items: center;
+    align-items: center;
+    gap: 16px 8px;
+    width: 100%;
+    padding: 14px 0;
+  }
+  .nav-links li:nth-child(1) {
+    grid-area: journey;
+  }
+  .nav-links li:nth-child(2) {
+    grid-area: results;
+  }
+  .nav-links li:nth-child(3) {
+    grid-area: gallery;
+  }
+  .nav-links li:nth-child(5) {
+    grid-area: about;
+  }
+  .nav-links li:nth-child(6) {
+    grid-area: partners;
+  }
+  .nav-links li:nth-child(7) {
+    grid-area: contact;
+  }
+  .nav-links li:nth-child(4) {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 6px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .nav-links img {
+    height: 60px;
+  }
+  .nav-links a {
+    padding: 6px 2px;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+  }
+
+  .scroll {
+    margin: 15px 0;
+    font-size: 0.8rem;
+  }
+
+  .hero-container {
+    border-radius: 0 0 20px 20px;
+  }
+  .hero-title {
+    font-size: 4rem;
+  }
+  .hero-description {
+    font-size: 1.25rem;
+  }
+  .hero-stats {
+    gap: 15px;
+  }
+  .stat {
+    min-width: 170px;
+    min-height: 170px;
+  }
+  .stat h2 {
+    font-size: 3rem;
+  }
+
+  .analytics,
+  .gallery {
+    border-radius: 25px;
+  }
+  .analytics-header h1,
+  .gallery-header h1 {
+    font-size: 5rem;
+    letter-spacing: 15px;
+  }
+  .analytics-header h2,
+  .gallery-header h2 {
+    font-size: 2.2rem;
+  }
+  .analytics-card {
+    min-width: 60%;
+  }
+  .analytics-card p {
+    letter-spacing: 1px;
+  }
+  .analytics-btn a {
+    padding: 14px 40px;
+    font-size: 1.2rem;
+  }
+
+  .competition-name {
+    font-size: 3.5rem;
+  }
+  .countdown-grid {
+    gap: 25px;
+  }
+  .countdown-grid .time-box:nth-child(1) span {
+    font-size: 4rem;
+  }
+  .countdown-grid .time-box:nth-child(2) span {
+    font-size: 3.5rem;
+  }
+  .countdown-grid .time-box:nth-child(3) span {
+    font-size: 3rem;
+  }
+  .countdown-grid .time-box:nth-child(4) span {
+    font-size: 2.5rem;
+  }
+
+  .about-title {
+    font-size: 3.3rem;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 85%;
+    margin: 30px auto;
+    gap: 20px;
+  }
+  .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+  }
+  .about-btn {
+    max-width: 60%;
+    font-size: 1.1rem;
+  }
+
+  .partners-description {
+    font-size: 1.6rem;
+  }
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+  .partner-card {
+    height: 360px;
+  }
+  .partner-btn {
+    font-size: 1.4rem;
+  }
+
+  .footer-left h1 {
+    font-size: 2.3rem;
+    line-height: 3.6rem;
+  }
+
+  .quote {
+    letter-spacing: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-links img {
+    height: 40px;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .hero-subtitle,
+  .countdown-title {
+    letter-spacing: 6px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .analytics-header h1,
+  .gallery-header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+  }
+  .analytics-header h2,
+  .gallery-header h2 {
+    font-size: 1.7rem;
+  }
+  .analytics-card {
+    border-radius: 25px;
+  }
+  .analytics-card p {
+    font-size: 0.7rem;
+  }
+
+  .competition-name {
+    font-size: 2.4rem;
+  }
+  .competition-location {
+    letter-spacing: 5px;
+  }
+  .countdown-grid {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    max-width: 95%;
+    gap: 20px;
+  }
+  .gallery-number {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .gallery-text {
+    font-size: 1.3rem;
+  }
+  .gallery-header p {
+    font-size: 1rem;
+    letter-spacing: 5px;
+  }
+  .gallery-btn a {
+    padding: 10px 36px;
+    font-size: 1.2rem;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+  .about-subtitle {
+    letter-spacing: 6px;
+  }
+  .about-btn {
+    font-size: 0.85rem;
+  }
+
+  .partners-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+  }
+  .partners-description {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .partner-card {
+    height: 250px;
+  }
+  .partner-card img {
+    height: 200px;
+  }
+  .partner-name {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+  .partner-year,
+  .partner-role {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  .partner-link {
+    padding: 10px 30px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  .partners-cta {
+    margin-top: 15px;
+  }
+  .partners-cta p {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+  .partners-btn {
+    padding: 15px 36px;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+
+  .quote {
+    font-size: 0.5rem;
+    letter-spacing: 8px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 250px;
+  }
+  .footer-right a {
+    font-size: 2.8rem;
+  }
+  .footer-bottom {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 95%;
+    font-size: 1.2rem;
+  }
+
+  .analytics-card p {
+    font-size: 0.65rem;
+  }
+  .analytics-btn a {
+    padding: 8px 32px;
+    font-size: 0.95rem;
+  }
+
+  .countdown-grid .time-box:nth-child(1) span {
+    font-size: 3rem;
+  }
+  .countdown-grid .time-box:nth-child(2) span {
+    font-size: 2.5rem;
+  }
+  .countdown-grid .time-box:nth-child(3) span {
+    font-size: 2rem;
+  }
+  .countdown-grid .time-box:nth-child(4) span {
+    font-size: 1.5rem;
+  }
+  .days small {
+    letter-spacing: 6px;
+  }
+  .hours small {
+    letter-spacing: 4px;
+  }
+  .minutes small {
+    letter-spacing: 2px;
+  }
+  .seconds small {
+    letter-spacing: 0;
+  }
+  .countdown-grid {
+    gap: 10px;
+  }
+  .competition-name {
+    font-size: 2rem;
+  }
+  .countdown-title {
+    letter-spacing: 5px;
+  }
+  .competition-location {
+    letter-spacing: 4px;
+  }
+
+  .gallery {
+    border-radius: 25px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 85%;
+    gap: 10px;
+  }
+  .gallery-header p {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+  }
+
+  .about-title {
+    font-size: 2.1rem;
+  }
+  .about-btn {
+    font-size: 0.65rem;
+  }
+
+  .partner-card img {
+    height: 150px;
+  }
+  .partner-name {
+    font-size: 2rem;
+  }
+  .partner-year {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .partner-role {
+    font-size: 0.9rem;
+  }
+  .partner-link {
+    padding: 8px 15px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .partners-cta p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+  .partners-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  .quote {
+    font-size: 0.5rem;
+    letter-spacing: 5px;
+  }
+}
