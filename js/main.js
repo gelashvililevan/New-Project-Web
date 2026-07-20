@@ -245,7 +245,7 @@ if (countdownContainer) {
 
 const galleryImages = [
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_absolut_jaca_quarter_final.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_quarter_final.jpg",
     title: "Super Copa De Espana Absolut Jaca Quarter-Final",
   },
   {
