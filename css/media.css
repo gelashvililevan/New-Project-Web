@@ -77,7 +77,6 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: 80%;
     margin: 0 auto;
-    gap: 30px;
   }
 
   .about-content {
