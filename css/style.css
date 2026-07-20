@@ -1051,7 +1051,7 @@ header {
   letter-spacing: 5px;
 }
 
-.partners-btn a {
+.partners-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
