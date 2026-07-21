@@ -730,7 +730,7 @@ header {
 
 .about-image {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateY(50px);
   transition: 1s ease;
 }
 
@@ -752,7 +752,7 @@ header {
   font: 1.4rem/2.1rem Oswald;
   letter-spacing: 1px;
   opacity: 0;
-  transform: translateX(70px);
+  transform: translateY(70px);
   transition: 0.9s;
 }
 
@@ -834,13 +834,13 @@ header {
 }
 
 .about.show .about-line.bottom {
-  transition-delay: 3.4s;
+  transition-delay: 3s;
 }
 
 .about.show .about-image img {
   animation:
-    athleteFloat 10s ease-in-out infinite,
-    imageShadow 10s ease-in-out infinite;
+    athleteFloat 8s ease-in-out infinite,
+    imageShadow 8s ease-in-out infinite;
 }
 
 @keyframes athleteFloat {
@@ -859,7 +859,7 @@ header {
     box-shadow: 0 5px 160px rgba(255, 255, 255, 0.4);
   }
   50% {
-    box-shadow: 0 5px 160pxpx rgba(212, 175, 55, 0.6);
+    box-shadow: 0 5px 160px rgb(212, 175, 55, 0.7);
   }
 }
 
@@ -1051,7 +1051,7 @@ header {
   letter-spacing: 5px;
 }
 
-.partners-btn  {
+.partners-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
