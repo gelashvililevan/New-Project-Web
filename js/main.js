@@ -265,23 +265,23 @@ const galleryImages = [
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
-    src: "./images/gallery/competitions/copa_catalunya_absolut_final.jpeg",
+    src: "./images/gallery/competitions/copa_catalunya_absolut_final.JPEG",
     title: "Copa Catalunya Absolut Final",
   },
   {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_2.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_2.JPG",
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
-    src: "../images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.jpg",
     title: "Super Copa De Espana Absolut Jaca Team Picture",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_3.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_3.jpg",
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
-    src: "../images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_4.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_4.jpg",
     title: "Super Copa De Espana Absolut Jaca - Bronze Final",
   },
   {
@@ -293,15 +293,15 @@ const galleryImages = [
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_4.jpg",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_4.JPG",
     title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
   },
   {
-    src: "../images/gallery/podiums/copa_catalunya_juniors_podium.jpg",
+    src: "./images/gallery/podiums/copa_catalunya_juniors_podium.JPG",
     title: "Copa Catalunya Juniors Podium",
   },
   {
-    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.JPG",
     title: "Super Copa De Espana Absolut Jaca Podium",
   },
   {
