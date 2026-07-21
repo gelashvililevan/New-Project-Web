@@ -86,7 +86,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.4,
+    threshold: 0.1,
   },
 );
 
@@ -236,7 +236,7 @@ if (countdownContainer) {
       });
     },
     {
-      threshold: 0.45,
+      threshold: 0.1,
     },
   );
 
@@ -391,7 +391,7 @@ if (aboutSection) {
       });
     },
     {
-      threshold: 0.35,
+      threshold: 0.1,
     },
   );
 
@@ -472,7 +472,7 @@ if (partnersSection) {
       });
     },
     {
-      threshold: 0.35,
+      threshold: 0.1,
     },
   );
   partnersObserver.observe(partnersSection);
