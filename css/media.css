@@ -244,7 +244,7 @@
     font-size: 2.2rem;
   }
   .analytics-card {
-    min-width: 60%;
+    min-width: 65%;
   }
   .analytics-card p {
     letter-spacing: 1px;
@@ -275,6 +275,7 @@
 
   .about-title {
     font-size: 3.3rem;
+    text-align: center;
   }
   .about-content {
     display: flex;
@@ -356,9 +357,12 @@
   }
   .analytics-card {
     border-radius: 25px;
+    min-width: 85%;
   }
   .analytics-card p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+
   }
 
   .competition-name {
@@ -529,7 +533,8 @@
   }
 
   .about-title {
-    font-size: 2.1rem;
+    font-size: 2rem;
+    letter-spacing: 2px;
   }
   .about-btn {
     font-size: 0.65rem;
