@@ -1,1 +1,104 @@
-﻿
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/424c0b4b20.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <title>HOME</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <section class="results-hero">
+      <div class="container">
+        <div class="results-line top"></div>
+        <p class="results-subtitle">2026 SEASON</p>
+        <h1 class="results-title">RESULTS</h1>
+        <p class="results-description">
+          Every competition, every medal and every match that shaped the 2026
+          season.
+        </p>
+      </div>
+    </section>
+    <section class="results-analytics">
+      <div class="container">
+        <div class="analytics-gridd">
+          <div class="stat-card">
+            <h3>2026 MEDALS</h3>
+            <div class="stat-value medals">
+              <span>🥇 X3</span>
+              <span>🥈 X2</span>
+              <span>🥉 X1</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <h3>TOTAL TIME ON MAT</h3>
+            <div class="stat-value">47 MIN</div>
+          </div>
+          <div class="stat-card">
+            <h3>FASTEST IPPON</h3>
+            <div class="stat-value">0:14</div>
+          </div>
+          <div class="stat-card">
+            <h3>2026 PODIUMS</h3>
+            <div class="stat-value">6 / 6</div>
+          </div>
+          <div class="stat-card">
+            <h3>2026 MATCH RECORD</h3>
+            <div class="stat-value">25 / 21</div>
+          </div>
+          <div class="stat-card">
+            <h3>2026 IPPONS</h3>
+            <div class="stat-value">21 / 19</div>
+          </div>
+        </div>
+      </div>
+      <div class="results-line bottom"></div>
+    </section>
+    <section class="journey">
+      <div class="container">
+        <div class="journey-track">
+          <svg class="journey-road" viewBox="0 0 1200 1800">
+    <path
+        class="journey-road-glow"
+        d="M320 120
+           L760 380
+           L320 640
+           L760 900
+           L320 1160
+           L760 1420
+           L320 1680"/>
+           <path
+        id="journeyPath"
+        d="M320 120
+           L760 380
+           L320 640
+           L760 900
+           L320 1160
+           L760 1420
+           L320 1680"
+    />
+            <circle id="roadGlow" r="8" />
+            <circle class="road-node" cx="320" cy="120" r="12" />
+            <circle class="road-node" cx="760" cy="380" r="12" />
+            <circle class="road-node" cx="320" cy="640" r="12" />
+            <circle class="road-node" cx="760" cy="900" r="12" />
+            <circle class="road-node" cx="320" cy="1160" r="12" />
+            <circle class="road-node" cx="760" cy="1420" r="12" />
+            <circle class="road-node" cx="320" cy="1680" r="12" />
+          </svg>
+          <div class="journey-items" id="journeyTimeline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer"></div>
+    <script src="./js/results.js"></script>
+    <script src="./js/components.js"></script>
+  </body>
+</html>

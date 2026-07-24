@@ -477,3 +477,5 @@ if (partnersSection) {
   );
   partnersObserver.observe(partnersSection);
 }
+
+
