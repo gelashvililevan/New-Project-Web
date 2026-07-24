@@ -225,7 +225,7 @@ header {
 .analytics {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 15px 0;
   background: rgba(30, 29, 29, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 40px;
@@ -238,7 +238,7 @@ header {
 }
 
 .analytics-header {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -249,11 +249,11 @@ header {
 }
 
 .analytics-header h1 {
-  margin-bottom: 15px;
-
   color: var(--gold);
   font: 500 8rem Oswald;
   letter-spacing: 40px;
+  line-height: 0.8;
+  margin-bottom: 13px;
 }
 
 .analytics-header p {
@@ -530,7 +530,7 @@ header {
 .gallery {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 5px 0 15px;
   background: rgba(30, 29, 29, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 40px;
@@ -543,7 +543,7 @@ header {
 }
 
 .gallery-header {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -558,6 +558,7 @@ header {
   color: var(--gold);
   font: 500 8rem Oswald;
   letter-spacing: 40px;
+  line-height: .8;
 }
 
 .gallery-header p {
@@ -1354,13 +1355,11 @@ header {
 
 .journey-medal {
   position: absolute;
-  width: 52px;
-  height: 52px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  font-size: 1.8rem;
+  font-size: 3.5rem;
   opacity: 0;
   transform: translateY(-50%) scale(0.5);
   transition:
@@ -1455,8 +1454,8 @@ header {
 }
 
 .journey-item.left .journey-medal {
-  right: -59px;
-  top: 190px;
+  right: -79px;
+  top: 50px;
 }
 
 .journey-item.right {
@@ -1486,8 +1485,8 @@ header {
 }
 
 .journey-item.right .journey-medal {
-  left: -59px;
-  top: 190px;
+  left: -79px;
+  top: 50px;
 }
 
 .journey-card {

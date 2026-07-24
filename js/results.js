@@ -357,7 +357,7 @@ if (countdownElement) {
     }
     const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
 
-    countdownElement.textContent = `${days} Days`;
+    countdownElement.textContent = `${days} DAYS`;
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
