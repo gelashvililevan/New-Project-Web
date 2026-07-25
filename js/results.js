@@ -297,7 +297,13 @@ function renderJourney() {
 
 function positionJourneyItems() {
   const items = [...document.querySelectorAll(".journey-item")];
-
+  const styles = getComputedStyle(document.documentElement);
+  const leftOffset = parseFloat(
+    styles.getPropertyValue("--journey-left-offset"),
+  );
+  const rightOffset = parseFloat(
+    styles.getPropertyValue("--journey-right-offset"),
+  );
   items.forEach((item, index) => {
     const cx = nodePositions[index].x;
     const cy = nodePositions[index].y;
@@ -305,9 +311,9 @@ function positionJourneyItems() {
     item.style.top = `${cy - 225}px`;
 
     if (item.classList.contains("left")) {
-      item.style.left = `${cx - 360}px`;
+      item.style.left = `${cx - leftOffset}px`;
     } else {
-      item.style.left = `${cx + 60}px`;
+      item.style.left = `${cx + rightOffset}px`;
     }
   });
 }

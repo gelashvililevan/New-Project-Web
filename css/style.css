@@ -6,9 +6,14 @@
   --white: #fff;
   --gray: #cfcfcf;
   --gold: #d4af37;
-
   --radius: 20px;
   --transition: 0.35s ease;
+  --journey-card-width: 320px;
+  --journey-card-height: 470px;
+  --journey-left-offset: 360px;
+  --journey-right-offset: 60px;
+  --journey-medal-offset: 79px;
+  --journey-scale: 1;
 }
 
 body {
@@ -558,7 +563,7 @@ header {
   color: var(--gold);
   font: 500 8rem Oswald;
   letter-spacing: 40px;
-  line-height: .8;
+  line-height: 0.8;
 }
 
 .gallery-header p {
@@ -1267,16 +1272,19 @@ header {
 }
 
 .journey {
-  height: 1900px;
-  max-width: 1090px;
+  width: 100%;
+  height: calc(1900px * var(--journey-scale));
   margin: 180px auto 0;
 }
 
 .journey-track {
   position: relative;
-  width: 1200px;
-  height: 1800px;
+  width: 100%;
+  max-width: 1200px;
+  height: calc(1800px * var(--journey-scale));
   margin: 0 auto;
+  transform-origin: top center;
+  transform: scale(var(--journey-scale));
 }
 
 .journey-road {
@@ -1400,8 +1408,8 @@ header {
 
 .journey-item {
   position: absolute;
-  width: 320px;
-  height: 470px;
+  width: var(--journey-card-width);
+  height: var(--journey-card-height);
   opacity: 0;
   transition:
     opacity 0.55s ease,
@@ -1490,8 +1498,8 @@ header {
 }
 
 .journey-card {
-  width: 320px;
-  height: 470px;
+  width: var(--journey-card-width);
+  height: var(--journey-card-height);
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1501,8 +1509,8 @@ header {
 }
 
 .journey-card-image {
-  width: 280px;
-  height: 180px;
+  width: calc(var(--journey-card-width) - 40px);
+  height: calc(var(--journey-card-height) * 0.38);
   margin: 13px auto 12px;
   overflow: hidden;
   border-radius: 15px;

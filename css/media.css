@@ -100,6 +100,31 @@
     max-width: 320px;
   }
 
+  :root {
+    --journey-scale: 0.9;
+    --journey-card-width: 295px;
+    --journey-card-height: 435px;
+    --journey-left-offset: 330px;
+    --journey-right-offset: 45px;
+    --journey-medal-offset: 70px;
+  }
+
+  .analytics-gridd {
+    gap: 18px;
+  }
+
+  .stat-card {
+    min-height: 220px;
+  }
+
+  .stat-value {
+    font-size: 3rem;
+  }
+
+  .results-title {
+    font-size: 4.4rem;
+  }
+
   .footer-top {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -362,7 +387,6 @@
   .analytics-card p {
     font-size: 0.8rem;
     letter-spacing: 2px;
-
   }
 
   .competition-name {
