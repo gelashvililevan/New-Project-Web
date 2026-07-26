@@ -1,78 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-
-:root {
-  --bg: #0a061b;
-  --black: #090909;
-  --white: #fff;
-  --gray: #cfcfcf;
-  --gold: #d4af37;
-  --radius: 20px;
-  --transition: 0.35s ease;
-  --journey-card-width: 320px;
-  --journey-card-height: 470px;
-  --journey-left-offset: 360px;
-  --journey-right-offset: 60px;
-  --journey-medal-offset: 79px;
-  --journey-scale: 1;
-}
-
-body {
-  background: var(--bg);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-inline: 1rem;
-}
-
-header {
-  width: 100%;
-  height: 80px;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  background: rgba(9, 9, 9, 0.6);
-  backdrop-filter: blur(12px);
-  transition:
-    background var(--transition),
-    box-shadow var(--transition);
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  max-width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  font: 1.2rem Oswald;
-  letter-spacing: 1.5px;
-}
-
-.nav-links img {
-  height: 100px;
-}
-
-.nav-links a {
-  padding: 0.25rem 0.5rem;
-  color: rgba(255, 255, 255, 0.85);
-  border-bottom: 2px solid transparent;
-  transition: var(--transition);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--white);
-  border-bottom-color: var(--white);
-}
-
 .scroll {
   display: flex;
   justify-content: center;
@@ -180,38 +105,6 @@ header {
   gap: 20px;
   margin-bottom: 15px;
   margin-top: 20px;
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 18px 40px;
-  border-radius: 50px;
-  font-family: Oswald;
-  letter-spacing: 2px;
-
-  transition: var(--transition);
-}
-
-.btn-primary {
-  background: var(--gold);
-  color: #332768;
-  font-size: 1.4rem;
-}
-
-.btn-primary:hover {
-  color: var(--black);
-  box-shadow: 0 5px 35px rgba(212, 175, 55, 0.8);
-}
-
-.btn-secondary {
-  border: 2px solid var(--white);
-  color: var(--white);
-}
-
-.btn-secondary:hover {
-  background: var(--white);
-  color: var(--bg);
-  box-shadow: 0 5px 35px rgba(255, 255, 255, 0.65);
 }
 
 .hero-image {
@@ -864,7 +757,7 @@ header {
     box-shadow: 0 5px 160px rgba(255, 255, 255, 0.4);
   }
   50% {
-    box-shadow: 0 5px 160px rgb(212, 175, 55, 0.7);
+    box-shadow: 0 5px 160px rgb(212 175 55 / 70%);
   }
 }
 
@@ -1117,684 +1010,538 @@ header {
   letter-spacing: 18px;
 }
 
-.results-hero {
-  max-width: 1200px;
-  margin: 20px auto 0;
-  text-align: center;
-}
-
-.results-line {
-  width: 90%;
-  height: 1px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.results-line.bottom {
-  margin-top: 25px;
-}
-
-.results-subtitle {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.65);
-  font: 100 1.2rem Oswald;
-  letter-spacing: 18px;
-}
-
-.results-title {
-  color: var(--gold);
-  font: 500 5rem Oswald;
-  letter-spacing: 22px;
-  line-height: 1.3;
-}
-
-.results-description {
-  max-width: 900px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.8);
-  font: 100 1rem/2rem Oswald;
-  letter-spacing: 4px;
-}
-
-.results-analytics {
-  max-width: 1200px;
-  margin: 30px auto;
-}
-
-.analytics-gridd {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 260px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.03);
-  opacity: 0;
-  transform: translateY(35px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    border-color 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.stat-card:hover {
-  cursor: pointer;
-  border-color: rgba(212, 175, 55, 0.35);
-  background: rgba(212, 175, 55, 0.06);
-  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.1);
-}
-
-.stat-value {
-  margin-bottom: 22px;
-  color: var(--gold);
-  font: 300 3.8rem Oswald;
-  letter-spacing: 3px;
-}
-
-.stat-value.medals {
-  display: flex;
-  gap: 24px;
-  font-size: 2.5rem;
-}
-
-.stat-value.medals span {
-  transition: transform 0.25s ease;
-}
-
-.stat-value.medals span:nth-child(1) {
-  color: #ffd700;
-}
-.stat-value.medals span:nth-child(2) {
-  color: #c0c0c0;
-}
-.stat-value.medals span:nth-child(3) {
-  color: #cd7f32;
-}
-.stat-card:hover .stat-value.medals span:nth-child(1) {
-  transform: translateY(-4px);
-}
-.stat-card:hover .stat-value.medals span:nth-child(2) {
-  transform: translateY(-2px);
-}
-.stat-card:hover .stat-value.medals span:nth-child(3) {
-  transform: translateY(-1px);
-}
-
-.stat-card h3 {
-  color: rgba(255, 255, 255, 0.78);
-  font: 300 1.05rem Oswald;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-.results-analytics.show .stat-card {
-  animation: statReveal 0.65s ease forwards;
-}
-
-.results-analytics.show .stat-card:nth-child(1) {
-  animation-delay: 0.08s;
-}
-.results-analytics.show .stat-card:nth-child(2) {
-  animation-delay: 0.18s;
-}
-.results-analytics.show .stat-card:nth-child(3) {
-  animation-delay: 0.28s;
-}
-.results-analytics.show .stat-card:nth-child(4) {
-  animation-delay: 0.38s;
-}
-.results-analytics.show .stat-card:nth-child(5) {
-  animation-delay: 0.48s;
-}
-.results-analytics.show .stat-card:nth-child(6) {
-  animation-delay: 0.58s;
-}
-
-@keyframes statReveal {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
+@media (max-width: 1200px) {
+  .hero-container,
+  .analytics,
+  .gallery {
+    max-width: 95%;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero-image {
+    transform: translate(10px, -11px);
+  }
+
+  .analytics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 770px;
+    margin: 0 auto;
+  }
+
+  .analytics-card {
+    min-width: 350px;
+    border-radius: 50px;
+  }
+
+  .analytics-card h3 {
+    font-weight: 300;
+  }
+
+  .analytics-card p {
+    margin-top: 2px;
+    font-weight: 200;
+    letter-spacing: 1px;
   }
 }
 
-.journey {
-  width: 100%;
-  height: calc(1900px * var(--journey-scale));
-  margin: 180px auto 0;
-}
-
-.journey-track {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: calc(1800px * var(--journey-scale));
-  margin: 0 auto;
-  transform-origin: top center;
-  transform: scale(var(--journey-scale));
-}
-
-.journey-road {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.journey-road-background {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.18;
-}
-
-.journey-road-glow {
-  fill: none;
-  stroke: rgba(0, 0, 0, 0.3);
-  filter: blur(4px);
-  stroke-width: 4px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-#journeyPath {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2.5px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.95;
-  filter: drop-shadow(0 0 18px rgb(212, 175, 55));
-}
-
-#roadGlow {
-  fill: var(--gold);
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
-  filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.8))
-    drop-shadow(0 0 8px rgba(212, 175, 55, 0.8))
-    drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
-}
-
-.road-node {
-  fill: var(--gold);
-  opacity: 0;
-  transform: scale(0.3);
-  transform-origin: center;
-  transform-box: fill-box;
-  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8))
-    drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
-}
-
-.road-node.active {
-  animation: nodePop 0.45s ease forwards;
-}
-
-@keyframes nodePop {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
+@media (max-width: 992px) {
+  .scroll {
+    margin: 30px 0;
+    font-size: 1rem;
   }
-  60% {
-    opacity: 1;
-    transform: scale(1.25);
+
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  .hero-content,
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-description,
+  .hero-line {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-stats,
+  .hero-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-image {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-height: 400px;
+    transform: translateY(14px);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    grid-template-columns: 320px 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .about-btn {
+    display: flex;
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .partner-card img {
+    max-width: 320px;
   }
 }
 
-.journey-medal {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 3.5rem;
-  opacity: 0;
-  transform: translateY(-50%) scale(0.5);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-  color: var(--medal-color);
+@media (max-width: 840px) {
+  .analytics-grid {
+    gap: 20px;
+  }
+
+  .analytics-card {
+    min-width: 318px;
+  }
+
+  .analytics-card h3 {
+    font-weight: 300;
+  }
+
+  .analytics-card p {
+    margin-top: 2px;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about-btn {
+    max-width: 60%;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
 }
 
-.journey-item:hover .journey-medal {
-  filter: drop-shadow(0 0 10px currentColor);
+@media (max-width: 768px) {
+  .scroll {
+    margin: 15px 0;
+    font-size: 0.8rem;
+  }
+
+  .hero-container {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+
+  .hero-stats {
+    gap: 15px;
+  }
+
+  .stat {
+    min-width: 170px;
+    min-height: 170px;
+  }
+
+  .stat h2 {
+    font-size: 3rem;
+  }
+
+  .analytics,
+  .gallery {
+    border-radius: 25px;
+  }
+
+  .analytics-header h1,
+  .gallery-header h1 {
+    font-size: 5rem;
+    letter-spacing: 15px;
+  }
+
+  .analytics-header h2,
+  .gallery-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .analytics-card {
+    min-width: 65%;
+  }
+
+  .analytics-card p {
+    letter-spacing: 1px;
+  }
+
+  .analytics-btn a {
+    padding: 14px 40px;
+    font-size: 1.2rem;
+  }
+
+  .competition-name {
+    font-size: 3.5rem;
+  }
+
+  .countdown-grid {
+    gap: 25px;
+  }
+
+  .countdown-grid .time-box:nth-child(1) span {
+    font-size: 4rem;
+  }
+
+  .countdown-grid .time-box:nth-child(2) span {
+    font-size: 3.5rem;
+  }
+
+  .countdown-grid .time-box:nth-child(3) span {
+    font-size: 3rem;
+  }
+
+  .countdown-grid .time-box:nth-child(4) span {
+    font-size: 2.5rem;
+  }
+
+  .about-title {
+    font-size: 3.3rem;
+    text-align: center;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 85%;
+    margin: 30px auto;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+  }
+
+  .about-btn {
+    max-width: 60%;
+    font-size: 1.1rem;
+  }
+
+  .partners-description {
+    font-size: 1.6rem;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-card {
+    height: 360px;
+  }
+
+  .partner-btn {
+    font-size: 1.4rem;
+  }
+
+  .quote {
+    letter-spacing: 13px;
+  }
 }
 
-.journey-item:hover .journey-card {
-  border-color: var(--medal-color);
-  box-shadow:
-    0 0 20px color-mix(in srgb, var(--medal-color) 28%, transparent),
-    0 18px 45px rgba(0, 0, 0, 0.35);
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle,
+  .countdown-title {
+    letter-spacing: 6px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .analytics-header h1,
+  .gallery-header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+  }
+
+  .analytics-header h2,
+  .gallery-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .analytics-card {
+    min-width: 85%;
+    border-radius: 25px;
+  }
+
+  .analytics-card p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .competition-name {
+    font-size: 2.4rem;
+  }
+
+  .competition-location {
+    letter-spacing: 5px;
+  }
+
+  .countdown-grid {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    gap: 20px;
+    max-width: 95%;
+  }
+
+  .gallery-number {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .gallery-text {
+    font-size: 1.3rem;
+  }
+
+  .gallery-header p {
+    font-size: 1rem;
+    letter-spacing: 5px;
+  }
+
+  .gallery-btn a {
+    padding: 10px 36px;
+    font-size: 1.2rem;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-subtitle {
+    letter-spacing: 6px;
+  }
+
+  .about-btn {
+    font-size: 0.85rem;
+  }
+
+  .partners-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+  }
+
+  .partners-description {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .partner-card {
+    height: 250px;
+  }
+
+  .partner-card img {
+    height: 200px;
+  }
+
+  .partner-name {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .partner-year,
+  .partner-role {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .partner-link {
+    padding: 10px 30px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+
+  .partners-cta {
+    margin-top: 15px;
+  }
+
+  .partners-cta p {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+
+  .partners-btn {
+    padding: 15px 36px;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+
+  .quote {
+    font-size: 0.5rem;
+    letter-spacing: 8px;
+  }
 }
 
-.journey-item.gold {
-  --medal-color: #ffd700;
-}
+@media (max-width: 376px) {
+  .analytics-card p {
+    font-size: 0.65rem;
+  }
 
-.journey-item.silver {
-  --medal-color: #c0c0c0;
-}
+  .analytics-btn a {
+    padding: 8px 32px;
+    font-size: 0.95rem;
+  }
 
-.journey-item.bronze {
-  --medal-color: #cd7f32;
-}
+  .countdown-grid {
+    gap: 10px;
+  }
 
-.journey-timeline {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-}
+  .countdown-grid .time-box:nth-child(1) span {
+    font-size: 3rem;
+  }
 
-.journey-item {
-  position: absolute;
-  width: var(--journey-card-width);
-  height: var(--journey-card-height);
-  opacity: 0;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease;
-  z-index: 2;
-}
+  .countdown-grid .time-box:nth-child(2) span {
+    font-size: 2.5rem;
+  }
 
-.journey-item.show {
-  opacity: 1;
-}
+  .countdown-grid .time-box:nth-child(3) span {
+    font-size: 2rem;
+  }
 
-.journey-item.show .journey-medal {
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
-  transition-delay: 0.15s;
-}
+  .countdown-grid .time-box:nth-child(4) span {
+    font-size: 1.5rem;
+  }
 
-.journey-item.left {
-  left: 0;
-  border-radius: 20px;
-  box-shadow:
-    -50px 50px 100px rgba(0, 0, 0, 0.6),
-    10px -10px 50px rgba(255, 255, 255, 0.12);
-  opacity: 0;
-  transform: rotate(10deg) rotateY(-78deg) rotateX(-12deg) translateY(40px)
-    scale(0.9);
-}
+  .days small {
+    letter-spacing: 6px;
+  }
 
-.journey-item.left.show {
-  opacity: 1;
-  transform: rotate(-4deg) rotateY(8deg) rotateX(12deg) scale(1);
-}
+  .hours small {
+    letter-spacing: 4px;
+  }
 
-.journey-item.left:hover {
-  transform: rotate(-2deg) rotateY(-4deg) rotateX(-2deg) translateY(-30px)
-    translateX(15px);
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.18),
-    0 30px 60px rgba(0, 0, 0, 0.35),
-    0 80px 120px rgba(0, 0, 0, 0.18),
-    0 25px 60px rgba(0, 0, 0, 0.35);
-}
+  .minutes small {
+    letter-spacing: 2px;
+  }
 
-.journey-item:hover .journey-card-button {
-  background: var(--gold);
-  color: var(--black);
-  letter-spacing: 4px;
-}
+  .seconds small {
+    letter-spacing: 0;
+  }
 
-.journey-item.left .journey-medal {
-  right: -79px;
-  top: 50px;
-}
+  .competition-name {
+    font-size: 2rem;
+  }
 
-.journey-item.right {
-  right: 0;
-  border-radius: 20px;
-  box-shadow:
-    50px 50px 100px rgba(0, 0, 0, 0.6),
-    -10px -10px 50px rgba(255, 255, 255, 0.12);
-  opacity: 0;
-  transform: rotate(10deg) rotateY(78deg) rotateX(-12deg) translateY(40px)
-    scale(0.9);
-}
-.journey-item.right.show {
-  opacity: 1;
-  transform: rotate(3deg) rotateY(16deg) rotateX(-17deg) scale(1);
-}
-.journey-item.right:hover {
-  transform: rotate(2deg) rotateY(4deg) rotateX(-2deg) translateY(-30px)
-    translateX(-15px);
-  cursor: pointer;
-  backdrop-filter: blur(30px);
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.18),
-    0 30px 60px rgba(0, 0, 0, 0.35),
-    0 80px 120px rgba(0, 0, 0, 0.18),
-    0 25px 60px rgba(0, 0, 0, 0.35);
-}
+  .countdown-title {
+    letter-spacing: 5px;
+  }
 
-.journey-item.right .journey-medal {
-  left: -79px;
-  top: 50px;
-}
+  .competition-location {
+    letter-spacing: 4px;
+  }
 
-.journey-card {
-  width: var(--journey-card-width);
-  height: var(--journey-card-height);
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
-}
+  .gallery {
+    border-radius: 25px;
+  }
 
-.journey-card-image {
-  width: calc(var(--journey-card-width) - 40px);
-  height: calc(var(--journey-card-height) * 0.38);
-  margin: 13px auto 12px;
-  overflow: hidden;
-  border-radius: 15px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s ease;
-}
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 85%;
+  }
 
-.journey-item.show .journey-card-image {
-  opacity: 1;
-  transform: none;
-}
+  .gallery-header p {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+  }
 
-.journey-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.45s ease;
-}
+  .about-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
 
-.journey-item:hover .journey-card-image img {
-  transform: scale(1.04);
-}
+  .about-btn {
+    font-size: 0.65rem;
+  }
 
-.journey-card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
+  .partner-card img {
+    height: 150px;
+  }
 
-.journey-card-date,
-.journey-card-title,
-.journey-card-location,
-.journey-card-divider,
-.journey-card-row,
-.journey-card-button {
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
+  .partner-name {
+    font-size: 2rem;
+  }
 
-.journey-item.show .journey-card-date,
-.journey-item.show .journey-card-title,
-.journey-item.show .journey-card-location,
-.journey-item.show .journey-card-divider,
-.journey-item.show .journey-card-row,
-.journey-item.show .journey-card-button {
-  opacity: 1;
-  transform: none;
-}
+  .partner-year {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
 
-.journey-card-date {
-  color: rgba(255, 255, 255, 0.7);
-  font: 100 0.7rem Oswald;
-  letter-spacing: 4px;
-  transition-delay: 0.2s;
-}
+  .partner-role {
+    font-size: 0.9rem;
+  }
 
-.journey-card-title {
-  color: var(--gold);
-  font: 400 1.6rem Oswald;
-  transition-delay: 0.3s;
-}
+  .partner-link {
+    padding: 8px 15px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
 
-.journey-card-location {
-  color: rgba(255, 255, 255, 0.85);
-  font: 300 0.9rem Oswald;
-  letter-spacing: 6px;
-  transition-delay: 0.4s;
-}
+  .partners-cta p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
 
-.journey-card-divider {
-  width: 90%;
-  height: 1px;
-  margin: 10px auto;
-  background: rgba(255, 255, 255, 0.08);
-  transition-delay: 0.45s;
-}
+  .partners-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
 
-.journey-card-info {
-  width: 85%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.journey-card-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition-delay: 0.55s;
-}
-
-.journey-card-row span {
-  color: rgba(255, 255, 255, 0.55);
-  font: 0.9rem Oswald;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.journey-card-row strong {
-  color: var(--white);
-  font: 500 1rem Oswald;
-}
-
-.journey-card-button {
-  width: 85%;
-  height: 48px;
-  margin: 5px auto 0;
-  border-radius: 14px;
-  border: 1px solid var(--gold);
-  background: none;
-  color: var(--gold);
-  font: 1.2rem Oswald;
-  letter-spacing: 3px;
-  cursor: pointer;
-  transform: translateY(20px) scale(0.95);
-  transition: 0.7s;
-}
-
-.journey-item.show .journey-card-button {
-  opacity: 1;
-  transform: none;
-  transition:
-    opacity 0.4s,
-    transform 0.4s,
-    background-color 0.5s,
-    color 0.5s,
-    letter-spacing 0.5s;
-  transition-delay: 1.05s, 1.05s, 0s, 0s, 0s;
-}
-.journey-item.next {
-  height: 350px;
-  border: 1px solid rgba(0, 0, 0, 0);
-}
-.journey-item.next .journey-card {
-  height: 100%;
-}
-
-.fa-bullseye {
-  color: var(--gold);
-  font-size: 2.8rem;
-  margin: 12px 0 7px;
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.35));
-  transition: transform 0.3s ease;
-}
-
-.journey-item.next:hover .fa-bullseye {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 12px rgb(212, 175, 55));
-}
-
-.journey-item.next:hover {
-  border: 2px solid var(--gold);
-  box-shadow:
-    0 0 20px color-mix(in srgb, var(--gold) 28%, transparent),
-    0 18px 45px rgba(0, 0, 0, 0.35);
-}
-
-.journey-countdown {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.journey-countdown span {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.journey-countdown strong {
-  color: var(--gold);
-  font: 400 2rem Oswald;
-}
-
-footer {
-  background: url("../images/icons/foterbg.jpg") center / cover;
-  color: var(--white);
-}
-
-footer .container {
-  padding: 5rem 1rem 2rem;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-}
-
-.footer-left h1 {
-  font: 300 3rem/5rem Oswald;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.8);
-  transition: 0.6s;
-}
-
-.footer-left h1:hover {
-  color: var(--gold);
-  transform: translateY(-5px);
-  cursor: pointer;
-}
-
-.footer-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-}
-
-.partner-btn {
-  padding: 18px 50px;
-  border: 2px solid var(--gold);
-  border-radius: 50px;
-  background: transparent;
-  color: var(--gold);
-  font: 1.8rem Oswald;
-  cursor: pointer;
-  transition: 0.35s;
-}
-
-.partner-btn:hover {
-  background: var(--gold);
-  color: var(--black);
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
-}
-
-.footer-links {
-  display: flex;
-  gap: 28px;
-}
-
-.footer-links img {
-  height: 42px;
-  transition: 0.35s;
-}
-
-.footer-links img:hover {
-  transform: translateY(-8px) scale(1.12);
-}
-
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 65px;
-  height: 100%;
-}
-
-.footer-right a {
-  font-size: 3rem;
-  color: var(--white);
-  transition: 0.3s;
-}
-
-.footer-right a:hover {
-  color: var(--gold);
-  transform: translateY(-5px);
-}
-
-.footer-bottom {
-  margin-top: 5rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  text-align: center;
-  line-height: 1.8;
-  letter-spacing: 1px;
-  color: #bdbdbd;
-  transition: 0.6s;
-}
-
-.footer-bottom:hover {
-  color: var(--white);
-  letter-spacing: 2px;
-  cursor: pointer;
+  .quote {
+    font-size: 0.5rem;
+    letter-spacing: 5px;
+  }
 }

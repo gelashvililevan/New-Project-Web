@@ -7,10 +7,11 @@
       src="https://kit.fontawesome.com/424c0b4b20.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/media.css" />
-    <title>HOME</title>
+<link rel="stylesheet" href=".//css/reset.css">
+<link rel="stylesheet" href=".//css/tokens.css">
+<link rel="stylesheet" href=".//css/global.css">
+<link rel="stylesheet" href=".//css/results.css">
+    <title>Results | Levan Gelashvili</title>
   </head>
   <body>
     <div id="header"></div>
@@ -27,7 +28,7 @@
     </section>
     <section class="results-analytics">
       <div class="container">
-        <div class="analytics-gridd">
+        <div class="results-analytics-grid">
           <div class="stat-card">
             <h3>2026 MEDALS</h3>
             <div class="stat-value medals">
@@ -63,35 +64,10 @@
     <section class="journey">
       <div class="container">
         <div class="journey-track">
-          <svg class="journey-road" viewBox="0 0 1200 1800">
-    <path
-        class="journey-road-glow"
-        d="M320 120
-           L760 380
-           L320 640
-           L760 900
-           L320 1160
-           L760 1420
-           L320 1680"/>
-           <path
-        id="journeyPath"
-        d="M320 120
-           L760 380
-           L320 640
-           L760 900
-           L320 1160
-           L760 1420
-           L320 1680"
-    />
-            <circle id="roadGlow" r="8" />
-            <circle class="road-node" cx="320" cy="120" r="12" />
-            <circle class="road-node" cx="760" cy="380" r="12" />
-            <circle class="road-node" cx="320" cy="640" r="12" />
-            <circle class="road-node" cx="760" cy="900" r="12" />
-            <circle class="road-node" cx="320" cy="1160" r="12" />
-            <circle class="road-node" cx="760" cy="1420" r="12" />
-            <circle class="road-node" cx="320" cy="1680" r="12" />
-          </svg>
+          <svg class="journey-road">
+    <path id="journeyPath"></path>
+    <circle id="roadGlow" r="8"></circle>
+</svg>
           <div class="journey-items" id="journeyTimeline"></div>
           </div>
         </div>

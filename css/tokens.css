@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+:root {
+  /* Colors */
+  --bg: #0a061b;
+  --black: #090909;
+  --white: #ffffff;
+  --gray: #cfcfcf;
+  --gold: #d4af37;
+
+  --content-width: 1200px;
+  --radius: 20px;
+
+  --transition: 0.35s ease;
+  
+  --journey-scale: 1;
+  --journey-track-width: 1200px;
+  --journey-card-width: 320px;
+  --journey-card-height: 470px;
+  --journey-gap: 40px;
+  --journey-medal-offset: 79px;
+}

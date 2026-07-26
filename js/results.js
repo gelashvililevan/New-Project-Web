@@ -19,97 +19,6 @@ if (resultsAnalytics) {
   analyticsObserver.observe(resultsAnalytics);
 }
 
-const path = document.getElementById("journeyPath");
-const glow = document.getElementById("roadGlow");
-const nodes = [...document.querySelectorAll(".road-node")];
-const nodePositions = nodes.map((node) => ({
-  x: Number(node.getAttribute("cx")),
-  y: Number(node.getAttribute("cy")),
-}));
-const cards = [];
-
-const length = path.getTotalLength();
-
-path.style.strokeDasharray = length;
-path.style.strokeDashoffset = length;
-
-const moveTime = 5000;
-const stopTime = 1500;
-const segmentCount = nodes.length - 1;
-
-let start = null;
-let nextNode = 1;
-
-const firstNode = nodes[0];
-
-glow.setAttribute("cx", firstNode.getAttribute("cx"));
-glow.setAttribute("cy", firstNode.getAttribute("cy"));
-
-firstNode.classList.add("active");
-
-function animate(now) {
-  if (start === null) {
-    start = now;
-  }
-
-  let elapsed = now - start;
-
-  let progress = 0;
-
-  const segment = 1 / segmentCount;
-
-  for (let i = 0; i < segmentCount; i++) {
-    const moveDuration = moveTime / segmentCount;
-
-    if (elapsed <= moveDuration) {
-      progress += (elapsed / moveDuration) * segment;
-      break;
-    }
-
-    progress += segment;
-    elapsed -= moveDuration;
-
-    if (elapsed <= stopTime) {
-      break;
-    }
-
-    elapsed -= stopTime;
-  }
-
-  progress = Math.min(progress, 1);
-
-  path.style.strokeDashoffset = length * (1 - progress);
-
-  const point = path.getPointAtLength(length * progress);
-
-  glow.setAttribute("cx", point.x);
-  glow.setAttribute("cy", point.y);
-
-  const node = nodes[nextNode];
-
-  if (node) {
-    const cx = nodePositions[nextNode].x;
-    const cy = nodePositions[nextNode].y;
-
-    if (Math.hypot(point.x - cx, point.y - cy) < 10) {
-      node.classList.add("active");
-
-      const card = cards[nextNode];
-
-      if (card) {
-        setTimeout(() => {
-          card.classList.add("show");
-        }, 220);
-      }
-
-      nextNode++;
-    }
-  }
-  if (progress < 1) {
-    requestAnimationFrame(animate);
-  }
-}
-
 const journeyData = [
   {
     image: "./images/gallery/competitions/copa_catalunya_absolut_final.JPEG",
@@ -193,59 +102,53 @@ function createJourneyItem(event, index) {
   const side = index % 2 === 0 ? "left" : "right";
 
   return `
-<div class="journey-item ${side} ${event.medal}">
-        <article class="journey-card">
-            <div class="journey-card-image">
-                <img
-                    src="${event.image}"
-                    alt="${event.competition}"
-                    loading="lazy">
+    <div class="journey-item ${side} ${event.medal}">
+      <span class="journey-pin" aria-hidden="true"></span>
+      <article class="journey-card">
+      <div class="journey-medal ${event.medal}">
+        <i class="fa-solid fa-medal"></i>
+      </div>
+        <div class="journey-card-image">
+          <img
+            src="${event.image}"
+            alt="${event.competition}"
+            loading="lazy"
+          >
+        </div>
+        <div class="journey-card-content">
+          <span class="journey-card-date">${event.date}</span>
+          <h3 class="journey-card-title">${event.competition}</h3>
+          <span class="journey-card-location">${event.location}</span>
+          <div class="journey-card-divider"></div>
+          <div class="journey-card-info">
+            <div class="journey-card-row">
+              <span>Result</span>
+              <strong>${event.result}</strong>
             </div>
-            <div class="journey-medal ${event.medal}">
-           <i class="fa-solid fa-medal"></i>
+            <div class="journey-card-row">
+              <span>Category</span>
+              <strong>${event.weight}</strong>
+            </div>
+            <div class="journey-card-row">
+              <span>Record</span>
+              <strong>${event.record}</strong>
+            </div>
+            <div class="journey-card-row">
+              <span>Time on Mat</span>
+              <strong>${event.matTime}</strong>
+            </div>
           </div>
-
-            <div class="journey-card-content">
-                <span class="journey-card-date">
-                    ${event.date}
-                </span>
-                <h3 class="journey-card-title">
-                    ${event.competition}
-                </h3>
-                <span class="journey-card-location">
-                    ${event.location}
-                </span>
-                <div class="journey-card-divider"></div>
-                <div class="journey-card-info">
-                 <div class="journey-card-row">
-                        <span>Result</span>
-                        <strong>${event.result}</strong>
-                    </div>
-                    <div class="journey-card-row">
-                        <span>Category</span>
-                        <strong>${event.weight}</strong>
-                    </div>
-                    <div class="journey-card-row">
-                        <span>Record</span>
-                        <strong>${event.record}</strong>
-                    </div>
-                    <div class="journey-card-row">
-                        <span>Time on Mat</span>
-                        <strong>${event.matTime}</strong>
-                    </div>
-                </div>
-                <button class="journey-card-button">
-                    View Details
-                </button>
-            </div>
-        </article>
+          <button class="journey-card-button">View Details</button>
+        </div>
+      </article>
     </div>
-`;
+  `;
 }
 
 function createNextJourneyItem(event) {
   return `
 <div class="journey-item left next">
+<span class="journey-pin" aria-hidden="true"></span>
     <article class="journey-card">
         <div class="journey-card-content">
         <div class="journey-target">
@@ -290,64 +193,169 @@ function renderJourney() {
   timeline.innerHTML =
     journeyData.map(createJourneyItem).join("") +
     createNextJourneyItem(nextCompetition);
-
-  positionJourneyItems();
-  cards.push(...document.querySelectorAll(".journey-item"));
 }
 
 function positionJourneyItems() {
   const items = [...document.querySelectorAll(".journey-item")];
-  const styles = getComputedStyle(document.documentElement);
-  const leftOffset = parseFloat(
-    styles.getPropertyValue("--journey-left-offset"),
-  );
-  const rightOffset = parseFloat(
-    styles.getPropertyValue("--journey-right-offset"),
-  );
-  items.forEach((item, index) => {
-    const cx = nodePositions[index].x;
-    const cy = nodePositions[index].y;
+  const track = document.querySelector(".journey-track");
 
-    item.style.top = `${cy - 225}px`;
+  if (items.length === 0) return;
+
+  const scale = track.clientWidth / 1200;
+  const cardWidth = items[0].offsetWidth;
+  const leftMargin = 20 * scale;
+  const rightMargin = 20 * scale;
+  const startY = 120 * scale;
+  let verticalGap = 280 * scale;
+
+  if (window.innerWidth <= 1200) {
+    verticalGap = 270;
+  }
+
+  if (window.innerWidth <= 992) {
+    verticalGap = 250;
+  }
+
+  items.forEach((item, index) => {
+    item.style.top = `${startY + index * verticalGap}px`;
 
     if (item.classList.contains("left")) {
-      item.style.left = `${cx - leftOffset}px`;
+      item.style.left = `${leftMargin}px`;
     } else {
-      item.style.left = `${cx + rightOffset}px`;
+      item.style.left = `${track.clientWidth - cardWidth - rightMargin}px`;
     }
   });
 }
 
 renderJourney();
+positionJourneyItems();
 
-let started = false;
+const path = document.getElementById("journeyPath");
+const glow = document.getElementById("roadGlow");
+const track = document.querySelector(".journey-track");
+const journeyCards = [...document.querySelectorAll(".journey-item")];
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    if (!entries[0].isIntersecting || started) return;
+let roadNodes = [];
+let roadLength = 0;
+let journeyStarted = false;
+let animationStart = null;
+let activeNodeIndex = 1;
 
-    started = true;
+function getPinPositions() {
+  const trackRect = track.getBoundingClientRect();
+  const pins = [...document.querySelectorAll(".journey-pin")];
 
-    const firstCard = document.querySelector(".journey-item");
+  return pins.map((pin) => {
+    const pinRect = pin.getBoundingClientRect();
 
-    if (firstCard) {
-      firstCard.classList.add("show");
-    }
+    return {
+      x: pinRect.left - trackRect.left + pinRect.width / 2,
+      y: pinRect.top - trackRect.top + pinRect.height / 2,
+    };
+  });
+}
 
-    setTimeout(() => {
-      requestAnimationFrame(animate);
-    }, 1800);
+function buildRoad() {
+  const pins = getPinPositions();
 
-    observer.disconnect();
+  if (pins.length < 2) return;
+
+  path.setAttribute(
+    "d",
+    pins
+      .map((pin, index) => `${index === 0 ? "M" : "L"} ${pin.x} ${pin.y}`)
+      .join(" "),
+  );
+  roadNodes = [...document.querySelectorAll(".journey-pin")];
+
+  roadLength = path.getTotalLength();
+
+  path.style.strokeDasharray = roadLength;
+  path.style.strokeDashoffset = roadLength;
+
+  glow.setAttribute("cx", pins[0].x);
+  glow.setAttribute("cy", pins[0].y);
+}
+function buildRoadAtFinalCardPositions() {
+  track.classList.add("is-measuring");
+
+  track.getBoundingClientRect();
+  buildRoad();
+
+  track.classList.remove("is-measuring");
+}
+
+function animateRoad(timestamp) {
+  if (animationStart === null) {
+    animationStart = timestamp;
+  }
+
+  const duration = 7000;
+  const progress = Math.min((timestamp - animationStart) / duration, 1);
+
+  path.style.strokeDashoffset = roadLength * (1 - progress);
+
+  const point = path.getPointAtLength(roadLength * progress);
+
+  glow.setAttribute("cx", point.x);
+  glow.setAttribute("cy", point.y);
+
+  while (
+    activeNodeIndex < roadNodes.length &&
+    progress >= activeNodeIndex / (roadNodes.length - 1)
+  ) {
+    roadNodes[activeNodeIndex].classList.add("active");
+    journeyCards[activeNodeIndex]?.classList.add("show");
+    activeNodeIndex += 1;
+  }
+
+  if (progress < 1) {
+    requestAnimationFrame(animateRoad);
+  } else {
+    track.classList.remove("is-animating");
+  }
+}
+
+function startJourneyAnimation() {
+  if (journeyStarted || roadNodes.length === 0) return;
+
+  journeyStarted = true;
+  track.classList.add("is-animating");
+  roadNodes[0].classList.add("active");
+  journeyCards[0]?.classList.add("show");
+
+  requestAnimationFrame(animateRoad);
+}
+
+buildRoadAtFinalCardPositions();
+
+const journeyObserver = new IntersectionObserver(
+  ([entry]) => {
+    if (!entry.isIntersecting) return;
+
+    startJourneyAnimation();
+    journeyObserver.disconnect();
   },
-  {
-    threshold: 0.1,
-  },
+  { threshold: 0.1 },
 );
 
-observer.observe(document.querySelector(".journey-track"));
+journeyObserver.observe(track);
 
-observer.observe(document.querySelector(".journey-track"));
+window.addEventListener("resize", () => {
+  positionJourneyItems();
+
+  if (journeyStarted) {
+    buildRoad();
+    path.style.strokeDashoffset = 0;
+
+    const finalPoint = path.getPointAtLength(roadLength);
+
+    glow.setAttribute("cx", finalPoint.x);
+    glow.setAttribute("cy", finalPoint.y);
+  } else {
+    buildRoadAtFinalCardPositions();
+  }
+});
 
 const countdownElement = document.getElementById("competitionCountdown");
 
@@ -355,16 +363,17 @@ if (countdownElement) {
   const competitionDate = new Date("2026-08-16");
 
   function updateCountdown() {
-    const now = new Date();
-    const difference = competitionDate - now;
+    const difference = competitionDate - new Date();
+
     if (difference <= 0) {
       countdownElement.textContent = "TODAY";
       return;
     }
-    const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
 
+    const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
     countdownElement.textContent = `${days} DAYS`;
   }
+
   updateCountdown();
   setInterval(updateCountdown, 1000);
 }
