@@ -929,12 +929,13 @@
   }
 
   .journey {
-    height: 2900px;
+    height: auto;
     margin: 55px auto;
   }
 
   .journey-track {
     width: min(100% - 1.25rem, 620px);
+    aspect-ratio: auto;
   }
 
   .journey-items {
