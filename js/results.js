@@ -201,6 +201,20 @@ function positionJourneyItems() {
 
   if (items.length === 0) return;
 
+  const isMobileTimeline = window.matchMedia(
+    "(max-width: 768px), (max-width: 1024px) and (max-height: 500px) and (orientation: landscape)",
+  ).matches;
+
+  if (isMobileTimeline) {
+    items.forEach((item) => {
+      item.style.removeProperty("top");
+      item.style.removeProperty("left");
+      item.style.removeProperty("right");
+    });
+
+    return;
+  }
+
   const scale = track.clientWidth / 1200;
   const cardWidth = items[0].offsetWidth;
   const leftMargin = 20 * scale;
@@ -290,7 +304,11 @@ function animateRoad(timestamp) {
     animationStart = timestamp;
   }
 
-  const duration = 7000;
+  const isMobileTimeline = window.matchMedia(
+    "(max-width: 768px), (max-width: 1024px) and (max-height: 500px) and (orientation: landscape)",
+  ).matches;
+
+  const duration = isMobileTimeline ? 9500 : 7000;
   const progress = Math.min((timestamp - animationStart) / duration, 1);
 
   path.style.strokeDashoffset = roadLength * (1 - progress);
