@@ -13,7 +13,6 @@ textarea {
   overflow: hidden;
 }
 
-.contact-page.belt-reveal-lock #header,
 .contact-page.belt-reveal-lock main > :not(.judogi-belt-hero),
 .contact-page.belt-reveal-lock #footer {
   pointer-events: none;
@@ -664,12 +663,10 @@ textarea {
 
 @media (max-width: 600px) {
   .judogi-belt {
-    width: 94vw;
+    width: 100vw;
   }
-
-  .belt-name-svg text {
-    font-size: 44px;
-    letter-spacing: 5px;
+  .judogi-belt-hero{
+    top: 1%;
   }
 }
 
