@@ -16,7 +16,7 @@ if (beltHero) {
   let revealProgress = 0;
   let revealFinished = false;
   let touchStartY = 0;
-  const revealDistance = window.innerWidth <= 700 ? 700 : 1200;
+  const revealDistance = window.innerWidth <= 700 ? 240 : 1200;
 
   document.body.classList.add("belt-reveal-lock");
 
