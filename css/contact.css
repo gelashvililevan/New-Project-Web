@@ -1,0 +1,699 @@
+button,
+input,
+select,
+textarea {
+  font-family: Oswald;
+}
+
+.contact-page {
+  background: var(--bg);
+}
+
+.contact-page.belt-reveal-lock {
+  overflow: hidden;
+}
+
+.contact-page.belt-reveal-lock #header,
+.contact-page.belt-reveal-lock main > :not(.judogi-belt-hero),
+.contact-page.belt-reveal-lock #footer {
+  pointer-events: none;
+}
+
+.judogi-belt-hero {
+  pointer-events: auto;
+}
+
+.judogi-belt-hero {
+  position: fixed;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  pointer-events: none;
+  will-change: opacity;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.judogi-belt-stage {
+  position: relative;
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+  place-items: center;
+  isolation: isolate;
+  background: transparent;
+  backdrop-filter: blur(16px);
+}
+.judogi-veil {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: rgb(10 6 27 / 20%);
+  backdrop-filter: blur(16px);
+  will-change: opacity, backdrop-filter;
+  pointer-events: none;
+}
+.judogi-belt {
+  position: relative;
+  z-index: 2;
+  width: min(88vw, 1180px);
+  opacity: 1;
+  will-change: opacity;
+}
+
+.belt-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.belt-name-svg {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.belt-name-svg text {
+  fill: var(--gold);
+  stroke: var(--gold);
+  stroke-width: 1px;
+  paint-order: stroke;
+  font-family: Oswald;
+  font-size: 78px;
+  font-weight: 600;
+  letter-spacing: 18px;
+}
+
+.judogi-scroll-hint {
+  position: absolute;
+  z-index: 4;
+  bottom: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 5px;
+  opacity: 0;
+  text-transform: uppercase;
+  pointer-events: none;
+  animation: scroll-hint 0.8s ease 2s forwards;
+}
+
+.contact-page-header {
+  width: min(100% - 2rem, var(--content-width));
+  margin: 0 auto;
+  padding: 35px;
+  text-align: center;
+}
+
+.contact-page-header h1 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 8px;
+  pointer-events: none;
+}
+
+.contact-introduction {
+  position: relative;
+  padding: 20px 0 50px;
+}
+
+.contact-letter {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  min-height: 450px;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 5%), transparent 55%),
+    rgb(255 255 255 / 1%);
+  box-shadow: 0 35px 90px rgb(0 0 0 / 30%);
+}
+
+.contact-letter-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 17px 50px;
+  border-right: 1px solid rgb(255 255 255 / 9%);
+  text-align: center;
+}
+
+.contact-letter-label {
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 7px;
+}
+
+.contact-letter h1 {
+  line-height: 1.1;
+  color: var(--gold);
+  font-size: clamp(3rem, 5vw, 5.3rem);
+  font-weight: 500;
+  letter-spacing: 4px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-letter-main p {
+  max-width: 400px;
+  margin: 0 auto;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+
+.contact-letter-details {
+  margin-top: 0;
+  padding: 55px;
+}
+
+.contact-note {
+  max-width: 390px;
+}
+
+.contact-note-label {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--gold);
+  font-size: 2.3rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.contact-note p {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.7px;
+}
+
+.contact-signature {
+  padding-top: 30px;
+  text-align: right;
+}
+
+.contact-signature strong {
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.contact-mission {
+  padding: 0 0 140px;
+}
+
+.mission-card {
+  padding: 20px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 25%, rgb(212 175 55 / 18%), transparent 45%),
+    rgb(255 255 255 / 1%);
+  box-shadow: 0 35px 90px rgb(0 0 0 / 25%);
+  transition: 0.3s;
+}
+
+.mission-card:hover {
+  background:
+    radial-gradient(circle at 50% 25%, rgb(212 175 55 / 28%), transparent 45%),
+    rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+}
+
+.mission-heading {
+  text-align: center;
+}
+
+.mission-heading h2 {
+  margin: 0;
+  color: var(--gold);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 6px;
+}
+
+.mission-heading p {
+  max-width: 720px;
+  margin: 15px auto 25px;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.8px;
+}
+
+.mission-options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.mission-option {
+  position: relative;
+  display: flex;
+  min-height: 235px;
+  padding: 26px 18px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 16px;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(0 0 0 / 14%);
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.conv {
+  color: var(--gold);
+  font-size: 3.8rem;
+  line-height: 1;
+  transition: var(--transition);
+}
+
+.mission-option span {
+  font-size: 1.3rem;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.mission-option small {
+  margin-top: 18px;
+  color: var(--white);
+  opacity: 0.9;
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.mission-option:hover {
+  border-color: var(--gold);
+  background: rgb(212 175 55 / 9%);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 28%);
+}
+
+.mission-option:hover .conv {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px currentcolor);
+}
+
+.mission-form-panel {
+  position: relative;
+  display: none;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px 18px 0;
+}
+
+.mission-form-panel::before,
+.mission-form-panel::after {
+  position: absolute;
+  top: 15px;
+  bottom: 24px;
+  width: 1px;
+  content: "";
+  background: rgb(255 255 255 / 10%);
+}
+
+.mission-form-panel::before {
+  left: 0;
+}
+
+.mission-form-panel::after {
+  right: 0;
+}
+
+.mission-form-panel.show {
+  display: block;
+  animation: mission-form-in 0.45s ease both;
+}
+
+.mission-form-status:empty {
+  display: none;
+}
+
+.mission-card:has(.mission-form-panel.show) {
+  padding-bottom: 16px;
+}
+
+.mission-form-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.mission-form-top span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 6px;
+}
+
+.mission-form-top h3 {
+  color: var(--white);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+.mission-back {
+  border: 0;
+  margin-left: -5px;
+  background: transparent;
+  color: var(--white);
+  font: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.mission-back:hover {
+  opacity: 1;
+}
+
+.mission-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.mission-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mission-form-field:has(input[type="email"]) {
+  grid-column: 1 / -1;
+}
+
+.mission-form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.mission-form-field label {
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-left: 6px;
+}
+
+.mission-form input,
+.mission-form textarea {
+  width: 100%;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 15px;
+  outline: none;
+  background: rgb(0 0 0 / 20%);
+  color: var(--white);
+  font: Oswald;
+  font-size: 1rem;
+  letter-spacing: 0.7px;
+  transition: var(--transition);
+}
+
+.mission-form input {
+  height: 52px;
+  padding: 0 16px;
+}
+
+.mission-form textarea {
+  min-height: 145px;
+  padding: 16px;
+  resize: vertical;
+}
+
+.mission-form input:focus,
+.mission-form textarea:focus {
+  border-color: var(--gold);
+}
+
+.mission-form input::placeholder,
+.mission-form textarea::placeholder {
+  font-family: Oswald;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: var(--gray);
+  opacity: 0.4;
+}
+
+.mission-submit {
+  grid-column: 1 / -1;
+  min-height: 56px;
+  border: 1px solid var(--gold);
+  border-radius: 15px;
+  background: transparent;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: var(--transition);
+}
+
+.mission-submit:hover {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 5px 35px rgb(212 175 55 / 80%);
+  font-weight: 500;
+}
+
+.mission-form-status {
+  grid-column: 1 / -1;
+  margin: 5px 0 0;
+  color: var(--gray);
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission-card.reveal .mission-option {
+  opacity: 0;
+}
+
+.mission-card.reveal.is-visible .mission-option {
+  animation: mission-option-in 0.45s ease forwards;
+}
+.mission-card.reveal.is-visible .mission-option:nth-child(1) {
+  animation-delay: 0.08s;
+}
+.mission-card.reveal.is-visible .mission-option:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.mission-card.reveal.is-visible .mission-option:nth-child(3) {
+  animation-delay: 0.24s;
+}
+.mission-card.reveal.is-visible .mission-option:nth-child(4) {
+  animation-delay: 0.32s;
+}
+.mission-card.reveal.is-visible .mission-option:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes mission-option-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mission-form-in {
+  from {
+    opacity: 0;
+    transform: translateY(44px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .mission-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-introduction {
+    padding: 30px 0 60px;
+  }
+
+  .contact-letter {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-letter-main {
+    padding: 28px 30px;
+    gap: 25px;
+    border-right: 0;
+    border-bottom: 1px solid rgb(255 255 255 / 9%);
+  }
+
+  .contact-letter-details {
+    padding: 35px 30px 48px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-page-header {
+    padding: 20px 0;
+  }
+
+  .contact-page-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+  }
+
+  .contact-page-header h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+    letter-spacing: 2px;
+  }
+
+  .contact-page-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-mission {
+    padding-bottom: 90px;
+  }
+
+  .contact-signature {
+    text-align: center;
+  }
+
+  .mission-card {
+    padding: 48px 22px;
+  }
+
+  .mission-options {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-option {
+    min-height: 130px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .conv {
+    font-size: 2.5rem;
+  }
+
+  .mission-option span {
+    margin-top: 0px;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+
+  .mission-option small {
+    margin-top: 0px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+  }
+
+  .mission-form {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-form-field.full-width {
+    grid-column: auto;
+  }
+
+  .mission-form-top h3 {
+    font-size: 2.2rem;
+  }
+
+  .mission-back {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .judogi-belt {
+    width: 94vw;
+  }
+
+  .belt-name-svg text {
+    font-size: 44px;
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact-note-label {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+  }
+
+  .mission-heading h2 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .mission-heading p {
+    font-size: 0.8rem;
+    letter-spacing: 0px;
+  }
+
+  .mission-option {
+    width: 90%;
+  }
+
+  .conv {
+    font-size: 2rem;
+  }
+}

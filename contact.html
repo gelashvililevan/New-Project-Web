@@ -1,1 +1,158 @@
-﻿
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/424c0b4b20.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <title>Contact | Levan Gelashvili</title>
+  </head>
+  <body class="contact-page">
+    <div id="header"></div>
+    <main>
+      <section class="judogi-belt-hero" aria-label="Contact introduction">
+        <div class="judogi-belt-stage">
+          <div class="judogi-veil"></div>
+          <div class="judogi-belt" aria-hidden="true">
+            <img
+              class="belt-image"
+              src="./images/icons/judogi-belt-transparent.png"
+              alt=""
+            />
+            <svg
+              class="belt-name-svg"
+              viewBox="0 0 1200 500"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <path id="beltNamePath" d="M 85 130 Q 600 220 1115 130" />
+              </defs>
+              <text>
+                <textPath
+                  href="#beltNamePath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  LEVAN GELASHVILI
+                </textPath>
+              </text>
+            </svg>
+          </div>
+          <span class="judogi-scroll-hint">
+            <i class="fa-solid fa-arrow-down"></i>
+            Scroll
+            <i class="fa-solid fa-arrow-down"></i>
+          </span>
+        </div>
+      </section>
+      <section class="contact-page-header reveal">
+        <div class="container">
+          <h1>
+            ONE MESSAGE<br />
+            CAN START<br />
+            SOMETHING BIG.
+          </h1>
+        </div>
+      </section>
+      <section class="contact-introduction">
+        <div class="container">
+          <article class="contact-letter reveal">
+            <div class="contact-letter-main">
+              <span class="contact-letter-label">LET’S CONNECT</span>
+              <h1>BUILD THE JOURNEY TOGETHER.</h1>
+              <p>
+                For partnerships, Opportunities, Media Requests, Or Anything
+                Connected To The Journey Get In Touch.
+              </p>
+            </div>
+            <div class="contact-letter-details">
+              <div class="contact-note">
+                <span class="contact-note-label">BEYOND THE TATAMI</span>
+
+                <p>
+                  Judo has taught me that the strongest results are built long
+                  before they are seen. Every training session, competition, and
+                  setback has shaped how I work. The discipline I carry onto the
+                  tatami also guides the way I approach people, challenges, and
+                  new experiences. This page is simply an open invitation to
+                  connect.
+                </p>
+
+                <div class="contact-signature">
+                  <strong>Levan Gelashvili</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="contact-mission reveal">
+        <div class="container">
+          <div class="mission-card">
+            <div class="mission-heading">
+              <h2>
+                WHAT BRINGS<br />
+                YOU HERE?
+              </h2>
+              <p>Choose A Direction And Let’s Start The Right Conversation.</p>
+            </div>
+            <div class="mission-options">
+              <button
+                class="mission-option"
+                type="button"
+                data-mission="sponsorship"
+              >
+                <i class="fa-solid fa-bullseye conv"></i>
+                <span>SPONSORSHIP</span>
+                <small>Support The Next Chapter</small>
+              </button>
+              <button class="mission-option" type="button" data-mission="media">
+                <i class="fa-solid fa-camera-retro conv"></i>
+                <span>MEDIA</span>
+                <small>Stories Beyond Competition</small>
+              </button>
+              <button
+                class="mission-option"
+                type="button"
+                data-mission="partnership"
+              >
+                <i class="fa-solid fa-link conv"></i>
+                <span>PARTNERSHIP</span>
+                <small>Create Meaningful Impact</small>
+              </button>
+              <button
+                class="mission-option"
+                type="button"
+                data-mission="general"
+              >
+                <i class="fa-solid fa-paper-plane conv"></i>
+                <span>GENERAL</span>
+                <small>Start With A Message</small>
+              </button>
+              <button class="mission-option" type="button" data-mission="fan">
+                <i class="fa-solid fa-star conv"></i>
+                <span>FAN MESSAGE</span>
+                <small>Your Support Matters</small>
+              </button>
+            </div>
+            <div
+              class="mission-form-panel"
+              id="missionFormPanel"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <script src="./js/contact.js"></script>
+    <script src="./js/components.js"></script>
+  </body>
+</html>
