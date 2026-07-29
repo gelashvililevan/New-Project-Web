@@ -16,7 +16,16 @@ if (beltHero) {
   let revealProgress = 0;
   let revealFinished = false;
   let touchStartY = 0;
-  const revealDistance = window.innerWidth <= 700 ? 240 : 1000;
+
+  const desktopRevealDistance = 900;
+  const phoneRevealDistance = 240;
+
+  function getWheelRevealDistance() {
+    const phoneSizedViewport =
+      Math.min(window.innerWidth, window.innerHeight) <= 600;
+
+    return phoneSizedViewport ? phoneRevealDistance : desktopRevealDistance;
+  }
 
   document.body.classList.add("belt-reveal-lock");
 
@@ -25,21 +34,19 @@ if (beltHero) {
 
     beltHero.style.opacity = 1 - progress;
 
-    if (progress > 0) {
+    if (progress > 0 && hint) {
       hint.style.opacity = 0;
     }
 
     if (progress >= 1 && !revealFinished) {
       revealFinished = true;
-
       beltHero.style.opacity = 0;
       beltHero.style.visibility = "hidden";
-
       document.body.classList.remove("belt-reveal-lock");
     }
   }
 
-  function progressBelt(amount) {
+  function progressBelt(amount, revealDistance) {
     if (revealFinished || amount <= 0) return;
 
     revealProgress += amount / revealDistance;
@@ -52,7 +59,7 @@ if (beltHero) {
       if (revealFinished) return;
 
       event.preventDefault();
-      progressBelt(event.deltaY);
+      progressBelt(event.deltaY, getWheelRevealDistance());
     },
     { passive: false },
   );
@@ -60,6 +67,8 @@ if (beltHero) {
   window.addEventListener(
     "touchstart",
     (event) => {
+      if (revealFinished) return;
+
       touchStartY = event.touches[0].clientY;
     },
     { passive: true },
@@ -74,8 +83,7 @@ if (beltHero) {
       const distance = touchStartY - currentY;
 
       event.preventDefault();
-      progressBelt(distance);
-
+      progressBelt(distance, phoneRevealDistance);
       touchStartY = currentY;
     },
     { passive: false },
@@ -220,23 +228,40 @@ const missionForms = {
 };
 
 function createField(field) {
-  const required = field.required ? "required" : "";
+  const required = field.required ? " required" : "";
   const fullWidth =
-    field.type === "textarea" || field.type === "email" ? "full-width" : "";
+    field.type === "textarea" || field.type === "email" ? " full-width" : "";
+
+  const fieldName = field.label
+    .toLowerCase()
+    .replace(/\s*\(optional\)\s*/g, "")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_|_$/g, "");
+
+  const fieldId = `mission-${fieldName}`;
 
   if (field.type === "textarea") {
     return `
-      <div class="mission-form-field ${fullWidth}">
-        <label>${field.label}</label>
-        <textarea placeholder="${field.placeholder}" ${required}></textarea>
+      <div class="mission-form-field${fullWidth}">
+        <label for="${fieldId}">${field.label}</label>
+        <textarea
+          id="${fieldId}"
+          name="${fieldName}"
+          placeholder="${field.placeholder}"${required}
+        ></textarea>
       </div>
     `;
   }
 
   return `
-    <div class="mission-form-field">
-      <label>${field.label}</label>
-      <input type="${field.type}" placeholder="${field.placeholder}" ${required} />
+    <div class="mission-form-field${fullWidth}">
+      <label for="${fieldId}">${field.label}</label>
+      <input
+        id="${fieldId}"
+        name="${fieldName}"
+        type="${field.type}"
+        placeholder="${field.placeholder}"${required}
+      />
     </div>
   `;
 }
@@ -244,12 +269,15 @@ function createField(field) {
 function showMissionForm(missionName) {
   const mission = missionForms[missionName];
 
+  if (!mission || !missionPanel || !missionHeading || !missionOptions) return;
+
   missionHeading.style.display = "none";
   missionOptions.style.display = "none";
 
   missionPanel.innerHTML = `
     <div class="mission-form-top">
-    <button class="mission-back" type="button">CHOOSE ANOTHER
+      <button class="mission-back" type="button">
+        CHOOSE ANOTHER
       </button>
       <div>
         <span>${mission.label}</span>
@@ -264,6 +292,7 @@ function showMissionForm(missionName) {
       <p class="mission-form-status"></p>
     </form>
   `;
+
   missionPanel.classList.add("show");
 }
 
@@ -273,22 +302,27 @@ missionButtons.forEach((button) => {
   });
 });
 
-missionPanel.addEventListener("click", (event) => {
-  if (!event.target.classList.contains("mission-back")) return;
+if (missionPanel && missionHeading && missionOptions) {
+  missionPanel.addEventListener("click", (event) => {
+    if (!event.target.classList.contains("mission-back")) return;
 
-  missionPanel.classList.remove("show");
-  missionPanel.innerHTML = "";
-  missionHeading.style.display = "";
-  missionOptions.style.display = "";
-});
+    missionPanel.classList.remove("show");
+    missionPanel.innerHTML = "";
+    missionHeading.style.display = "";
+    missionOptions.style.display = "";
+  });
 
-missionPanel.addEventListener("submit", (event) => {
-  event.preventDefault();
+  missionPanel.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const status = missionPanel.querySelector(".mission-form-status");
-  status.textContent =
-    "Your form design is ready. We’ll connect delivery next.";
-});
+    const status = missionPanel.querySelector(".mission-form-status");
+
+    if (status) {
+      status.textContent =
+        "Your form design is ready. We’ll connect delivery next.";
+    }
+  });
+}
 
 const revealItems = document.querySelectorAll(".reveal");
 
