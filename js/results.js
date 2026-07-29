@@ -33,7 +33,7 @@ const journeyData = [
   },
   {
     image:
-      "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jPG",
+      "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
     competition: "Super Copa De Espana Absolut",
     date: "02 | 05 | 2026",
     location: "• BARCELONA •",
@@ -56,7 +56,7 @@ const journeyData = [
   },
   {
     image:
-      "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.JPG",
+      "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
     competition: "Super Copa De Espana Absolut",
     date: "30 | 05 | 2026",
     location: "• JACA •",
