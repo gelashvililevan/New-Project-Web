@@ -5,6 +5,13 @@ textarea {
   font-family: Oswald;
 }
 
+.mission-heading,
+.contact-letter-main, .contact-note,
+.contact-signature,
+.journey-links-label {
+  pointer-events: none;
+}
+
 .contact-page {
   background: var(--bg);
 }
@@ -110,7 +117,7 @@ textarea {
 .contact-page-header {
   width: min(100% - 2rem, var(--content-width));
   margin: 0 auto;
-  padding: 35px;
+  padding: 25px;
   text-align: center;
 }
 
@@ -119,7 +126,7 @@ textarea {
   color: var(--white);
   font-size: clamp(3.5rem, 7vw, 7rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.05;
   letter-spacing: 8px;
   pointer-events: none;
 }
@@ -218,7 +225,7 @@ textarea {
 }
 
 .contact-mission {
-  padding: 0 0 140px;
+  padding: 0 0 40px;
 }
 
 .mission-card {
@@ -532,6 +539,140 @@ textarea {
   animation-delay: 0.4s;
 }
 
+.journey-links-section {
+  padding-top: 12px;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.journey-links-label {
+  margin-bottom: 14px;
+  text-align: center;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 9px;
+}
+
+.journey-links {
+  display: flex;
+  justify-content: center;
+  gap: 68px;
+  margin-bottom: 15px;
+}
+
+.journey-link {
+  display: flex;
+  align-items: center;
+  width: 70px;
+  min-height: 70px;
+  max-width: 40%;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 2%);
+  color: var(--white);
+  transition:
+    width 0.4s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.journey-link:hover,
+.journey-link:focus-visible,
+.journey-link-connect:hover {
+  width: 23%;
+  border-color: rgb(212 175 55 / 65%);
+  background: rgb(212 175 55 / 6%);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 22%);
+  outline: none;
+}
+
+.journey-link-icon {
+  display: grid;
+  flex: 0 0 69px;
+  width: 62px;
+  place-items: center;
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.journey-link-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 3px;
+  padding-right: 12px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.25s ease 0.1s,
+    transform 0.3s ease 0.1s;
+  white-space: nowrap;
+}
+
+.journey-link:hover .journey-link-content,
+.journey-link:focus-visible .journey-link-content,
+.journey-link-connect:hover .journey-link-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.journey-link-title {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.journey-link-text {
+  overflow: hidden;
+  color: var(--gray);
+  opacity: 0.8;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+}
+
+.journey-link-arrow {
+  margin-right: 16px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.25s ease 0.15s;
+}
+
+.journey-link:hover .journey-link-arrow,
+.journey-link:focus-visible .journey-link-arrow {
+  opacity: 1;
+}
+
+.journey-social-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.journey-social-links a {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 10px;
+  place-items: center;
+  color: rgb(255 255 255 / 78%);
+  font-size: 1.7rem;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.journey-social-links a:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--bg);
+}
+
 @keyframes mission-option-in {
   from {
     opacity: 0;
@@ -669,6 +810,30 @@ textarea {
   .mission-back {
     white-space: nowrap;
   }
+  .journey-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .journey-link,
+  .journey-link:hover,
+  .journey-link-connect,
+  .journey-link-connect:hover {
+    min-width: 290px !important;
+    margin-inline: auto;
+  }
+
+  .journey-link-content,
+  .journey-link:hover .journey-link-content,
+  .journey-link-connect .journey-link-content,
+  .journey-link-connect:hover .journey-link-content,
+  .journey-link-arrow,
+  .journey-link:hover .journey-link-arrow {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -702,5 +867,8 @@ textarea {
 
   .conv {
     font-size: 2rem;
+  }
+  .journey-links-label {
+    letter-spacing: 5px;
   }
 }

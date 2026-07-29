@@ -16,7 +16,7 @@ if (beltHero) {
   let revealProgress = 0;
   let revealFinished = false;
   let touchStartY = 0;
-  const revealDistance = window.innerWidth <= 700 ? 240 : 1200;
+  const revealDistance = window.innerWidth <= 700 ? 240 : 1000;
 
   document.body.classList.add("belt-reveal-lock");
 
@@ -142,8 +142,8 @@ const missionForms = {
     ],
   },
 
-  partnership: {
-    label: "PARTNERSHIP",
+  collaboration: {
+    label: "COLLABORATION",
     title: "LET’S CREATE SOMETHING MEANINGFUL.",
     fields: [
       { label: "YOUR NAME", type: "text", placeholder: "Name", required: true },
