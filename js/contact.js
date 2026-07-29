@@ -341,3 +341,28 @@ const revealObserver = new IntersectionObserver(
 revealItems.forEach((item) => {
   revealObserver.observe(item);
 });
+
+const journeyRevealItems = document.querySelectorAll(
+  ".journey-links-label, .journey-link",
+);
+
+if (journeyRevealItems.length) {
+  const journeyRevealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -45px",
+    },
+  );
+
+  journeyRevealItems.forEach((item) => {
+    journeyRevealObserver.observe(item);
+  });
+}

@@ -665,6 +665,48 @@ textarea {
   color: var(--bg);
 }
 
+.journey-links-label,
+.journey-link {
+  opacity: 0;
+  translate: 0 22px;
+}
+
+.journey-links-label.is-visible {
+  animation: journey-link-reveal 0.6s ease forwards;
+}
+
+.journey-link.is-visible {
+  animation: journey-link-reveal 0.65s ease forwards;
+}
+
+.journey-link:nth-child(1).is-visible {
+  animation-delay: 0.08s;
+}
+
+.journey-link:nth-child(2).is-visible {
+  animation-delay: 0.16s;
+}
+
+.journey-link:nth-child(3).is-visible {
+  animation-delay: 0.24s;
+}
+
+@keyframes journey-link-reveal {
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-links-label,
+  .journey-link {
+    opacity: 1;
+    translate: none;
+    animation: none !important;
+  }
+}
+
 @keyframes mission-form-in {
   from {
     opacity: 0;
