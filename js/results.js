@@ -67,7 +67,7 @@ const journeyData = [
     result: "Bronze • 3rd Place",
   },
   {
-    image: "./images/gallery/podiums/copa_catalunya_juniors_podium.JPG",
+    image: "./images/gallery/podiums/copa_catalunya_juniors_podium_c.JPG",
     competition: "Copa Catalunya Juniors",
     date: "06 | 06 | 2026",
     location: "• BARCELONA •",
@@ -79,7 +79,7 @@ const journeyData = [
   },
   {
     image:
-      "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_1.jpeg",
+      "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_1_c.jpeg",
     competition: "Super Copa De Espana Juniors",
     date: "28 | 06 | 2026",
     location: "• TORTOSA •",
