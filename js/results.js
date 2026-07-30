@@ -67,7 +67,7 @@ const journeyData = [
     result: "Bronze • 3rd Place",
   },
   {
-    image: "./images/gallery/podiums/copa_catalunya_juniors_podium_c.JPG",
+    image: "./images/gallery/podiums/copa_catalunya_juniors_podium_c.jpg",
     competition: "Copa Catalunya Juniors",
     date: "06 | 06 | 2026",
     location: "• BARCELONA •",
