@@ -199,7 +199,11 @@ footer .container {
   font:
     1.8rem Oswald,
     sans-serif;
-  transition: var(--transition);
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 .partner-btn:hover {
   background: var(--gold);
@@ -243,11 +247,48 @@ footer .container {
   letter-spacing: 1px;
   line-height: 1.8;
   text-align: center;
-  transition: 0.6s;
+  transition:
+    color 0.6s ease,
+    letter-spacing 0.6s ease;
 }
 .footer-bottom:hover {
   color: var(--white);
   letter-spacing: 2px;
+}
+.footer-reveal-item {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity 0.65s ease var(--footer-delay, 0ms),
+    translate 0.65s ease var(--footer-delay, 0ms),
+    color 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    letter-spacing 0.6s ease,
+    transform 0.35s ease;
+  will-change: opacity, translate;
+}
+.footer-reveal-item.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+.footer-left.footer-reveal-item {
+  translate: 0 24px;
+}
+.footer-left.footer-reveal-item.is-visible {
+  translate: 0 0;
+}
+.footer-links img.footer-reveal-item,
+.footer-right a.footer-reveal-item {
+  translate: 0 12px;
+}
+.footer-links img.footer-reveal-item.is-visible,
+.footer-right a.footer-reveal-item.is-visible {
+  translate: 0 0;
+}
+.footer-reveal-item.is-visible {
+  will-change: auto;
 }
 
 @keyframes header-line-breathe {
@@ -269,6 +310,12 @@ footer .container {
     animation: none;
     opacity: 0.45;
     transform: none;
+  }
+  .footer-reveal-item,
+  .footer-reveal-item.is-visible {
+    opacity: 1;
+    translate: none;
+    transition: none;
   }
 }
 

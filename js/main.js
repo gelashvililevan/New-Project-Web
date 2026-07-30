@@ -366,15 +366,30 @@ if (galleryGrid) {
 
   galleryGrid.innerHTML = html;
 
-  const galleryItems = document.querySelectorAll(
+  const galleryItems = galleryGrid.querySelectorAll(
     ".gallery-card, .gallery-more",
   );
 
-  galleryItems.forEach((item, index) => {
-    setTimeout(() => {
-      item.classList.add("show");
-    }, index * 180);
-  });
+  const galleryObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        galleryItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add("show");
+          }, index * 110);
+        });
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+  galleryObserver.observe(galleryGrid);
 }
 
 const aboutSection = document.querySelector(".about");
@@ -477,5 +492,3 @@ if (partnersSection) {
   );
   partnersObserver.observe(partnersSection);
 }
-
-

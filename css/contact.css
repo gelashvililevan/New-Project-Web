@@ -919,4 +919,51 @@ textarea {
   .journey-links-label::after {
     width: 28px;
   }
+
+  .journey-links {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .journey-link,
+  .journey-link:hover,
+  .journey-link:focus-visible,
+  .journey-link-connect:hover {
+    width: min(90%, 360px);
+    max-width: none;
+    min-height: 88px;
+  }
+
+  .journey-link-icon {
+    flex: 0 0 62px;
+    width: 62px;
+  }
+
+  .journey-link-content {
+    min-width: 0;
+    padding-right: 6px;
+    white-space: normal;
+  }
+
+  .journey-link-title {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    letter-spacing: 2.5px;
+  }
+
+  .journey-link-text {
+    display: block;
+    max-width: 100%;
+    overflow: visible;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .journey-link-arrow {
+    flex: 0 0 auto;
+    margin-right: 12px;
+  }
 }

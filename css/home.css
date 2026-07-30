@@ -502,6 +502,14 @@
   transform: translateY(0) scale(1);
 }
 
+.gallery-card.show:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.gallery-more.show:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
 .gallery-card:hover {
   border-color: var(--gold);
   box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
@@ -1009,6 +1017,20 @@
   font: 100 0.55rem Oswald;
   color: var(--white);
   letter-spacing: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card,
+  .gallery-more,
+  .gallery-card img {
+    transition: none;
+  }
+
+  .gallery-card,
+  .gallery-more {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 1200px) {
