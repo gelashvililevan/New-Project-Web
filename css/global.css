@@ -37,6 +37,8 @@ body {
     rgb(212 175 55 / 28%),
     transparent
   );
+  transform-origin: center;
+  animation: header-line-breathe 4.5s ease-in-out infinite;
 }
 .site-header.scrolled {
   border-bottom-color: rgb(212 175 55 / 10%);
@@ -246,6 +248,28 @@ footer .container {
 .footer-bottom:hover {
   color: var(--white);
   letter-spacing: 2px;
+}
+
+@keyframes header-line-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.72);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.1);
+    box-shadow: 0 0 15px rgb(212 175 55 / 45%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header::after {
+    animation: none;
+    opacity: 0.45;
+    transform: none;
+  }
 }
 
 @media (max-width: 992px) {

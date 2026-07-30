@@ -200,15 +200,17 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   opacity: 0.95;
-  filter: drop-shadow(0 0 18px rgb(212, 175, 55));
+  filter: none;
+  will-change: stroke-dashoffset;
+}
+
+.journey-track:not(.is-animating) #journeyPath {
+  filter: drop-shadow(0 0 8px rgb(212 175 55 / 50%));
 }
 
 #roadGlow {
   fill: var(--gold);
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
-  filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.8))
-    drop-shadow(0 0 8px rgba(212, 175, 55, 0.8))
-    drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
+  filter: drop-shadow(0 0 6px rgb(212 175 55 / 80%));
 }
 
 .journey-medal {

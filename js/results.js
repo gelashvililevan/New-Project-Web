@@ -112,7 +112,8 @@ function createJourneyItem(event, index) {
           <img
             src="${event.image}"
             alt="${event.competition}"
-            loading="lazy"
+            loading="eager"
+            decoding="async"
           >
         </div>
         <div class="journey-card-content">
@@ -244,10 +245,37 @@ function positionJourneyItems() {
 renderJourney();
 positionJourneyItems();
 
+function prepareJourneyImages() {
+  const images = [...document.querySelectorAll(".journey-card-image img")];
+
+  images.forEach((image) => {
+    image.loading = "eager";
+  });
+
+  return Promise.all(
+    images.map((image) => {
+      if (typeof image.decode !== "function") {
+        return Promise.resolve();
+      }
+
+      return image.decode().catch(() => {});
+    }),
+  );
+}
+
+const journeyImagesReady = prepareJourneyImages();
+
 const path = document.getElementById("journeyPath");
 const glow = document.getElementById("roadGlow");
 const track = document.querySelector(".journey-track");
+
 const journeyCards = [...document.querySelectorAll(".journey-item")];
+
+const mobileTimelineQuery = window.matchMedia(
+  "(max-width: 768px), (max-width: 1024px) and (max-height: 500px) and (orientation: landscape)",
+);
+
+let journeyAnimationDuration = mobileTimelineQuery.matches ? 9500 : 7000;
 
 let roadNodes = [];
 let roadLength = 0;
@@ -304,16 +332,15 @@ function animateRoad(timestamp) {
     animationStart = timestamp;
   }
 
-  const isMobileTimeline = window.matchMedia(
-    "(max-width: 768px), (max-width: 1024px) and (max-height: 500px) and (orientation: landscape)",
-  ).matches;
+  const elapsedTime = timestamp - animationStart;
 
-  const duration = isMobileTimeline ? 9500 : 7000;
-  const progress = Math.min((timestamp - animationStart) / duration, 1);
+  const progress = Math.min(elapsedTime / journeyAnimationDuration, 1);
 
-  path.style.strokeDashoffset = roadLength * (1 - progress);
+  const currentRoadLength = roadLength * progress;
 
-  const point = path.getPointAtLength(roadLength * progress);
+  path.style.strokeDashoffset = roadLength - currentRoadLength;
+
+  const point = path.getPointAtLength(currentRoadLength);
 
   glow.setAttribute("cx", point.x);
   glow.setAttribute("cy", point.y);
@@ -323,22 +350,37 @@ function animateRoad(timestamp) {
     progress >= activeNodeIndex / (roadNodes.length - 1)
   ) {
     roadNodes[activeNodeIndex].classList.add("active");
+
     journeyCards[activeNodeIndex]?.classList.add("show");
+
     activeNodeIndex += 1;
   }
 
   if (progress < 1) {
     requestAnimationFrame(animateRoad);
   } else {
+    path.style.strokeDashoffset = 0;
     track.classList.remove("is-animating");
   }
 }
 
-function startJourneyAnimation() {
+async function startJourneyAnimation() {
   if (journeyStarted || roadNodes.length === 0) return;
 
   journeyStarted = true;
+
+  await journeyImagesReady;
+
+  positionJourneyItems();
+  buildRoadAtFinalCardPositions();
+
+  journeyAnimationDuration = mobileTimelineQuery.matches ? 9500 : 7000;
+
+  animationStart = null;
+  activeNodeIndex = 1;
+
   track.classList.add("is-animating");
+
   roadNodes[0].classList.add("active");
   journeyCards[0]?.classList.add("show");
 
