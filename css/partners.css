@@ -716,10 +716,10 @@
   place-items: center;
   isolation: isolate;
 }
+
 .partners-final-year {
   position: absolute;
   top: 50%;
-  left: 5%;
   z-index: 0;
   color: rgba(255, 255, 255, 0.015);
   font-size: clamp(14rem, 26vw, 27rem);
@@ -731,14 +731,14 @@
   transform: translate(-50%, -50%);
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.13);
   text-shadow: 0 0 0 transparent;
+  pointer-events: none;
+  user-select: none;
   transition:
     color 0.6s ease,
     opacity 0.6s ease,
     text-shadow 0.6s ease,
     -webkit-text-stroke-color 0.6s ease,
-    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-  pointer-events: none;
-  user-select: none;
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
 }
 
 .partners-final-title {
@@ -770,7 +770,6 @@
 .partners-final-heading:hover .partners-final-year {
   color: rgba(221, 184, 44, 0.035);
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1.025);
   -webkit-text-stroke-color: rgba(221, 184, 44, 0.5);
   text-shadow:
     0 0 22px rgba(221, 184, 44, 0.17),
@@ -1035,7 +1034,6 @@
   }
 
   .partners-final-year {
-    right: -6vw;
     font-size: clamp(14rem, 32vw, 24rem);
   }
 
@@ -1208,7 +1206,9 @@
   }
   .partners-final-year {
     font-size: clamp(9rem, 45vw, 14rem);
-    letter-spacing: -6px;
+    letter-spacing: 18px;
+    opacity: 0.9 !important;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2) !important;
   }
   .partners-final-title {
     font-size: clamp(3.6rem, 16vw, 5.5rem);
