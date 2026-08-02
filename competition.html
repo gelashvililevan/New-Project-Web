@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Competition chapter from the judo journey of Levan Gelashvili."
+    />
+    <script
+      src="https://kit.fontawesome.com/424c0b4b20.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/competition.css" />
+    <title>Competition | Levan Gelashvili</title>
+  </head>
+  <body class="competition-page">
+    <div id="header"></div>
+    <main id="competitionPage">
+      <div
+        class="competition-loading"
+        id="competitionLoading"
+        role="status"
+        aria-live="polite"
+      >
+        <span aria-hidden="true"></span>
+        <p>OPENING CHAPTER</p>
+      </div>
+      <div class="competition-content" id="competitionContent"></div>
+      <section
+        class="competition-error"
+        id="competitionError"
+        aria-labelledby="competitionErrorTitle"
+        hidden
+      >
+        <p>CHAPTER NOT FOUND</p>
+        <h1 id="competitionErrorTitle">This competition could not be found.</h1>
+        <a href="./results.html">Return to the journey</a>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <script src="./js/components.js"></script>
+    <script type="module" src="./js/competition.js"></script>
+  </body>
+</html>

@@ -540,6 +540,7 @@
   width: 85%;
   height: 48px;
   margin: 5px auto 0;
+  padding: 8px 10px;
   border-radius: 14px;
   border: 1px solid var(--gold);
   background: none;

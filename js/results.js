@@ -21,6 +21,7 @@ if (resultsAnalytics) {
 
 const journeyData = [
   {
+    id: "copa-catalunya-2026",
     image: "./images/gallery/competitions/copa_catalunya_absolut_final.JPEG",
     competition: "Copa Catalunya Absolut",
     date: "11 | 04 | 2026",
@@ -32,6 +33,7 @@ const journeyData = [
     result: "Silver • 2nd Place",
   },
   {
+    id: "super-copa-espana-barcelona-2026",
     image:
       "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
     competition: "Super Copa De Espana Absolut",
@@ -44,6 +46,7 @@ const journeyData = [
     result: "Silver • 2nd Place",
   },
   {
+    id: "vila-salou-teams-2026",
     image: "./images/gallery/competitions/salou_team_competition.JPG",
     competition: "Vila Salou Trophy Teams",
     date: "09 | 05 | 2026",
@@ -55,6 +58,7 @@ const journeyData = [
     result: "Gold • 1st Place",
   },
   {
+    id: "super-copa-espana-jaca-2026",
     image:
       "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
     competition: "Super Copa De Espana Absolut",
@@ -67,6 +71,7 @@ const journeyData = [
     result: "Bronze • 3rd Place",
   },
   {
+    id: "copa-catalunya-juniors-2026",
     image: "./images/gallery/podiums/copa_catalunya_juniors_podium_c.jpg",
     competition: "Copa Catalunya Juniors",
     date: "06 | 06 | 2026",
@@ -78,6 +83,7 @@ const journeyData = [
     result: "Gold • 1st Place",
   },
   {
+    id: "super-copa-espana-juniors-tortosa-2026",
     image:
       "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_1_c.jpeg",
     competition: "Super Copa De Espana Juniors",
@@ -92,6 +98,7 @@ const journeyData = [
 ];
 
 const nextCompetition = {
+  id: "next-super-copa-valencia-2026",
   title: "Super Copa De Espana",
   date: "16 | 08 | 2026",
   location: "• Valencia •",
@@ -139,7 +146,11 @@ function createJourneyItem(event, index) {
               <strong>${event.matTime}</strong>
             </div>
           </div>
-          <button class="journey-card-button">View Details</button>
+          <a class="journey-card-button"
+            href="./competition.html?id=${encodeURIComponent(event.id)}"
+            aria-label="View details for ${event.competition}">
+            View Details
+        </a>
         </div>
       </article>
     </div>

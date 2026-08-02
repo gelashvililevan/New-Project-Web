@@ -1,3 +1,24 @@
+(() => {
+  const navigationEntry = performance.getEntriesByType?.("navigation")[0];
+  const isReload = navigationEntry
+    ? navigationEntry.type === "reload"
+    : performance.navigation?.type === 1;
+  if (!isReload) return;
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  function resetScrollPosition() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+  resetScrollPosition();
+  window.addEventListener("pageshow", resetScrollPosition, { once: true });
+})();
+
 async function loadComponent(id, file) {
   const element = document.getElementById(id);
 
