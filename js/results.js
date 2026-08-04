@@ -98,7 +98,7 @@ const journeyData = [
 ];
 
 const nextCompetition = {
-  id: "next-super-copa-valencia-2026",
+  id: "super-copa-espana-valencia-2026",
   title: "Super Copa De Espana",
   date: "16 | 08 | 2026",
   location: "• Valencia •",
@@ -190,9 +190,12 @@ function createNextJourneyItem(event) {
                     <strong>${event.category}</strong>
                 </div>
             </div>
-            <button class="journey-card-button">
-                Competition Details
-            </button>
+            <a
+  class="journey-card-button"
+  href="./competition.html?id=${encodeURIComponent(event.id)}"
+>
+  Competition Details
+</a>
         </div>
     </article>
 </div>

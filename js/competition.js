@@ -183,7 +183,9 @@ function renderProgressionLink(chapter, direction) {
   const date = targetCompetition?.date || chapter.date;
   const title = targetCompetition?.competition || chapter.title;
   const result =
-    targetCompetition?.placement || chapter.result || "VIEW CHAPTER";
+    targetCompetition?.status === "upcoming"
+      ? "UPCOMING · NEXT MISSION"
+      : targetCompetition?.placement || chapter.result || "VIEW CHAPTER";
   const isPrevious = direction === "previous";
   const label = isPrevious ? "PREVIOUS CHAPTER" : "NEXT CHAPTER";
   const arrowClass = isPrevious ? "fa-arrow-left" : "fa-arrow-right";
@@ -220,6 +222,246 @@ function renderProgressionNavigation(navigation = {}) {
       ${links.join("")}
     </div>
   `;
+}
+
+function renderUpcomingObjectives(objectives = []) {
+  return objectives
+    .map(
+      (objective, index) => `
+        <article class="competition-upcoming-objective" data-reveal>
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h3>${objective.title}</h3>
+          <p>${objective.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+}
+function initializeUpcomingCountdown(container, targetDate) {
+  const countdown = container.querySelector("[data-countdown]");
+  if (!countdown || !targetDate) return;
+  const daysElement = countdown.querySelector("[data-countdown-days]");
+  const hoursElement = countdown.querySelector("[data-countdown-hours]");
+  const minutesElement = countdown.querySelector("[data-countdown-minutes]");
+  const secondsElement = countdown.querySelector("[data-countdown-seconds]");
+  const statusElement = countdown.querySelector("[data-countdown-status]");
+  const targetTime = new Date(targetDate).getTime();
+  if (!Number.isFinite(targetTime)) {
+    if (statusElement) statusElement.textContent = "DATE TO BE CONFIRMED";
+    return;
+  }
+  let countdownInterval;
+  function updateCountdown() {
+    const remaining = Math.max(0, targetTime - Date.now());
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    if (daysElement) daysElement.textContent = String(days).padStart(2, "0");
+    if (hoursElement) hoursElement.textContent = String(hours).padStart(2, "0");
+    if (minutesElement) {
+      minutesElement.textContent = String(minutes).padStart(2, "0");
+    }
+    if (secondsElement) {
+      secondsElement.textContent = String(seconds).padStart(2, "0");
+    }
+    if (remaining === 0) {
+      if (statusElement) statusElement.textContent = "COMPETITION DAY";
+      if (countdownInterval) clearInterval(countdownInterval);
+    }
+  }
+  updateCountdown();
+  countdownInterval = window.setInterval(updateCountdown, 1000);
+}
+function renderUpcomingCompetitionPage(competition, content) {
+  const opportunity = competition.opportunity ?? {};
+  const preparation = competition.preparation ?? {};
+  const objectives = Array.isArray(competition.objectives)
+    ? competition.objectives
+    : [];
+  setMedalTheme("gold");
+  document.body.classList.add("competition-page--upcoming");
+  document.title = `${competition.competition} — ${competition.location} | Levan Gelashvili`;
+  content.innerHTML = `
+    <section
+      class="competition-upcoming-hero"
+      aria-labelledby="competitionUpcomingTitle"
+    >
+      <div class="competition-upcoming-background" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      ${
+        competition.image
+          ? `
+            <div class="competition-upcoming-image" aria-hidden="true">
+              <img
+                src="${competition.image}"
+                alt=""
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              >
+            </div>
+          `
+          : ""
+      }
+      <div class="container competition-upcoming-hero-container">
+        <div class="competition-hero-navigation">
+          <a class="competition-back-link" href="./results.html">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <span>BACK TO THE ${competition.season} JOURNEY</span>
+          </a>
+        </div>
+        <div class="competition-upcoming-hero-content">
+          <p class="competition-upcoming-chapter">
+            CHAPTER ${competition.chapter} · NEXT MISSION
+          </p>
+          <span class="competition-upcoming-status">
+            <i class="fa-solid fa-circle" aria-hidden="true"></i>
+            UPCOMING
+          </span>
+          <h1 id="competitionUpcomingTitle">
+            ${competition.competition}
+          </h1>
+          <div class="competition-upcoming-meta">
+            <span>${competition.date}</span>
+            <span aria-hidden="true"></span>
+            <span>${competition.location}</span>
+          </div>
+          <div
+            class="competition-upcoming-countdown"
+            data-countdown
+            aria-live="polite"
+          >
+            <div>
+              <strong data-countdown-days>--</strong>
+              <span>DAYS</span>
+            </div>
+            <div>
+              <strong data-countdown-hours>--</strong>
+              <span>HOURS</span>
+            </div>
+            <div>
+              <strong data-countdown-minutes>--</strong>
+              <span>MINUTES</span>
+            </div>
+            <div>
+              <strong data-countdown-seconds>--</strong>
+              <span>SECONDS</span>
+            </div>
+            <p data-countdown-status>UNTIL THE FIRST BOW</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="competition-upcoming-section competition-upcoming-opportunity"
+      aria-labelledby="competitionOpportunityTitle"
+    >
+      <div class="container competition-upcoming-container">
+        <header class="competition-upcoming-heading" data-reveal>
+          <p>BRIEFING 01 · THE OPPORTUNITY</p>
+          <h2 id="competitionOpportunityTitle">
+            ${opportunity.eyebrow || "THE NEXT MISSION"}
+          </h2>
+        </header>
+        <p class="competition-upcoming-story" data-reveal>
+          ${
+            opportunity.story ||
+            "The complete story of this opportunity will be added here."
+          }
+        </p>
+        <dl class="competition-upcoming-facts" data-reveal>
+          <div>
+            <dt>Date</dt>
+            <dd>${competition.date}</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>${competition.location}</dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd>${competition.category}</dd>
+          </div>
+          <div>
+            <dt>Division</dt>
+            <dd>${competition.division}</dd>
+          </div>
+          <div>
+            <dt>Level</dt>
+            <dd>${competition.level}</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Upcoming</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section
+      class="competition-upcoming-section competition-upcoming-preparation"
+      aria-labelledby="competitionPreparationTitle"
+    >
+      <div class="container competition-upcoming-container">
+        <header class="competition-upcoming-heading" data-reveal>
+          <p>BRIEFING 02 · THE PREPARATION</p>
+          <h2 id="competitionPreparationTitle">
+            WORK BEFORE <span>THE FIRST BOW.</span>
+          </h2>
+        </header>
+        <p class="competition-upcoming-story" data-reveal>
+          ${
+            preparation.story ||
+            "The preparation story for this competition will be added here."
+          }
+        </p>
+      </div>
+    </section>
+    <section
+      class="competition-upcoming-section competition-upcoming-objectives"
+      aria-labelledby="competitionObjectivesTitle"
+    >
+      <div class="container competition-upcoming-container">
+        <header class="competition-upcoming-heading" data-reveal>
+          <p>BRIEFING 03 · THE OBJECTIVE</p>
+          <h2 id="competitionObjectivesTitle">
+            WHAT MUST <span>BE EXECUTED.</span>
+          </h2>
+        </header>
+        <div
+          class="competition-upcoming-objective-grid"
+          data-count="${objectives.length}"
+        >
+          ${renderUpcomingObjectives(objectives)}
+        </div>
+      </div>
+    </section>
+    <section
+      class="competition-act competition-progression competition-upcoming-navigation"
+      aria-label="Competition chapter navigation"
+    >
+      <div class="container competition-progression-container">
+        ${renderProgressionNavigation(competition.navigation)}
+      </div>
+    </section>
+    <nav
+      class="competition-chapter-navigation"
+      aria-label="Return to the results journey"
+    >
+      <div class="container competition-chapter-navigation-container">
+        <a class="competition-return-link" href="./results.html">
+          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <span>RETURN TO THE JOURNEY</span>
+        </a>
+      </div>
+    </nav>
+  `;
+  content.classList.add("is-ready");
+  initializeRevealAnimations(content);
+  initializeUpcomingCountdown(content, competition.countdownDate);
 }
 
 function formatMatchCount(count) {
@@ -293,6 +535,11 @@ function initializeMatchDetails(container) {
 }
 
 function renderCompetitionPage(competition, content) {
+  if (competition.status === "upcoming") {
+    renderUpcomingCompetitionPage(competition, content);
+    return;
+  }
+  document.body.classList.remove("competition-page--upcoming");
   const matches = Array.isArray(competition.matches) ? competition.matches : [];
   const lessons = Array.isArray(competition.lessons)
     ? competition.lessons.slice(0, 3)
@@ -389,7 +636,10 @@ function renderCompetitionPage(competition, content) {
             <div><dt>Mat Time</dt><dd>${competition.totalMatTime}</dd></div>
             <div><dt>Ippons</dt><dd>${competition.ippons}</dd></div>
             <div><dt>Fastest Win</dt><dd>${competition.fastestWin}</dd></div>
-            <div><dt>Competitors</dt><dd>${competition.competitors}</dd></div>
+            <div>
+              <dt>${competition.competitorsLabel || "Competitors"}</dt>
+              <dd>${competition.competitors}</dd>
+            </div>
           </dl>
         </div>
       </div>

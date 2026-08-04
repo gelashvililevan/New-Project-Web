@@ -66,14 +66,15 @@ export const competitions = {
     competitors: "9",
     preparation: {
       story:
-        "This was my first competition after moving to Barcelona, but despite that my main goal was gold medal and to test my new skills and see how fast I would adapt to the new environment.",
+        "This was my first competition after moving to Barcelona. My goal was still the gold medal: I wanted to test the skills I had been developing and discover how quickly I could adapt to a new environment.",
     },
     matches: [
       createMatch("01", "ROUND ONE", "WIN", {
         method: "IPPON",
         duration: "00:56",
+        score: "100 – 000",
         technique: "Soto-Makikomi",
-        note: "After getting my dominant left grip, opponent made a mistake while trying to break my grip and I was able to take advantage of that and finish the match with a beautiful Soto-Makikomi.",
+        note: "After establishing my dominant left grip, my opponent made a mistake while trying to break it. I took advantage of the opening and finished the match with a beautiful Soto-Makikomi.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -82,8 +83,9 @@ export const competitions = {
       createMatch("02", "QUARTER-FINAL", "WIN", {
         method: "IPPON",
         duration: "01:38",
+        score: "100 – 000",
         technique: "Ko-Soto-Gake",
-        note: "Still after getting my dominant left grip, opponent made a mistake while trying to throw me with Yoko-Gake and because I had better grip and positioning I was able to counter that and finish the match with a beautiful Ko-Soto-Gake.",
+        note: "Once again, after establishing my dominant left grip, my opponent made a mistake while attempting Yoko-Gake. My stronger grip and positioning allowed me to counter the attack and finish the match with Ko-Soto-Gake.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 1 },
@@ -92,8 +94,9 @@ export const competitions = {
       createMatch("03", "SEMI-FINAL", "WIN", {
         method: "IPPON",
         duration: "01:24",
+        score: "100 – 000",
         technique: "Uchi-Mata-Gaeshi",
-        note: "After constant presure from left side, I was able to make my opponent to make a mistake and I was able to counter his Uchi-Mata with Uchi-Mata-Gaeshi and finish the match.",
+        note: "By applying constant pressure from the left side, I forced my opponent into a mistake. When he attacked with Uchi-Mata, I countered with Uchi-Mata-Gaeshi and finished the match.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 1 },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -102,8 +105,9 @@ export const competitions = {
       createMatch("04", "FINAL", "LOSS", {
         method: "IPPON",
         duration: "03:42",
-        technique: "Uchi-Mata",
-        note: "After being scored yuko and getting presured in Ne-waza, I was able to comeback in match by scoring yuko with Uchi-Mata, but I wasn't able to take the lead in points and after getting 2 shidos I made a mistake by trying to break grip that he was waiting for the whole match and he was able to take advantage of that and scored a beautiful Seoi-Otoshi that decided the match in the last 15 seconds.",
+        score: "001 – 101",
+        technique: "Seoi-Otoshi",
+        note: "After conceding a Yuko and being put under pressure in Ne-waza, I fought my way back by scoring a Yuko with Uchi-Mata. I could not take the lead, however, and after receiving two shidos, I tried to break the grip my opponent had been setting up throughout the match. He capitalized on that mistake with a beautiful Seoi-Otoshi in the final 15 seconds.",
         scores: {
           mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 2 },
           opponent: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 1 },
@@ -116,8 +120,8 @@ export const competitions = {
         text: "I constantly pressured my opponents, forcing mistakes and creating opportunities. In the final, however, I could not maintain that same pressure.",
       },
       {
-        title: "RESULT",
-        text: "Despite the challenges that shaped my result, I felt the huge progress even between matches, after every match I was adapting and setting up a plan for next one. Most importantly, I was able to adapt way faster to new enviroment than i expected, and this competition and experience led me to adding new set of skills to my game that shaped every next competition since then.",
+        title: "ADAPTATION",
+        text: "Despite the challenges that shaped the result, I could feel myself progressing between matches. After every fight, I adapted and created a clearer plan for the next one. Most importantly, I adjusted to a new environment much faster than I expected. That ability helped me add new skills that influenced every competition that followed.",
       },
       {
         title: "TRANSITIONS",
@@ -127,14 +131,14 @@ export const competitions = {
     changes: [
       {
         before:
-          "Before this competition, I was unable to realize how low was my groundwork skills and how much I was relying on standing techniques. Also I was able to adapt new things easier than i expected.",
+          "Before this competition, I had not realized how underdeveloped my groundwork was or how heavily I relied on standing techniques.",
         after:
-          "After I left the pavilion, I realized that me who came in the morning and me who left the competition was completely different person, I knew that I had to work on the reasons that made me lose the final, but I have never felt progress between matches like that before, the guy after first match, the guy after second match, the guy after third match and the guy after final were 4 completely different person, and that was the most important lesson I took from this competition.",
+          "When I left the pavilion, I felt like a different athlete from the one who had arrived that morning. I had progressed between every match, adapted faster than I expected and gained a clearer understanding of why I lost the final. The athlete after the first match was not the same athlete after the second, the third or the final. That ability to learn in real time became the most important lesson I took from this competition.",
       },
     ],
     progression: {
-      eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-      text: "After adding groundwork and transition skills to my game, I was able to put them into practice in the next competitions, and I was able to see how much they improved my overall performance and results in a very short time and way stronger events.",
+      eyebrow: "ACT 07 · PUT INTO PRACTICE",
+      text: "After adding groundwork and transition skills to my game, I began putting them into practice in the competitions that followed. In a very short time, I could see how much they improved my overall performance and results against much stronger fields.",
     },
     navigation: {
       previous: null,
@@ -161,14 +165,15 @@ export const competitions = {
     competitors: "20",
     preparation: {
       story:
-        "This was my first super copa and I was excited to test my skills against a stronger field of competitors. Also I wanted to test the weaknesses that I discovered in the previous competition and see how much I improved since then.",
+        "This was my first Super Copa, and I was excited to test myself against a stronger field of competitors. I also wanted to revisit the weaknesses exposed by my previous competition and discover how much progress I had made since then.",
     },
     matches: [
       createMatch("01", "ROUND ONE", "WIN", {
         method: "IPPON",
         duration: "00:34",
+        score: "100 – 000",
         technique: "O-Soto-Gari",
-        note: "The guy was so tall and strong, but I was able to take grip and control in the first seconds of the match and after that I tried one handed drop O-Soto-Gari and he got injured while trying to defend the throw in a wrong way and was unable to continue the match.",
+        note: "My opponent was very tall and physically strong, but I established my grip and control within the opening seconds. I attacked with a one-handed drop O-Soto-Gari, and while attempting to defend the throw, he was injured and unable to continue the match.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -177,16 +182,18 @@ export const competitions = {
       createMatch("02", "QUARTER-FINAL", "WIN", {
         method: "IPPON",
         duration: "00:46",
+        score: "100 – 000",
         technique: "Uchi-Mata",
-        note: "After putting much presure from left grip, opponent made a mistake by trying to throw me with Yoko-Gake and I was able to counter that with a beautiful Uchi-Mata and finish the match in early seconds.",
+        note: "After conceding a Yuko in the first minute, I spent the rest of regulation time searching for an equalizer. In the final seconds, I scored with Sumi-Gaeshi and forced the match into golden score. Despite receiving two shidos and suffering an injury early in golden score, I stayed composed and scored another Yuko with the same technique to win the match.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
         },
       }),
       createMatch("03", "SEMI-FINAL", "WIN", {
-        method: "IPPON",
+        method: "YUKO",
         duration: "GS 07:36",
+        score: "002 – 001",
         technique: "2X Sumi-Gaeshi",
         note: "After being scored yuko in the first minute of the match, I was constantly trying to even the score and in the last seconds of the match I was able to score a beautiful Sumi-Gaeshi and even the score, after that I got 2 shidos, but I did my best in golden score I got another yuko in the same style and finish the match.",
         scores: {
@@ -197,8 +204,9 @@ export const competitions = {
       createMatch("04", "FINAL", "LOSS", {
         method: "IPPON",
         duration: "GS 05:12",
+        score: "000 – 100",
         technique: "Sasae-Tsuri-Komi-Ashi",
-        note: "After strong grip fighting whole match and both of us having out moments, still none of us was able to take the lead until golden score. After 1 minute of golden score, I couldn't defend his strongest grip and technique and he was able to score a beautiful Sasae-Tsuri-Komi-Ashi that decided the match.",
+        note: "After a full match of difficult grip fighting, both of us had opportunities, but neither could take the lead during regulation time. One minute into golden score, I was unable to stop my opponent from establishing his strongest grip. He took advantage and scored with a beautiful Sasae-Tsurikomi-Ashi to decide the final.",
         scores: {
           mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 2 },
           opponent: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 1 },
@@ -208,24 +216,24 @@ export const competitions = {
     lessons: [
       {
         title: "ENDURANCE",
-        text: "I was able to keep my focus and game plan in the semi-final even tho everything seemed to be against me, but still I got the score late in the golden score. I was amazed by my endurance that gave me the chance to win the match and go to the final. Since then I realized that it's one of my strongest skills and I can use it to my advantage in the future.",
+        text: "The semifinal showed me that I could remain focused and follow my game plan deep into golden score. Even after falling behind, receiving two shidos and suffering an injury, my endurance kept me in the match long enough to find the winning score.",
       },
       {
         title: "MENTALITY",
-        text: "Despite of the longevity of the match, I was able to get through tiredness and didn't listen to the body that only wanted to quit.",
+        text: "Tiredness, pain and pressure were all telling me to stop, but I refused to quit. I learned that when the body begins asking for a way out, a disciplined mind can keep the fight alive.",
       },
     ],
     changes: [
       {
         before:
-          "Night before the competition when I saw the contest order, I found out that my first match was against one of the strongest guy in the competition who was seeded number 2 and also that the match was #20 in the contest which meant I would have to wait about 1 hour since the competition start. I knew that guy was so tall and I had to be very careful.",
+          "The night before the competition, I discovered that my opening match would be against the second seed, one of the strongest competitors in the draw. He was very tall, and because our contest was number 20, I would also have to manage a long wait before stepping onto the mat.",
         after:
-          "Unfortunately, after causing an injury to my opponent in the first match, I was able to find my way to the final, I was able to win my second match easily. Semi-final was long and tough test, despite of the injury that I got in the beginning of the golden score, that affected my focus and attacks, I was still able to win the match and go to the final, but I was so exhausted and injury got worse during break before the final, and I wasn't able to perform at my best in the final and still after trying my best I lost the final. Most importantly, I saw huge progress and that's what mattered most.",
+          "The opening match ended after my opponent was injured while defending the throw, and I advanced through the quarter-final with a quick win. The semi-final then became a long and difficult test. I was injured early in golden score, but I remained focused and found a way to win. By the final, the injury had worsened and the semifinal had taken much of my energy. I could not perform at my best, but the progress I saw in my endurance, adaptability and mentality mattered far more than the result alone.",
       },
     ],
     progression: {
-      eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-      text: "After this competition, I realized that my mentality and physical endurance are one of my strongest skills. I was able to see huge progress in my game plan, tactics, techniques, groundwork and adapting so fast after every match. I kept improving and sharpening these set of skills to shape them into my strongest weapons in the upcoming competitions.",
+      eyebrow: "ACT 07 · PUT INTO PRACTICE",
+      text: "This competition revealed that mentality and physical endurance were becoming two of my strongest weapons. I could also see clear progress in my tactics, techniques, groundwork and ability to adapt between matches. In the competitions that followed, I continued sharpening those qualities and turning them into a more complete style of judo.",
     },
     navigation: {
       previous: { id: "copa-catalunya-2026" },
@@ -240,7 +248,7 @@ export const competitions = {
     competition: "Vila Salou Trophy Teams",
     date: "09 · 05 · 2026",
     location: "Salou, Spain",
-    image: "./images/gallery/competitions/salou_team_competition.JPG",
+    image: "./images/gallery/podiums/salou_team_competition.JPG",
     medal: "gold",
     placement: "Gold · 1st Place",
     category: "−90 KG",
@@ -248,17 +256,20 @@ export const competitions = {
     totalMatTime: "08:05",
     ippons: "3",
     fastestWin: "00:14",
+    competitorsLabel: "Teams",
     competitors: "6",
     preparation: {
       story:
-        "This was my first team competition and I was excited to test my adaptation skills again because competition style and format was completely different from any other I had before.",
+        "This was my first team competition, and I was excited to test my ability to adapt once again. The competition format was completely different from anything I had experienced before, and every individual fight contributed to something larger than my own result.",
     },
+
     matches: [
       createMatch("01", "ROUND ONE", "WIN", {
         method: "IPPON",
         duration: "01:32",
+        score: "110 – 001",
         technique: "Sumi-Gaeshi & Ko-Soto-Gake",
-        note: "After scoring one beautiful waza-ari with Sumi-Gaeshi in the first seconds of the match, I lost focus and got scored yuko by Seoi-Otoshi. It helped me find my focus again and counter his attack with Ko-Soto-Gari to finish match in under 2 minutes. Team was able to win the first match with score of 4-1.",
+        note: "After scoring a beautiful Waza-ari with Sumi-Gaeshi in the opening seconds, I briefly lost focus and conceded a Yuko from Seoi-Otoshi. That score brought my concentration back. When my opponent attacked again, I countered with Ko-Soto-Gake and finished the match by Ippon. The team won the opening round 4–1.",
         scores: {
           mine: { ippon: 1, wazaAri: 1, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 1 },
@@ -267,10 +278,11 @@ export const competitions = {
       createMatch("02", "ROUND TWO", "LOSS", {
         method: "YUKO",
         duration: "04:00",
+        score: "000 – 001",
         technique: "Kata-Guruma",
-        note: "In the first minute of the match, after strong grip fighting I got scored yuko. Since then I kept applying lots of presure and made opponent gain 2 shidos, but due to lack of time I wasn't able to save the match, despite my loss, team still triumphed the way into the semi-final with final score of 3-2 in the round 2.",
+        note: "After difficult grip fighting in the first minute, my opponent scored a Yuko. From that moment, I applied constant pressure and forced him to receive two shidos. By the time I realized I needed to attack more aggressively, there was not enough time left to change the result. Despite my loss, the team won the round 3–2 and advanced to the semifinal.",
         scores: {
-          mine: { ippon: 0, wazaAri: 1, yuko: 0, shidos: null },
+          mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 2 },
         },
       }),
@@ -278,7 +290,8 @@ export const competitions = {
         method: "IPPON",
         duration: "00:14",
         technique: "Sukashi",
-        note: "Hard grip fighting in the first 10 seconds of the match and after getting my grip opponent made a mistake by doing false attack to break my grip which gave me an huge opportunity to counter and win the match in very early seconds. Team won semi-final with the score of 4-1.",
+        score: "100 – 000",
+        note: "After intense grip fighting during the opening seconds, I established my grip and forced my opponent into a false attack while he attempted to escape the position. The mistake created a perfect opportunity to counter and finish the match after only 14 seconds. The team won the semifinal 4–1.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -287,8 +300,9 @@ export const competitions = {
       createMatch("04", "Final", "WIN", {
         method: "IPPON",
         duration: "02:44",
+        score: "110 – 000",
         technique: "De-Ashi-Barai & O-goshi",
-        note: "2-1 leading in the match by my team and then there comes my fight, if I win team gets first place, if I lose there is still another chance, but in the second minute of fight I scored magnificent De-Ashi-Barai that made the comentators and fans go crazy. 50 seconds after that my opponent had no choice but to leave me many opportunities and I was able to score Ippon with O-goshi and win the gold medal for the team. Final score was 3-2.",
+        note: "My team was leading the final 2–1 when it was time for my fight. A victory would secure first place. During the second minute, I scored a magnificent De-Ashi-Barai that brought the commentators and crowd to life. Fifty seconds later, my opponent had no choice but to take more risks, creating the opening I needed to finish with O-Goshi and secure the gold medal for the team. The final team score was 3–2.",
         scores: {
           mine: { ippon: 1, wazaAri: 1, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -298,24 +312,24 @@ export const competitions = {
     lessons: [
       {
         title: "TIME",
-        text: "Despite of my endurance and constant presure, time was the main reason why I lost the second match, when I realized that I had to got more aggresive with my attacks it was already too late. I was so close to winning by shidos but opponent was too expierienced and stopped all my attacks and won the match without getting disqualified.",
+        text: "Despite my endurance and constant pressure, time became the deciding factor in my only loss. By the time I realized that I needed to attack more aggressively, it was already too late. I came close to forcing a third shido, but my experienced opponent managed the final moments and protected his lead.",
       },
       {
         title: "TEAM",
-        text: "After losing my second fight, I was really frustraited and angry, but my team helped me get through it and gain all my strength and focus back. They motivated me and we did everything to secure a gold medal. It made me realize in this case individual loss means nothing and team always got your back.",
+        text: "I was frustrated and angry after losing my second fight, but my teammates helped me recover my strength and focus. Their support allowed me to reset, return to the mat and contribute to winning the gold medal. I learned that in a team competition, one individual result never defines the entire journey—the team is always there to lift you back up.",
       },
     ],
     changes: [
       {
         before:
-          "In that period of time my mother was visiting me and she was leaving before the competition. When I got her to the airport I had to say goodbye without knowing when will I be able to see her again. Also it affected my mood and traveling made me tired, despite that I had tried everything to not let it affect my performance and to leave my feelings and mood behind the tatami.",
+          "My mother had been visiting me during that period, but she was leaving on the morning of the competition. When I took her to the airport, I had to say goodbye without knowing when I would see her again. The emotion of that moment and the travelling left me tired, but I tried to keep those feelings outside the tatami and not allow them to affect my performance.",
         after:
-          "The weather was so bad in that day and flight was delayed. Right after winning the final I called my mother without realizing she was meant to be in the middle of the flight, but she answered, I was able to tell her about the result and the second I finished my speech, plane took off, she was able to tell me only one sentence 'The flight was delayed just enough time for u to tell me about ut result.' and then connection was lost.",
+          "The weather was terrible that day, and her flight was delayed. Immediately after winning the final, I called her without realizing that she was supposed to be in the air. She answered, and I managed to tell her that we had won. The moment I finished speaking, the plane began taking off. Before the connection disappeared, she had time to say only one sentence: “The flight was delayed just long enough for you to tell me the result.”",
       },
     ],
     progression: {
       eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-      text: "After this day, I realized that I should always try not to merge mood and feelings to the tatami. I should keep calm and cold heart to make decisions quickly and not to let other things affect my performance and resutls. I also learned that team competitions needs very differend kind of approuch, there is no loss if team won and it shouldn't affect my remaining fights.",
+      text: "This day taught me not to carry every emotion from life onto the tatami. I needed to remain calm and clear-headed enough to make decisions under pressure. I also learned that team competitions demand a different mentality: an individual loss does not end the journey when the team is still fighting, and it must never affect the matches that remain.",
     },
     navigation: {
       previous: { id: "super-copa-espana-barcelona-2026" },
@@ -342,14 +356,15 @@ export const competitions = {
     competitors: "15",
     preparation: {
       story:
-        "Super Copa De Espana Jaca was my 2nd seniors super copa, I was so excited to test my level among one of the most experienced and strong ones. Rest is history.",
+        "The Super Copa de España in Jaca was my second senior Super Copa. I was excited to test my level against another experienced and physically strong field of competitors. What followed became one of the most important learning experiences of my season.",
     },
     matches: [
       createMatch("01", "ROUND ONE", "WIN", {
         method: "IPPON",
         duration: "00:53",
+        score: "100 – 000",
         technique: "Ne-Waza",
-        note: "After bad start due to lack of knowladge about the opponents style I managed to get my first ever win in Ne-Waza, since I moved in Barcelona at the very end of the first minute in the fight.",
+        note: "I started the match poorly because I did not understand my opponent’s style quickly enough. I recovered, adapted and secured my first victory in Ne-waza since moving to Barcelona, finishing the contest near the end of the opening minute.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -358,18 +373,20 @@ export const competitions = {
       createMatch("02", "QUARTER-FINAL", "LOSS", {
         method: "IPPON",
         duration: "01:47",
+        score: "000 – 101",
         technique: "Okuri-Eri-Jime",
-        note: "In this fight I was facing one of the strongest Spain national team member years ago and national champion in every category, his experience and skills made me unable to perform well and unfortunately duo to making lots of mistakes I lost this fight.",
+        note: "I was facing a former Spanish national team member who had won national titles across multiple age categories. His experience and technical level prevented me from establishing my usual performance. I made several mistakes, and he took advantage to finish the contest with Okuri-Eri-Jime.",
         scores: {
           mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 1 },
           opponent: { ippon: 1, wazaAri: 0, yuko: 1, shidos: null },
         },
       }),
       createMatch("03", "REPECHAGE R1", "WIN", {
-        method: "IPPON",
+        method: "YUKO",
         duration: "00:19",
+        score: "001 – 000",
         technique: "Ko-Soto-Gake",
-        note: "Due to frustration, I went in this fight angry, I wanted to win so fast and hard, luckily my opponent made mistake duo to dominant grip and I was able to get an easy win in the first 20 seconds of the match.",
+        note: "I carried frustration from the quarterfinal onto the mat and wanted to recover the result too quickly. My opponent made a mistake while trying to escape my dominant grip, giving me the opportunity to attack with Ko-Soto-Gake and take the lead within the opening 19 seconds.",
         scores: {
           mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -378,18 +395,20 @@ export const competitions = {
       createMatch("04", "REPECHAGE R2", "WIN", {
         method: "IPPON",
         duration: "01:39",
+        score: "100 – 000",
         technique: "Ko-Uchi-Gari",
-        note: "After last win, I was able to control my emotions a little bit and went to the fight calm. First minute was hard, grip fighting, positions and so on, at the end of the second minute I was able to get my domimant left grip and did false attack which worked well and opponent tried to throw Ura-Nage but I already had the right position to countered it with Ko-Uchi-Gari and won the fight.",
+        note: "After the previous victory, I regained control of my emotions and entered the match with a calmer mindset. The opening minute was defined by difficult grip fighting and positional exchanges. Once I established my dominant left grip, I used a feint that encouraged my opponent to attack with Ura-Nage. I was already positioned to counter and finished the match with Ko-Uchi-Gari.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
         },
       }),
-      createMatch("04", "BRONZE FINAL", "WIN", {
+      createMatch("05", "BRONZE FINAL", "WIN", {
         method: "IPPON",
         duration: "00:22",
         technique: "Uchi-Mata",
-        note: "After small break I was able to set up a plan for the bronze medal fight where my opponent was very experienced judoka. I was able to gain focus and calm before the fight which led me to force opponent make a fatal mistake which gave me opportunity to throw beautiful Uchi-Mata and win fight in first 20 seconds.",
+        score: "100 – 000",
+        note: "During the short break before the bronze medal match, I created a clear plan for facing another experienced opponent. I recovered my focus and entered the fight calm. My pressure forced a decisive mistake, creating the opening for a beautiful Uchi-Mata that secured the bronze medal after only 22 seconds.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -399,28 +418,28 @@ export const competitions = {
     lessons: [
       {
         title: "ANGER",
-        text: "The anger I carried to the mat after my loss could have made the first repechage fight ended very bad for me, I learned that despite the performance and the loss I should always try to keep my focus, emotions, mentality and strength especially when there are fights ahead to win!",
+        text: "The anger I carried into the first repechage match could easily have produced another bad result. I wanted to recover from the loss too quickly, which made my decisions emotional and rushed. I learned that frustration must never be allowed to control the next fight when there are still matches left to win.",
       },
       {
-        title: "FOCUS",
-        text: "After loss, I lost my focus, also lost my will to continue competing at that cup, but I learned that it can cause the results that will turn into reasons of regret, I will always try to control my emtions, anger, frustration, focus and mindset, without these it will become almost impossible to win important fights. Every proffesional athlete should work on these skills that might change the directionof  many fights in the future.",
+        title: "RESET",
+        text: "After the quarterfinal, I briefly lost both my focus and my desire to continue competing. If I had allowed that feeling to remain, I would have left Jaca with regret instead of a medal. A serious athlete must learn to reset after disappointment because the direction of the entire competition can still change.",
       },
       {
-        title: "WARM UP",
-        text: "The bad warm up can really define and affect the results and performance of the day, this is what I realized after having bad warp up.It made me face the importance of the good warm up before the competition, and changed the way I approuch it from since then.",
+        title: "WARM-UP",
+        text: "A poor warm-up affected my lower back, movement and performance throughout the day. I learned that preparation before the first contest is not a minor detail—it can influence every match that follows. Since Jaca, I have approached my competition warm-up with much greater control and purpose.",
       },
     ],
     changes: [
       {
         before:
-          "In the morning when we went in pavilion, I wasn't able to properly warm up. I started doing fast and uncontrolable moves that caused lower back pain throughout the whole competition. This made me realize very certain point that good or bad warm up can shape the final resutls more than I thought.",
+          "When we arrived at the pavilion, I did not warm up properly. I began with movements that were too fast and uncontrolled, causing lower-back pain that remained with me throughout the competition. Until that day, I had underestimated how strongly a poor warm-up could affect the final result.",
         after:
-          "After I left Jaca with bronze medal, I was happy with this results, but my underperformance in quarter-final still haunted me, but it taught me very important lessons that will shape me and my approuches to the very certain things that might seem unimportant but these has more influence on results than I have ever thought.",
+          "I left Jaca happy to have won the bronze medal, but my quarterfinal performance continued to trouble me. It forced me to examine details that had previously seemed unimportant: the warm-up, emotional control and the ability to reset after a loss. I understood that each of those details could influence a result far more than I had realized.",
       },
     ],
     progression: {
       eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-      text: "Next competition was very close but it was in the juniors which gave me opportunities to test a lot of things, which I was unable to test in seniors category.",
+      text: "The next competition arrived quickly and returned me to the junior category. It gave me room to apply the lessons from Jaca, rebuild my confidence and experiment with techniques and movement that were much harder to test against experienced senior opponents.",
     },
     navigation: {
       previous: { id: "vila-salou-teams-2026" },
@@ -446,14 +465,15 @@ export const competitions = {
     competitors: "7",
     preparation: {
       story:
-        "This was my first cup in juniors, duo to past medals in the seniors category, I stepped into the mat with very different mindset and confidance.",
+        "This was my first junior competition of the season. After already winning medals in the senior category, I stepped onto the mat with a completely different level of confidence. I wanted to compete freely, trust my movement and test techniques without being controlled by the fear of failure.",
     },
     matches: [
       createMatch("01", "ROUND ONE", "WIN", {
         method: "IPPON",
         duration: "00:53",
+        score: "100 – 000",
         technique: "Harai-Tsurikomi-Ashi",
-        note: "With this confidence and the mission to test as much and improve as much as possible I was moving really differently from the last competitions, in this fight I was able to score waza-ari with beautiful foot technique and then pin another 10 seconds down to secure a first win.",
+        note: "I entered the competition determined to experiment, improve and move differently from my previous events. I scored a Waza-ari with a beautiful foot technique before transitioning into groundwork and securing the opening victory with an Osaekomi.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -462,8 +482,9 @@ export const competitions = {
       createMatch("02", "ROUND TWO", "WIN", {
         method: "IPPON",
         duration: "00:35",
+        score: "101 – 000",
         technique: "De-Ashi-Barai & Uchi-Mata",
-        note: "After scoring yuko with foot technique in the first seconds of the fight, I was able to finish fight after second hajime with Uci-Mata.",
+        note: "I scored an early Yuko with De-Ashi-Barai. Immediately after the second Hajime, I maintained the momentum, attacked with Uchi-Mata and finished the contest after only 35 seconds.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 1, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -472,8 +493,9 @@ export const competitions = {
       createMatch("03", "ROUND THREE", "WIN", {
         method: "IPPON",
         duration: "00:52",
+        score: "101 – 000",
         technique: "2X De-Ashi-Barai",
-        note: "Scoring yuko with De-Ashi-Barai early in the fight, I scored ippon using same technique afterwards.",
+        note: "I scored an early Yuko with De-Ashi-Barai and continued creating opportunities through my footwork. Later in the contest, I attacked with the same technique again and converted it into a winning Ippon.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 1, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -482,8 +504,9 @@ export const competitions = {
       createMatch("04", "SEMI-FINAL", "WIN", {
         method: "IPPON",
         duration: "00:14",
+        score: "100 – 000",
         technique: "De-Achi-Barai",
-        note: "First 15 seconds in the fight and I already has my place in final, after scoring 4th ippon in a row using only foot.",
+        note: "Fourteen seconds into the semifinal, another precise De-Ashi-Barai secured my fourth consecutive Ippon and a place in the final. The movement and timing I had been trying throughout the day were becoming completely natural.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -492,8 +515,9 @@ export const competitions = {
       createMatch("05", "FINAL", "WIN", {
         method: "IPPON",
         duration: "01:48",
+        score: "100 – 000",
         technique: "Uchi-Mata-Gaeshi",
-        note: "Almost 2 minutes into the fight and constant presure payed off, forcing opponent do quick attack and I was able to counter it and secure my first ever individual gold medal in 2026.",
+        note: "Almost two minutes into the final, my constant pressure forced my opponent into a rushed attack. I recognized the opportunity, countered with Uchi-Mata-Gaeshi and secured my first individual gold medal of the 2026 season.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -502,29 +526,29 @@ export const competitions = {
     ],
     lessons: [
       {
-        title: "TEST",
-        text: "I was able to improve my foot work magnificently. In the past, foot work was one of my strongest weapons and after this competition i realived it.",
+        title: "FOOTWORK",
+        text: "Footwork had once been one of my strongest weapons, and this competition allowed me to rediscover it. Across five matches, my movement, timing and Ashi-waza created nearly every decisive opportunity. It reminded me how much of my judo could be built around controlling the space beneath my opponent.",
       },
       {
         title: "CONFIDENCE",
-        text: "In this competition I wasn't just moving and testing things, I was confident doing these things, I had this unexplaineble belief that everything I was testing would work, which let me to gaining something far more valuable than just a gold medal.",
+        text: "I was not simply moving and testing techniques—I believed in every decision I made. That confidence allowed me to attack without hesitation and created something more valuable than the gold medal: proof that I could trust my judo under pressure.",
       },
       {
-        title: "SKILL",
-        text: "This competition helped me develop a new skill which lets me test things without fear, not because everything will work but because I knew what to do if it wouldn't. This is something I have been trying to earn for so long.",
+        title: "TRUST",
+        text: "I learned how to experiment without being controlled by fear. It was not because I believed every attack would succeed, but because I trusted myself to recover and respond when one failed. That freedom was something I had been trying to develop for a long time.",
       },
     ],
     changes: [
       {
         before:
-          "I had this belief when I get to the pavilion in the morning that no one would stop me from getting this gold medal that day. Not because I was strongest or most experienced guy there but because I chose to free my mind and just enjoy and trust the momentum.",
+          "When I arrived at the pavilion that morning, I had a powerful belief that no one would stop me from winning the gold medal. It was not because I considered myself the strongest or most experienced competitor. I had simply decided to free my mind, enjoy the competition and trust the momentum I had built.",
         after:
-          "And that momentum helped me get my gold medal and the skill that changed much and will change and define much more in the future. I gained the confidence that strengthened and sharpened my mentality and mindset even more than it was before!",
+          "That mindset carried me through five victories and the gold medal, but it also gave me something that would matter far beyond this competition. I left with greater trust in my movement, sharper confidence in my decisions and the freedom to attempt techniques without fearing what would happen if they failed.",
       },
     ],
     progression: {
       eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-      text: "Upcoming competition was still in juniors which let me countinueing trying new things.",
+      text: "The following competition was also in the junior category, giving me another opportunity to continue experimenting. I could carry forward the confidence, footwork and freedom I discovered here while testing them against a stronger national field.",
     },
     navigation: {
       previous: { id: "super-copa-espana-jaca-2026" },
@@ -551,14 +575,15 @@ export const competitions = {
     competitors: "10",
     preparation: {
       story:
-        "First Super copa in juniors and my mindset was stroner then ever.",
+        "This was my first junior Super Copa, and my mindset was stronger than ever. The confidence I had developed in my previous competition allowed me to trust my decisions, but a difficult night without enough sleep created a new challenge before I even reached the tatami.",
     },
     matches: [
       createMatch("01", "QUARTER-FINAL", "WIN", {
         method: "IPPON",
         duration: "02:12",
+        score: "112 – 000",
         technique: "2X De-Ashi-Barai & O-Uchi-Gari & O-Uchi-Gaeshi",
-        note: "Scoring 2 yukos with foot I was able to keep up waza-ari with O-Uchi-Gari, minute in a fight and I already had 2 yukos and waza-ari. After 2 minute passed opponent made a mistake by doing O-Uchi-Gari when I had the better position and grip it gave me opportunity to score a winning ippon with O-Uchi-Gaeshi",
+        note: "I opened the contest by scoring two Yukos with foot techniques before adding a Waza-ari with O-Uchi-Gari. After two minutes, my opponent attempted O-Uchi-Gari while I held the stronger grip and position. The mistake gave me the opportunity to counter with O-Uchi-Gaeshi and finish the match by Ippon.",
         scores: {
           mine: { ippon: 1, wazaAri: 1, yuko: 2, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -568,7 +593,7 @@ export const competitions = {
         method: "IPPON",
         duration: "00:12",
         technique: "Sasae-Tsurikomi-Ashi",
-        note: "After tough quarter-final, I was able to get easy win in semi-final with excelent Sasai-Tsurikomi-Ashi, securing my place into the final.",
+        note: "After a demanding quarter-final, I trusted the confidence and willingness to take risks that I had developed at my previous competition. We established an even grip, but I committed to the attack without hesitation and scored a flawless Sasae-Tsurikomi-Ashi after only 12 seconds, securing my place in the final while saving valuable energy.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
@@ -577,8 +602,9 @@ export const competitions = {
       createMatch("03", "FINAL", "WIN", {
         method: "IPPON",
         duration: "01:35",
+        score: "100 – 000",
         technique: "O-Soto-Gari",
-        note: "After lunch break I was able to gain back my focus and strength quickly, which led me to stepping into the tatami calm, sharp and prepared to win the final. After tough first minute grip fighting, I was able to secure a great grip and score beautiful one of my favorites and strongest techniques O-Soto-Gari, booking my place at top of the podium.",
+        note: "The lunch break allowed me to recover my focus and strength before the final. I stepped onto the tatami calm, sharp and prepared. After a difficult opening minute of grip fighting, I established the position I needed and attacked with O-Soto-Gari, one of my favourite and strongest techniques to secure my place at the top of the podium.",
         scores: {
           mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 1 },
@@ -588,27 +614,68 @@ export const competitions = {
     lessons: [
       {
         title: "SLEEP",
-        text: "Due to the lack of sleep, first because of high temperature and being unable to sleep at night and second having to wake up at 5 and get to the pavilion. This affected my focus and my time of reaction which let to tough and unfocused first fight, it made me realize the importance of the sleep especially day before the competition.",
+        text: "The high temperature kept me awake during the night, and I then had to get up at five in the morning to travel to the pavilion. The lack of sleep affected my concentration and reaction time, contributing to a difficult and unfocused opening match. It showed me that proper sleep before a competition is part of performance, not something separate from it.",
       },
       {
-        title: "RISk",
-        text: "The skill I gained from the last competition which decreased the fear of risk and increased the confidence in case of failure defined and led me win the semi-final in a flawless way. We had the even grip but I was able to take the 'risk' and succeded, giving me lots of time and saving me lots of energy for the final.",
+        title: "RISK",
+        text: "The confidence I had developed in the previous competition reduced my fear of failure. During the semifinal, we established an even grip, but I trusted myself enough to commit fully to the attack. Taking that calculated risk produced a flawless victory, saved energy and gave me more time to prepare for the final.",
       },
     ],
     changes: [
       {
         before:
-          "I was worried about lack of sleep and how it would affect my performance, unable to solve the problem immediately but to think of the ways to never let this happen to me again.",
+          "Before the competition, I was worried about how the lack of sleep would affect my performance. I could not solve the problem that morning, but I was already thinking about what I needed to change to prevent it from happening again.",
         after:
-          "After securing gold medal I was still thinking how much better I would perform if I could have taken proper amount of sleep. It made me realize that every datail that might seem small at once can have huge influence on performance. Helping me create perfect rountine before,during and after competitions.",
+          "Even after winning the gold medal, I continued thinking about how much better I might have performed with proper sleep. It taught me that details which appear small can have a major influence on competition day. That realization helped me begin building a more deliberate routine for the days before, during and after every event.",
       },
     ],
     progression: {
       eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-      text: "Journey has only started, this is just a beggining, next stop is one of the srongest Super Copa De Espana Absolut - Ciutat De Valencia.",
+      text: "The journey has only just begun. The confidence, calculated risk and preparation developed through these six chapters will now be tested at the next destination: one of the strongest senior events of the season, the Super Copa de España Absolut — Ciutat de Valencia.",
     },
     navigation: {
       previous: { id: "copa-catalunya-juniors-2026" },
+      next: { id: "super-copa-espana-valencia-2026" },
+    },
+  },
+  "super-copa-espana-valencia-2026": {
+    id: "super-copa-espana-valencia-2026",
+    status: "upcoming",
+    chapter: "07",
+    season: "2026",
+    competition: "Super Copa de España Absolut",
+    date: "16 · 08 · 2026",
+    countdownDate: "2026-08-16T00:00:00+02:00",
+    location: "Valencia, Spain",
+    image: null,
+    category: "−90 KG",
+    division: "Senior",
+    level: "National Super Copa",
+    opportunity: {
+      eyebrow: "THE NEXT MISSION",
+      story:
+        "The journey returns to the senior category for one of the strongest events of the season. Valencia will be another opportunity to test the progress built across the previous six chapters against an experienced national field.",
+    },
+    preparation: {
+      story:
+        "Preparation for Valencia is focused on carrying the confidence developed in the junior competitions into a stronger senior environment. The objective is to arrive physically prepared, tactically clear and ready to adapt from the opening Hajime.",
+    },
+    objectives: [
+      {
+        title: "EXECUTION",
+        text: "Follow the game plan with discipline and make clear decisions under pressure.",
+      },
+      {
+        title: "TRANSITIONS",
+        text: "Apply the improvements made in Ne-waza and transitions against experienced senior opponents.",
+      },
+      {
+        title: "COMPOSURE",
+        text: "Remain calm throughout every contest and adapt without allowing the result of one moment to control the next.",
+      },
+    ],
+    navigation: {
+      previous: { id: "super-copa-espana-juniors-tortosa-2026" },
       next: null,
     },
   },
