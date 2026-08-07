@@ -127,7 +127,7 @@
 .competition-progression-copy > p {
   margin: 0 0 5px;
   color: var(--event-accent);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 5px;
@@ -139,7 +139,7 @@
   max-width: 1000px;
   margin: 0 auto;
   color: var(--competition-white);
-  font-size: clamp(2.3rem, 3.8vw, 3rem);
+  font-size: clamp(2.1rem, 3.8vw, 3rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -1px;
@@ -512,7 +512,7 @@
 }
 .competition-match-number {
   color: var(--event-accent);
-  font-size: 0.55rem;
+  font-size: 0.7rem;
   letter-spacing: 3px;
 }
 .competition-match-round {
@@ -522,7 +522,7 @@
 .competition-match-outcome,
 .competition-match-method,
 .competition-match-duration {
-  font-size: 0.58rem;
+  font-size: 0.72rem;
   letter-spacing: 2px;
 }
 .competition-match-outcome {
@@ -569,8 +569,8 @@
 }
 .competition-match-fact span {
   color: var(--competition-muted);
-  font-size: 0.5rem;
-  letter-spacing: 3px;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
 }
 .competition-match-fact strong {
   color: var(--competition-white);
@@ -606,7 +606,7 @@
 }
 .competition-scoreboard-top span {
   color: var(--competition-muted);
-  font-size: 0.48rem;
+  font-size: 0.6rem;
   letter-spacing: 3px;
 }
 .competition-scoreboard-top strong {
@@ -626,7 +626,7 @@
 .competition-scoreboard-labels {
   min-height: 28px;
   color: var(--competition-muted);
-  font-size: 0.48rem;
+  font-size: 0.7rem;
   letter-spacing: 2px;
 }
 .competition-scoreboard-row {
@@ -689,17 +689,18 @@
 }
 .competition-match-quote span {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--event-accent);
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   letter-spacing: 3px;
 }
 .competition-match-quote p {
-  margin: 0;
-  color: rgba(245, 243, 240, 0.68);
+  max-width: 380px;
+  margin: 0 auto;
+  color: rgba(245, 243, 240, 0.8);
   font-size: 0.88rem;
-  font-style: italic;
-  line-height: 1.7;
+  font-weight: 300;
+  line-height: 1.4;
 }
 /* Act 05: lessons */
 .competition-lessons-list {
@@ -748,7 +749,7 @@
   margin: 0;
   color: var(--competition-white);
   font-size: clamp(1.2rem, 1.7vw, 1.55rem);
-  font-weight: 500;
+  font-weight: 200;
   line-height: 1.2;
   letter-spacing: 3px;
   transition:
@@ -790,7 +791,7 @@
 }
 .competition-change-side small {
   color: var(--competition-muted);
-  font-size: 0.52rem;
+  font-size: 0.7rem;
   line-height: 1.5;
   letter-spacing: 4px;
 }
@@ -1561,7 +1562,7 @@
 @media (max-width: 768px) {
   .competition-context,
   .competition-act {
-    padding: 40px 0;
+    padding: 15px 0;
   }
   .competition-context-heading,
   .competition-act-header {
@@ -1571,21 +1572,16 @@
   .competition-act-header > p,
   .competition-progression-copy > p {
     margin-bottom: 10px;
-    font-size: 0.54rem;
+    font-size: 0.64rem;
     letter-spacing: 3.5px;
   }
   .competition-context-heading h2,
   .competition-act-header h2,
   .competition-progression-copy h2 {
-    font-size: clamp(2rem, 8.5vw, 2.9rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
     line-height: 1;
   }
-  .competition-context-heading h2 span,
-  .competition-act-header h2 span,
-  .competition-progression-copy h2 span {
-    display: block;
-    margin: 5px 0 0;
-  }
+
   .competition-hero {
     height: 650px;
     min-height: 650px;
@@ -1678,7 +1674,6 @@
   .competition-record-result {
     min-height: 115px;
     padding: 20px 15px;
-    border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   .competition-record-result strong {
@@ -1689,6 +1684,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .competition-record-facts > div {
+    border-left: 1px solid rgba(255, 255, 255, 0.075);
     min-height: 72px;
     padding: 12px 10px;
   }
@@ -1696,10 +1692,11 @@
     border-right: 1px solid rgba(255, 255, 255, 0.075);
   }
   .competition-record-facts > div:nth-child(even) {
-    border-right: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.075);
   }
   .competition-record-facts > div:nth-last-child(-n + 3) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+    border-right: 1px solid rgba(255, 255, 255, 0.075);
   }
   .competition-record-facts > div:nth-last-child(-n + 2) {
     border-bottom: 0;
@@ -1709,10 +1706,6 @@
     gap: 10px;
     min-height: 70px;
     padding: 14px 4px;
-  }
-  .competition-match-number {
-    font-size: 0.5rem;
-    letter-spacing: 2px;
   }
   .competition-match-round {
     font-size: 0.82rem;
@@ -1745,9 +1738,9 @@
     grid-template-columns: 1fr;
   }
   .competition-lesson {
-    min-height: 150px;
+    min-height: 120px;
     gap: 14px;
-    padding: 28px 20px;
+    padding: 18px 10px;
   }
   .competition-lesson + .competition-lesson::before {
     top: 0;
@@ -1764,14 +1757,14 @@
     );
   }
   .competition-lesson p {
-    max-width: 420px;
+    max-width: 300px;
   }
   .competition-change {
     grid-template-columns: 1fr;
   }
   .competition-change-side {
-    min-height: 135px;
-    padding: 28px 20px;
+    min-height: 105px;
+    padding: 7px 10px;
   }
   .competition-change-arrow {
     width: 100%;
@@ -1809,7 +1802,7 @@
     transform: none;
   }
   .competition-progression-copy > div {
-    width: 92%;
+    max-width: 380px;
     margin-top: 20px;
     font-size: 0.86rem;
     line-height: 1.65;
@@ -1921,6 +1914,11 @@
     min-height: 220px;
   }
 }
+@media (max-width: 650px) {
+  #competitionShiftTitle {
+    max-width: 300px;
+  }
+}
 @media (max-width: 480px) {
   .competition-hero,
   .competition-hero-container {
@@ -1941,9 +1939,12 @@
   .competition-scoreboard-row {
     grid-template-columns: minmax(68px, 1.3fr) repeat(3, 30px) minmax(62px, 1fr);
   }
+  .competition-match-quote p {
+    max-width: 90%;
+  }
   .competition-scoreboard-row > strong {
     padding-left: 10px;
-    font-size: 0.48rem;
+    font-size: 0.7rem;
     letter-spacing: 1.5px;
   }
   .competition-match-quote {
@@ -1971,6 +1972,12 @@
   .competition-upcoming-countdown {
     margin-top: 28px;
     border-radius: 20px;
+  }
+  #competitionLessonsTitle {
+    max-width: 200px;
+  }
+  #competitionMatchesTitle span {
+    display: block;
   }
   .competition-upcoming-countdown strong {
     font-size: 2.35rem;
