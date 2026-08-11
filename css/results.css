@@ -38,90 +38,229 @@
 }
 
 .results-analytics {
-  max-width: 1200px;
+  width: min(100% - 2rem, 1200px);
   margin: 30px auto;
 }
-
 .results-analytics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: 1.45fr repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 235px);
+  gap: 20px;
 }
-
 .stat-card {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 260px;
+  justify-content: center;
+  min-width: 0;
+  padding: 28px;
+  overflow: hidden;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(212 175 55 / 4%), transparent 48%),
+    rgb(255 255 255 / 2.5%);
   opacity: 0;
   transform: translateY(35px);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    border-color 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    border-color 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
-
+.stat-card::before {
+  content: attr(data-index);
+  position: absolute;
+  top: 2px;
+  right: 18px;
+  z-index: -1;
+  color: rgb(255 255 255 / 2.5%);
+  font: 500 6.5rem/1 Oswald;
+  letter-spacing: -5px;
+  pointer-events: none;
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  width: 21px;
+  height: 21px;
+  border-top: 1px solid rgb(212 175 55 / 80%);
+  border-left: 1px solid rgb(212 175 55 / 80%);
+  pointer-events: none;
+}
 .stat-card:hover {
-  cursor: pointer;
-  border-color: rgba(212, 175, 55, 0.35);
-  background: rgba(212, 175, 55, 0.06);
-  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.1);
+  border-color: rgb(212 175 55 / 38%);
+  background:
+    radial-gradient(circle at 50% 0%, rgb(212 175 55 / 7%), transparent 52%),
+    rgb(255 255 255 / 3%);
+  box-shadow:
+    0 18px 45px rgb(0 0 0 / 25%),
+    0 0 28px rgb(212 175 55 / 7%);
 }
-
+.stat-card:hover::before {
+  color: rgb(212 175 55 / 5%);
+  transform: translateY(-3px);
+}
+.stat-card-featured {
+  grid-row: 1 / 3;
+  justify-content: space-between;
+  padding: 42px 40px 38px;
+  border-color: rgb(212 175 55 / 45%);
+}
+.stat-card-featured::before {
+  font-size: 8rem;
+}
+.stat-card-main,
+.stat-medals {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.stat-heading,
+.stat-medals h3 {
+  color: rgb(255 255 255 / 76%);
+  font: 300 1rem Oswald;
+  letter-spacing: 5px;
+}
+.stat-heading::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  margin: 17px auto 0;
+  background: rgb(212 175 55 / 75%);
+}
 .stat-value {
-  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
   color: var(--gold);
-  font: 300 3.8rem Oswald;
+  font: 300 clamp(3rem, 4.2vw, 4.3rem) Oswald;
   letter-spacing: 3px;
 }
-
-.stat-value.medals {
+.stat-podiums {
+  margin-top: 12px;
+  font-size: clamp(4.8rem, 7vw, 7rem);
+  line-height: 1;
+}
+.stat-card-divider {
+  position: relative;
+  width: 78%;
+  height: 1px;
+  margin: 18px auto 20px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(212 175 55 / 65%),
+    transparent
+  );
+}
+.stat-card-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--gold);
+  background: var(--background);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.medal-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.medal-stat {
+  --medal-color: var(--gold);
+  --medal-dark: #9a6900;
+  --ribbon-main: #d92323;
+  --ribbon-light: #fff5dd;
   display: flex;
-  gap: 24px;
-  font-size: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
 }
-
-.stat-value.medals span {
-  transition: transform 0.25s ease;
+.medal-stat.silver {
+  --medal-color: #c5c8c9;
+  --medal-dark: #777d80;
+  --ribbon-main: #62bac3;
+  --ribbon-light: #edfafa;
 }
-
-.stat-value.medals span:nth-child(1) {
-  color: #ffd700;
+.medal-stat.bronze {
+  --medal-color: #cd7f32;
+  --medal-dark: #774017;
+  --ribbon-main: #d87838;
+  --ribbon-light: #fff0df;
 }
-.stat-value.medals span:nth-child(2) {
-  color: #c0c0c0;
+.medal-icon {
+  position: relative;
+  width: 42px;
+  height: 52px;
+  display: block;
+  transition: transform 0.35s ease;
 }
-.stat-value.medals span:nth-child(3) {
-  color: #cd7f32;
+.medal-ribbon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 31px;
+  height: 23px;
+  background: linear-gradient(
+    90deg,
+    var(--ribbon-main) 0 31%,
+    var(--ribbon-light) 31% 69%,
+    var(--ribbon-main) 69% 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 77% 100%, 50% 72%, 23% 100%);
+  transform: translateX(-50%);
 }
-.stat-card:hover .stat-value.medals span:nth-child(1) {
-  transform: translateY(-4px);
+.medal-disc {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--medal-dark);
+  border-radius: 50%;
+  color: #17120a;
+  font: 600 1rem Oswald;
+  background:
+    radial-gradient(circle at 38% 30%, rgb(255 255 255 / 58%), transparent 25%),
+    var(--medal-color);
+  box-shadow:
+    inset 0 0 0 2px rgb(255 255 255 / 24%),
+    0 5px 12px rgb(0 0 0 / 30%);
+  transform: translateX(-50%);
 }
-.stat-card:hover .stat-value.medals span:nth-child(2) {
-  transform: translateY(-2px);
+.medal-name {
+  margin-top: 8px;
+  color: var(--medal-color);
+  font: 300 0.68rem Oswald;
+  letter-spacing: 3px;
 }
-.stat-card:hover .stat-value.medals span:nth-child(3) {
-  transform: translateY(-1px);
+.medal-stat strong {
+  margin-top: 2px;
+  color: var(--medal-color);
+  font: 300 2rem Oswald;
+  letter-spacing: 1px;
 }
-
-.stat-card h3 {
-  color: rgba(255, 255, 255, 0.78);
-  font: 300 1.05rem Oswald;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.stat-card:hover .medal-icon {
+  transform: translateY(-3px);
 }
-
 .results-analytics.show .stat-card {
   animation: statReveal 0.65s ease forwards;
 }
-
 .results-analytics.show .stat-card:nth-child(1) {
   animation-delay: 0.08s;
 }
@@ -137,10 +276,6 @@
 .results-analytics.show .stat-card:nth-child(5) {
   animation-delay: 0.48s;
 }
-.results-analytics.show .stat-card:nth-child(6) {
-  animation-delay: 0.58s;
-}
-
 @keyframes statReveal {
   from {
     opacity: 0;
@@ -150,6 +285,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.stat-card,
+.stat-card * {
+  cursor: default;
+  user-select: none;
 }
 
 .journey {
@@ -228,11 +368,11 @@
   color: var(--medal-color);
 }
 
-.journey-item:hover .journey-medal {
+.journey-track:not(.is-animating) .journey-item:hover .journey-medal {
   filter: drop-shadow(0 0 10px currentColor);
 }
 
-.journey-item:hover .journey-card {
+.journey-track:not(.is-animating) .journey-item:hover .journey-card {
   border-color: var(--medal-color);
   box-shadow:
     0 0 20px color-mix(in srgb, var(--medal-color) 28%, transparent),
@@ -376,7 +516,7 @@
   transition-delay: 0.15s;
 }
 
-.journey-item:hover .journey-medal {
+.journey-track:not(.is-animating) .journey-item:hover .journey-medal {
   filter: drop-shadow(0 0 10px currentColor);
 }
 
@@ -396,7 +536,7 @@
     box-shadow 0.35s ease;
 }
 
-.journey-item:hover {
+.journey-track:not(.is-animating) .journey-item:hover {
   cursor: pointer;
 }
 
@@ -407,15 +547,15 @@
     0 18px 45px rgb(0 0 0 / 35%);
 }
 
-.journey-item.left:hover .journey-card {
+.journey-track:not(.is-animating) .journey-item.left:hover .journey-card {
   transform: translate(15px, -10px) rotate(2deg);
 }
 
-.journey-item.right:hover .journey-card {
+.journey-track:not(.is-animating) .journey-item.right:hover .journey-card {
   transform: translate(-15px, -10px) rotate(-2deg);
 }
 
-.journey-item:hover .journey-card-button {
+.journey-track:not(.is-animating) .journey-item:hover .journey-card-button {
   background: var(--gold);
   color: var(--black);
   letter-spacing: 4px;
@@ -447,7 +587,7 @@
   transition: transform 0.45s ease;
 }
 
-.journey-item:hover .journey-card-image img {
+.journey-track:not(.is-animating) .journey-item:hover .journey-card-image img {
   transform: scale(1.04);
 }
 
@@ -578,7 +718,7 @@
   transition: transform 0.3s ease;
 }
 
-.journey-item.next:hover .fa-bullseye {
+.journey-track:not(.is-animating) .journey-item.next:hover .fa-bullseye {
   transform: scale(1.1);
   filter: drop-shadow(0 0 12px rgb(212, 175, 55));
 }
@@ -615,27 +755,36 @@
   transform: rotate(4deg) rotateY(-8deg) rotateX(12deg) scale(1) !important;
 }
 
-.journey-track.is-animating .journey-item,
-.journey-track.is-animating .journey-item * {
-  pointer-events: none !important;
-  cursor: default !important;
-}
-
 @media (max-width: 1200px) {
-  .results-hero,
-  .results-analytics {
+  .results-hero {
     width: min(100% - 2rem, var(--content-width));
   }
-
+  .results-analytics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 18px;
+  }
+  .stat-card {
+    min-height: 205px;
+  }
+  .stat-card-featured {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 390px;
+  }
+  .stat-value {
+    font-size: 3.3rem;
+  }
+  .stat-podiums {
+    font-size: 5.5rem;
+  }
   .journey {
     --journey-card-width: 305px;
   }
-
   .journey,
   .journey-track {
     height: 2000px;
   }
-
   .journey-track {
     width: min(calc(100% - 48px), 1200px);
     aspect-ratio: auto;
@@ -697,71 +846,61 @@
     width: min(100% - 2rem, var(--content-width));
     margin-top: 15px;
   }
-
   .results-subtitle {
     font-size: 0.85rem;
     letter-spacing: 8px;
   }
-
   .results-title {
     font-size: 3.25rem;
     letter-spacing: 10px;
   }
-
   .results-description {
     font-size: 0.9rem;
     line-height: 1.7;
     letter-spacing: 2px;
   }
-
   .results-line {
     width: 100%;
   }
-
   .results-analytics {
     width: min(100% - 2rem, var(--content-width));
     margin: 24px auto;
   }
-
   .results-analytics-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 15px;
   }
-
-  .results-analytics .stat-card h3 {
+  .stat-card,
+  .stat-card-featured {
+    grid-column: auto;
+    width: 90%;
+    min-height: 155px;
+    margin-inline: auto;
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+  .stat-card-featured {
+    min-height: 370px;
+    padding: 34px 24px 30px;
+  }
+  .stat-card::before {
+    font-size: 5rem;
+  }
+  .stat-card-featured::before {
+    font-size: 6.5rem;
+  }
+  .stat-heading,
+  .stat-medals h3 {
+    font-size: 0.88rem;
     letter-spacing: 4px;
   }
-
-  .results-analytics .stat-value {
-    letter-spacing: 5px;
-  }
-
-  .results-analytics .stat-value.medals span {
-    letter-spacing: 1px;
-  }
-
-  .stat-card {
-    min-height: 150px;
-    border-radius: 22px;
-    width: 80%;
-    margin: 0 auto;
-  }
-
   .stat-value {
-    margin-bottom: 12px;
+    margin-top: 13px;
     font-size: 2.8rem;
   }
-
-  .stat-value.medals {
-    gap: 15px;
-    font-size: 2rem;
+  .stat-podiums {
+    font-size: 4.7rem;
   }
-
-  .stat-card h3 {
-    font-size: 0.95rem;
-    letter-spacing: 3px;
-  }
-
   .journey {
     height: auto;
     min-height: 0;
@@ -910,30 +1049,53 @@
     font-size: 0.75rem;
     letter-spacing: 5px;
   }
-
   .results-title {
     font-size: 2.7rem;
     letter-spacing: 7px;
   }
-
   .results-description {
     font-size: 0.8rem;
     letter-spacing: 1px;
   }
-
+  .stat-card,
+  .stat-card-featured {
+    width: 90%;
+  }
   .stat-card {
-    min-height: 135px;
+    min-height: 140px;
   }
-
+  .stat-card-featured {
+    min-height: 340px;
+  }
   .stat-value {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
   }
-
-  .stat-value.medals {
+  .stat-podiums {
+    font-size: 4rem;
+  }
+  .medal-breakdown {
     gap: 8px;
-    font-size: 1.65rem;
   }
-
+  .medal-icon {
+    width: 37px;
+    height: 47px;
+  }
+  .medal-disc {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+  .medal-ribbon {
+    width: 27px;
+    height: 20px;
+  }
+  .medal-name {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+  }
+  .medal-stat strong {
+    font-size: 1.7rem;
+  }
   .journey {
     height: auto;
     margin: 55px auto;
@@ -943,7 +1105,6 @@
     width: min(100% - 1.25rem, 620px);
     aspect-ratio: auto;
   }
-
   .journey-items {
     gap: 24px;
     padding-left: 34px;
@@ -988,7 +1149,6 @@
     width: 16px;
     height: 16px;
   }
-
   .journey-item.left .journey-medal,
   .journey-item.right .journey-medal {
     left: -72px;

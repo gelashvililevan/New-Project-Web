@@ -56,18 +56,14 @@ function initializeHeader() {
 
 function highlightCurrentPage() {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
+  const activePage =
+    currentPage === "competition.html" ? "results.html" : currentPage;
   const links = document.querySelectorAll(".nav-links a");
-
   links.forEach((link) => {
     const linkURL = new URL(link.getAttribute("href"), window.location.href);
-
     const linkPage = linkURL.pathname.split("/").pop() || "index.html";
-
-    const isCurrentPage = linkPage === currentPage;
-
+    const isCurrentPage = linkPage === activePage;
     link.classList.toggle("active", isCurrentPage);
-
     if (isCurrentPage) {
       link.setAttribute("aria-current", "page");
     } else {
@@ -78,40 +74,39 @@ function highlightCurrentPage() {
 
 function initializeHeaderScroll(header) {
   const mobileNavigation = window.matchMedia("(max-width: 850px)");
-
+  const shortViewport = window.matchMedia(
+    "(max-width: 850px) and (max-height: 620px)",
+  );
   let lastScrollY = Math.max(window.scrollY, 0);
   let directionStartY = lastScrollY;
   let currentDirection = null;
   let ticking = false;
-
   function updateHeader() {
     const currentScrollY = Math.max(window.scrollY, 0);
     const scrollDifference = currentScrollY - lastScrollY;
-
     header.classList.toggle("scrolled", currentScrollY > 20);
-
     if (!mobileNavigation.matches) {
       header.classList.remove("nav-compact");
-
       lastScrollY = currentScrollY;
       ticking = false;
-
       return;
     }
-
+    if (shortViewport.matches) {
+      header.classList.add("nav-compact");
+      lastScrollY = currentScrollY;
+      ticking = false;
+      return;
+    }
     let nextDirection = currentDirection;
-
     if (scrollDifference > 0) {
       nextDirection = "down";
     } else if (scrollDifference < 0) {
       nextDirection = "up";
     }
-
     if (nextDirection !== currentDirection) {
       currentDirection = nextDirection;
       directionStartY = lastScrollY;
     }
-
     const directionDistance = Math.abs(currentScrollY - directionStartY);
     if (currentScrollY < 60) {
       header.classList.remove("nav-compact");
@@ -123,29 +118,25 @@ function initializeHeaderScroll(header) {
     lastScrollY = currentScrollY;
     ticking = false;
   }
-
   function handleScroll() {
     if (ticking) return;
-
     ticking = true;
     window.requestAnimationFrame(updateHeader);
   }
-
   function handleViewportChange() {
     lastScrollY = Math.max(window.scrollY, 0);
     directionStartY = lastScrollY;
     currentDirection = null;
-
     if (!mobileNavigation.matches) {
       header.classList.remove("nav-compact");
     }
-
     updateHeader();
   }
   window.addEventListener("scroll", handleScroll, {
     passive: true,
   });
   mobileNavigation.addEventListener("change", handleViewportChange);
+  shortViewport.addEventListener("change", handleViewportChange);
   updateHeader();
 }
 
