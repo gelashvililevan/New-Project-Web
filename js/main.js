@@ -1,125 +1,126 @@
 const analyticsData = [
   {
     title: "Competition Medal Rate",
-    percent: 100,
-    value: "6 / 6",
-    description: "Every Competition Ended On The Podium.",
+    percent: 86,
+    value: "6 / 7",
+    description: "Six Podiums From Seven Competitions.",
   },
   {
     title: "Overall Win Rate",
-    percent: 84,
-    value: "25 / 21",
-    description: "Victories In Official Competitions.",
+    percent: 78,
+    value: "21 / 27",
+    description: "Twenty-One Wins In Official Competition.",
   },
   {
     title: "Wins By Ippon",
     percent: 90,
-    value: "21 / 19",
-    description: "Most Victories Finished Early.",
+    value: "19 / 21",
+    description: "Nineteen Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
     percent: 100,
     value: "8 / 8",
-    description: "Undefeated Junior Record.",
+    description: "Still Undefeated In Junior Competition.",
   },
 ];
-
-const grid = document.getElementById("analyticsGrid");
-
-let html = "";
-
-analyticsData.forEach((item) => {
-  html += `
-        <div class="analytics-card">
-            <div class="progress-ring">
-                <h3>${item.title}</h3>
-
-                <svg width="200" height="200">
-                    <circle class="ring-bg" cx="100" cy="100" r="70"></circle>
-                    <circle class="ring-progress" cx="100" cy="100" r="70"></circle>
-                </svg>
-
-                <span class="percent" data-percent="${item.percent}">0%</span>
-            </div>
-
-            <h4>${item.value}</h4>
+const analyticsGrid = document.getElementById("analyticsGrid");
+if (analyticsGrid) {
+  analyticsGrid.innerHTML = analyticsData
+    .map(
+      (item, index) => `
+        <article class="analytics-card">
+          <span class="analytics-card-number" aria-hidden="true">
+            ${String(index + 1).padStart(2, "0")}
+          </span>
+          <div class="analytics-card-copy">
+            <h3>${item.title}</h3>
+            <span class="analytics-percent" data-percent="${item.percent}">0%</span>
+            <strong class="analytics-value">${item.value}</strong>
             <p>${item.description}</p>
-        </div>
-    `;
-});
-
-grid.innerHTML = html;
-
-const cards = document.querySelectorAll(".analytics-card");
-
-const radius = 70;
-const circumference = 2 * Math.PI * radius;
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.classList.add("show");
-
-          setTimeout(() => {
-            const progressCircle = card.querySelector(".ring-progress");
-
-            progressCircle.style.transform = "rotate(-90deg)";
-            progressCircle.style.transformOrigin = "50% 50%";
-
-            const percentText = card.querySelector(".percent");
-            const targetPercent = parseInt(percentText.dataset.percent);
-
-            progressCircle.style.strokeDasharray = circumference;
-            progressCircle.style.strokeDashoffset = circumference;
-
-            animateCircle(progressCircle, percentText, targetPercent);
-          }, 180);
-        }, index * 700);
-      });
-
-      observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.1,
-  },
-);
-
-const analyticsSection = document.querySelector(".analytics");
-
-if (analyticsSection) {
-  observer.observe(analyticsSection);
-}
-
-function animateCircle(circle, text, target) {
-  let current = 0;
-
-  const duration = 1900;
-  const interval = 25;
-  const step = target / (duration / interval);
-
-  const timer = setInterval(() => {
-    current += step;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
+          </div>
+          <div class="progress-ring" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <circle class="ring-bg" cx="100" cy="100" r="70"></circle>
+              <circle class="ring-progress" cx="100" cy="100" r="70"></circle>
+              <circle class="ring-point" r="7" cx="100" cy="30"></circle>
+            </svg>
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+  const analyticsCards = [...analyticsGrid.querySelectorAll(".analytics-card")];
+  const analyticsRadius = 70;
+  const analyticsCircumference = 2 * Math.PI * analyticsRadius;
+  const reducedAnalyticsMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  function setRingPoint(point, percent) {
+    const angle = -90 + percent * 3.6;
+    const radians = (angle * Math.PI) / 180;
+    point.setAttribute("cx", 100 + analyticsRadius * Math.cos(radians));
+    point.setAttribute("cy", 100 + analyticsRadius * Math.sin(radians));
+  }
+  function setAnalyticsProgress(card, percent) {
+    const progressCircle = card.querySelector(".ring-progress");
+    const ringPoint = card.querySelector(".ring-point");
+    const percentText = card.querySelector(".analytics-percent");
+    progressCircle.style.strokeDasharray = analyticsCircumference;
+    progressCircle.style.strokeDashoffset =
+      analyticsCircumference - (percent / 100) * analyticsCircumference;
+    percentText.textContent = `${Math.round(percent)}%`;
+    setRingPoint(ringPoint, percent);
+  }
+  function animateAnalyticsCard(card) {
+    const target = Number(
+      card.querySelector(".analytics-percent").dataset.percent,
+    );
+    const duration = 1900;
+    let startTime = null;
+    function update(timestamp) {
+      if (startTime === null) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      setAnalyticsProgress(card, target * easedProgress);
+      if (progress < 1) requestAnimationFrame(update);
     }
-    text.textContent = Math.round(current) + "%";
-    const offset = circumference - (current / 100) * circumference;
-    circle.style.strokeDashoffset = offset;
-  }, interval);
+    requestAnimationFrame(update);
+  }
+  analyticsCards.forEach((card) => setAnalyticsProgress(card, 0));
+  const analyticsSection = document.querySelector(".analytics");
+  if (reducedAnalyticsMotion) {
+    analyticsCards.forEach((card) => {
+      card.classList.add("show");
+      setAnalyticsProgress(
+        card,
+        Number(card.querySelector(".analytics-percent").dataset.percent),
+      );
+    });
+  } else if (analyticsSection) {
+    const analyticsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          analyticsCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("show");
+              setTimeout(() => animateAnalyticsCard(card), 180);
+            }, index * 700);
+          });
+          analyticsObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.1 },
+    );
+    analyticsObserver.observe(analyticsSection);
+  }
 }
-
 const nextCompetition = {
-  name: "SUPER COPA DE ESPANA",
-  location: "VALENCIA • 16 AUGUST 2026",
-  quote: "ONE STEP CLOSER",
-  target: "2026-08-16T09:00:00",
+  name: "SUPER COPA DE ESPAÑA JUNIOR",
+  location: "BINÉFAR • 5 SEPTEMBER 2026",
+  quote: "THE COMEBACK STARTS HERE",
+  target: "2026-09-05T09:00:00+02:00",
 };
 
 const countdownContainer = document.getElementById("countdownContainer");

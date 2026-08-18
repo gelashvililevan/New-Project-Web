@@ -58,13 +58,22 @@
     <div class="scroll">
       <p>THE JOURNEY BEGINS</p>
     </div>
-    <section class="analytics">
-      <div class="container">
-        <div class="analytics-header">
-          <h2>PERFORMANCE ANALYTICS</h2>
-          <h1>2026</h1>
-          <p>Every Statistic Tells Part Of The Journey.</p>
-        </div>
+    <section class="analytics" aria-labelledby="analyticsTitle">
+      <div class="analytics-background" aria-hidden="true"></div>
+      <span class="analytics-corner top-left" aria-hidden="true"></span>
+      <span class="analytics-corner top-right" aria-hidden="true"></span>
+      <span class="analytics-corner bottom-left" aria-hidden="true"></span>
+      <span class="analytics-corner bottom-right" aria-hidden="true"></span>
+      <div class="container analytics-container">
+        <header class="analytics-header">
+          <p class="analytics-eyebrow">THE SEASON IN NUMBERS</p>
+          <h2 class="analytics-title" id="analyticsTitle">
+            PERFORMANCE <span>2026</span>
+          </h2>
+          <p class="analytics-description">
+            Every statistic tells part of the journey.
+          </p>
+        </header>
         <div class="analytics-grid" id="analyticsGrid"></div>
         <div class="analytics-btn">
           <a href="./results.html">VIEW COMPLETE RESULTS</a>

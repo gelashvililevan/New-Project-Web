@@ -295,7 +295,7 @@
 .journey {
   width: 100%;
   height: calc(1900px * var(--journey-scale));
-  margin: -100px auto 200px;
+  margin: -100px auto -40px;
 }
 
 .journey-track {
@@ -389,6 +389,10 @@
 
 .journey-item.bronze {
   --medal-color: #cd7f32;
+}
+
+.journey-item.unplaced {
+  --medal-color: #e8e5dc;
 }
 
 .journey-item {
@@ -538,13 +542,6 @@
 
 .journey-track:not(.is-animating) .journey-item:hover {
   cursor: pointer;
-}
-
-.journey-item:hover .journey-card {
-  border-color: var(--medal-color);
-  box-shadow:
-    0 0 20px color-mix(in srgb, var(--medal-color) 28%, transparent),
-    0 18px 45px rgb(0 0 0 / 35%);
 }
 
 .journey-track:not(.is-animating) .journey-item.left:hover .journey-card {
@@ -704,10 +701,13 @@
   transition-delay: 1.05s, 1.05s, 0s, 0s, 0s;
 }
 .journey-item.next {
-  height: 350px;
+  height: auto;
 }
 .journey-item.next .journey-card {
-  height: 100%;
+  height: auto;
+}
+.journey-item.next .journey-card-content {
+  padding-bottom: 14px;
 }
 
 .fa-bullseye {
@@ -1024,7 +1024,7 @@
   }
 
   .journey-item.next .journey-card-content {
-    padding-bottom: 16px;
+    padding-bottom: 14px;
   }
 
   .journey-countdown strong {

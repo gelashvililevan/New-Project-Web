@@ -95,26 +95,43 @@ const journeyData = [
     medal: "gold",
     result: "Gold • 1st Place",
   },
+  {
+    id: "super-copa-espana-valencia-2026",
+    image:
+      "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.jpg",
+    competition: "Super Copa De España Absolut",
+    date: "16 | 08 | 2026",
+    location: "• VALENCIA •",
+    weight: "-90 KG",
+    record: "0 - 2",
+    matTime: "04:35",
+    medal: "unplaced",
+    result: "9TH",
+  },
 ];
 
 const nextCompetition = {
-  id: "super-copa-espana-valencia-2026",
-  title: "Super Copa De Espana",
-  date: "16 | 08 | 2026",
-  location: "• Valencia •",
-  category: "-90KG",
+  id: "super-copa-espana-junior-binefar-2026",
+  title: "Super Copa De España Junior",
+  date: "05 | 09 | 2026",
+  location: "• BINÉFAR •",
+  category: "-90 KG",
 };
 
 function createJourneyItem(event, index) {
   const side = index % 2 === 0 ? "left" : "right";
+  const achievementMarker =
+    event.medal === "unplaced"
+      ? ""
+      : `<div class="journey-medal ${event.medal}" aria-label="${event.result}">
+          <i class="fa-solid fa-medal" aria-hidden="true"></i>
+        </div>`;
 
   return `
     <div class="journey-item ${side} ${event.medal}">
       <span class="journey-pin" aria-hidden="true"></span>
       <article class="journey-card">
-      <div class="journey-medal ${event.medal}">
-        <i class="fa-solid fa-medal"></i>
-      </div>
+        ${achievementMarker}
         <div class="journey-card-image">
           <img
             src="${event.image}"
@@ -157,9 +174,11 @@ function createJourneyItem(event, index) {
   `;
 }
 
-function createNextJourneyItem(event) {
+function createNextJourneyItem(event, index) {
+  const side = index % 2 === 0 ? "left" : "right";
+
   return `
-<div class="journey-item left next">
+<div class="journey-item ${side} next">
 <span class="journey-pin" aria-hidden="true"></span>
     <article class="journey-card">
         <div class="journey-card-content">
@@ -207,7 +226,7 @@ function renderJourney() {
 
   timeline.innerHTML =
     journeyData.map(createJourneyItem).join("") +
-    createNextJourneyItem(nextCompetition);
+    createNextJourneyItem(nextCompetition, journeyData.length);
 }
 
 function positionJourneyItems() {
@@ -226,6 +245,9 @@ function positionJourneyItems() {
       item.style.removeProperty("left");
       item.style.removeProperty("right");
     });
+
+    track.style.removeProperty("height");
+    document.querySelector(".journey")?.style.removeProperty("height");
 
     return;
   }
@@ -254,6 +276,18 @@ function positionJourneyItems() {
       item.style.left = `${track.clientWidth - cardWidth - rightMargin}px`;
     }
   });
+
+  const finalItemBottom = Math.max(
+    ...items.map((item) => item.offsetTop + item.offsetHeight),
+  );
+  const timelineHeight = Math.ceil(finalItemBottom + 140 * scale);
+  const journey = document.querySelector(".journey");
+
+  track.style.height = `${timelineHeight}px`;
+
+  if (journey) {
+    journey.style.height = `${timelineHeight}px`;
+  }
 }
 
 renderJourney();
@@ -434,7 +468,7 @@ window.addEventListener("resize", () => {
 const countdownElement = document.getElementById("competitionCountdown");
 
 if (countdownElement) {
-  const competitionDate = new Date("2026-08-16");
+  const competitionDate = new Date("2026-09-05T09:00:00+02:00");
 
   function updateCountdown() {
     const difference = competitionDate - new Date();

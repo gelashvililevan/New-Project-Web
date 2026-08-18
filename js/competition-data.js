@@ -640,42 +640,114 @@ export const competitions = {
   },
   "super-copa-espana-valencia-2026": {
     id: "super-copa-espana-valencia-2026",
-    status: "upcoming",
+    status: "completed",
     chapter: "07",
     season: "2026",
     competition: "Super Copa de España Absolut",
     date: "16 · 08 · 2026",
-    countdownDate: "2026-08-16T00:00:00+02:00",
     location: "Valencia, Spain",
+    image:
+      "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.jpg",
+    medal: "none",
+    placement: "9th Place",
+    category: "−90 KG",
+    record: "0–2",
+    totalMatTime: "04:35",
+    ippons: "0",
+    fastestWin: "—",
+    competitors: "25",
+    preparation: {
+      story:
+        "Preparation began at the beginning of July with a clear plan: gym in the morning and judo in the evening, twice a day throughout the month. Things did not unfold that way. By the middle of July, regular judo training had disappeared from my preparation. I continued working in the gym and developing my physical condition, but I arrived in Valencia after several weeks without training in a judogi. Multiple parts of my preparation fell below the standard this competition required. Those circumstances provide context, not excuses. It was still my responsibility to arrive ready—and I did not.",
+    },
+    matches: [
+      createMatch("01", "ROUND TWO", "LOSS", {
+        method: "IPPON",
+        duration: "03:32",
+        score: "000 – 100",
+        technique: "Front Uchi-Mata",
+        note: "I opened the competition against one of the strongest athletes in the −81 KG category, ranked No. 2 in the world at the time. Instead of cutting to his usual category, he competed at −90 KG in Valencia. He managed the contest intelligently. He took almost no unnecessary risks, controlled the distance and continually adapted his plan. I tried to close the space and establish my dominant left grip, but his experience kept me outside the position I wanted. During the final minute, I increased the pressure and began forcing him outside his comfort zone. It created several small opportunities, but I failed to convert them. In the final seconds, while crossing in to establish my grip, I left too much space between us. He recognized the opening immediately and finished the match with a beautiful front variation of Uchi-mata. I knew the attack was coming, but I could not recover my position in time to defend it. After the fight, he approached me and complimented both my performance and my physical strength. It did not erase the loss, but hearing that from an athlete of his level became one of the most meaningful moments of the competition. It reminded me that, despite the result, I was still moving in the right direction. ",
+        scores: {
+          mine: { ippon: 0, wazaAri: 1, yuko: 2, shidos: 1 },
+          opponent: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
+        },
+      }),
+      createMatch("02", "REPECHAGE R1", "LOSS", {
+        method: "WAZA-ARI",
+        duration: "01:03",
+        technique: "Tomoe-Nage",
+        note: "I entered the repechage still confident that I could fight my way back to the podium. My opponent repeatedly attacked with Tomoe-nage. After his third attempt, I adjusted by staying close and pulling him toward me, trying to remove the distance he needed to execute the technique. I believed I had brought him too close to attempt it successfully again. I was wrong. Because I believed the position was safe, I was not fully prepared to defend the next attack. He attempted Tomoe-nage for the fourth time, scored a Waza-ari and ended my competition.",
+        scores: {
+          mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 1 },
+          opponent: { ippon: 0, wazaAri: 1, yuko: 0, shidos: null },
+        },
+      }),
+    ],
+    lessons: [
+      {
+        title: "DISTRACTIONS",
+        text: "This competition gave me many lessons, but the clearest was about distractions. Some of the disruptions surrounding my preparation could have been prevented, while others were outside my control. The real mistake was allowing them to fracture my focus and remove the competition from the centre of my routine. Preparation is not only the work completed in training. It is also the discipline to protect that work, preserve the routine and prevent everything surrounding it from pulling attention away from the goal",
+      },
+      {
+        title: "MINDSET",
+        text: "My mindset changed before Valencia. In the previous competitions, I stepped onto the tatami wanting to win. While building this website and looking back at six podiums from six competitions, I began to understand how much that record meant to me. The thought of losing the streak became frightening. Without realizing it, I stopped attacking the competition and started defending a statistic. My mindset changed from wanting to win to being afraid to lose. The result had already begun controlling me before the first Hajime. Valencia taught me that I cannot compete to protect what I have already achieved. I must compete to create what comes next.",
+      },
+    ],
+    changes: [
+      {
+        before:
+          "When I learned who I would face in my opening contest, I genuinely believed I could defeat him. That belief became even stronger after watching his first match. When I lost, I immediately redirected my focus toward the repechage. The opening result was gone, but I still believed I could fight my way back and reach the podium",
+        after:
+          "I left Valencia without winning a match. It was my weakest result since moving to Spain, and it ended both my winning streak and my run of six podiums from six competitions. The result was heartbreaking, but it also exposed more than another victory could have shown me. It revealed weaknesses in my preparation, focus, distance management, adaptability and competitive mindset. There was now far more to examine and therefore far more to improve. The compliment after my opening match did not change the result, but it changed how I understood it. An athlete competing at the highest level had recognized something in my performance and strength. That gave me confidence, while the fight itself gave me experience that I can carry into every competition that follows. This setback was significant, but I believe the comeback can become even greater. Valencia did not take away my direction. It made that direction clearer.",
+      },
+    ],
+    progression: {
+      eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
+      text: "Less than twenty days separate Valencia from the next competition in Binéfar. That is not enough time to rebuild everything, but it is enough time to respond: to correct the details, restore discipline and step onto the tatami wanting to win again. This comeback is personal.",
+    },
+    navigation: {
+      previous: { id: "super-copa-espana-juniors-tortosa-2026" },
+      next: { id: "super-copa-espana-junior-binefar-2026" },
+    },
+  },
+  "super-copa-espana-junior-binefar-2026": {
+    id: "super-copa-espana-junior-binefar-2026",
+    status: "upcoming",
+    chapter: "08",
+    season: "2026",
+    competition: "Super Copa de España Junior",
+    date: "05 · 09 · 2026",
+    countdownDate: "2026-09-05T00:00:00+02:00",
+    location: "Binéfar, Spain",
     image: null,
     category: "−90 KG",
-    division: "Senior",
+    division: "Junior",
     level: "National Super Copa",
     opportunity: {
-      eyebrow: "THE NEXT MISSION",
+      eyebrow: "THE COMEBACK",
       story:
-        "The journey returns to the senior category for one of the strongest events of the season. Valencia will be another opportunity to test the progress built across the previous six chapters against an experienced national field.",
+        "The next chapter returns to the junior category in Binéfar. It is an opportunity to apply the lessons from Valencia, respond with discipline and begin building momentum again.",
     },
     preparation: {
       story:
-        "Preparation for Valencia is focused on carrying the confidence developed in the junior competitions into a stronger senior environment. The objective is to arrive physically prepared, tactically clear and ready to adapt from the opening Hajime.",
+        "Preparation for Binéfar is focused on correcting the details exposed in Valencia and returning to competition with a clearer, more aggressive and more disciplined approach.",
     },
     objectives: [
       {
-        title: "EXECUTION",
-        text: "Follow the game plan with discipline and make clear decisions under pressure.",
+        title: "RESPONSE",
+        text: "Turn the lessons from Valencia into visible changes from the opening Hajime.",
       },
       {
-        title: "TRANSITIONS",
-        text: "Apply the improvements made in Ne-waza and transitions against experienced senior opponents.",
+        title: "DISCIPLINE",
+        text: "Follow the plan, control the distance and remain composed in every exchange.",
       },
       {
-        title: "COMPOSURE",
-        text: "Remain calm throughout every contest and adapt without allowing the result of one moment to control the next.",
+        title: "MOMENTUM",
+        text: "Compete to win again and begin the next part of the season with purpose.",
       },
     ],
     navigation: {
-      previous: { id: "super-copa-espana-juniors-tortosa-2026" },
+      previous: { id: "super-copa-espana-valencia-2026" },
       next: null,
     },
   },

@@ -7,7 +7,7 @@
 .about-story {
   position: relative;
   width: 100%;
-  padding: 60px 0;
+  padding: 50px 0;
   color: var(--about-white);
 }
 .about-story::after {
@@ -97,12 +97,12 @@
   aspect-ratio: 4 / 3;
 }
 .about-visual figcaption {
-  margin-top: 45px;
+  margin-top: 25px;
   color: var(--about-muted);
   font:
     200 0.7rem Oswald,
     sans-serif;
-  letter-spacing: 4px;
+  letter-spacing: 3.1px;
   text-align: center;
 }
 .about-story-image-right .about-photo-frame {
@@ -248,7 +248,7 @@
 }
 @media (max-width: 992px) {
   .about-story {
-    padding: 70px 0;
+    padding: 40px 0;
   }
   .about-story-lead {
     gap: 50px;
@@ -268,7 +268,7 @@
 }
 @media (max-width: 768px) {
   .about-story {
-    padding: 70px 0 85px;
+    padding: 20px 0;
   }
   .about-story-container {
     width: min(90%, 620px);
@@ -277,7 +277,7 @@
   .about-story-image-left .about-story-lead,
   .about-story-image-right .about-story-lead {
     grid-template-columns: 1fr;
-    gap: 55px;
+    gap: 25px;
   }
   .about-story-image-left .about-visual,
   .about-story-image-right .about-visual {
@@ -296,14 +296,23 @@
   .about-visual-landscape {
     width: 100%;
   }
-  .about-photo-frame {
-    transform: perspective(1400px) rotateY(4deg) rotateZ(-1deg);
-  }
+  .about-photo-frame,
   .about-story-image-right .about-photo-frame {
-    transform: perspective(1400px) rotateY(-4deg) rotateZ(1deg);
+    transform: none;
+    transform-origin: center;
+    border-radius: 18px;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+    transition: none;
+  }
+
+  .about-photo-frame img {
+    transform: none;
   }
   .about-copy {
     text-align: center;
+  }
+  .about-visual figcaption {
+    margin-top: 20px;
   }
   .about-copy::before,
   .about-story-image-right .about-copy::before {
@@ -354,10 +363,10 @@
     border-radius: 19px;
   }
   .about-title {
-    font-size: 3.25rem;
+    font-size: 2.6rem;
   }
   .about-opening {
-    font-size: 1.02rem;
+    font-size: 1rem;
   }
   .about-text p {
     font-size: 0.9rem;
@@ -371,5 +380,79 @@
   .about-photo-frame,
   .about-photo-frame img {
     transition: none;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .about-visual {
+    perspective: none;
+  }
+
+  .about-photo-frame,
+  .about-story-image-right .about-photo-frame {
+    transform: none;
+    transform-origin: center;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+    transition: none;
+  }
+
+  .about-photo-frame img {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-story-lead,
+  .about-story-image-left .about-story-lead,
+  .about-story-image-right .about-story-lead {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .about-copy {
+    display: contents;
+  }
+  .about-copy::before {
+    display: none;
+  }
+  .about-section-label {
+    order: 1;
+    width: 100%;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .about-title {
+    order: 2;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .about-visual,
+  .about-story-image-left .about-visual,
+  .about-story-image-right .about-visual {
+    order: 3;
+    grid-column: auto;
+    grid-row: auto;
+    width: 90%;
+    margin: 34px auto 30px;
+  }
+  .about-visual-landscape {
+    width: 90%;
+  }
+  .about-divider {
+    order: 4;
+    width: 100%;
+    margin: 0 auto 30px;
+  }
+  .about-opening {
+    order: 5;
+    width: 100%;
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+  .about-copy > .about-text {
+    order: 6;
+    width: 100%;
+    text-align: left;
   }
 }
