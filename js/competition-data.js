@@ -647,7 +647,7 @@ export const competitions = {
     date: "16 · 08 · 2026",
     location: "Valencia, Spain",
     image:
-      "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.jpg",
+      "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.JPG",
     medal: "none",
     placement: "9th Place",
     category: "−90 KG",
