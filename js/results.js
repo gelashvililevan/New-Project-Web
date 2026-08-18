@@ -98,7 +98,7 @@ const journeyData = [
   {
     id: "super-copa-espana-valencia-2026",
     image:
-      "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.jpg",
+      "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.JPG",
     competition: "Super Copa De España Absolut",
     date: "16 | 08 | 2026",
     location: "• VALENCIA •",
