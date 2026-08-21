@@ -1,1 +1,136 @@
-﻿
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The photographic archive of Levan Gelashvili's 2026 judo journey."
+    />
+    <script
+      src="https://kit.fontawesome.com/424c0b4b20.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <title>Gallery | Levan Gelashvili</title>
+  </head>
+  <body class="gallery-page">
+    <div id="header"></div>
+    <main>
+      <section class="gallery-hero" aria-labelledby="galleryTitle">
+        <span
+          class="gallery-hero-number"
+          data-gallery-total
+          aria-hidden="true"
+        >--</span>
+        <div class="gallery-corner gallery-corner-top-left" aria-hidden="true"></div>
+        <div class="gallery-corner gallery-corner-top-right" aria-hidden="true"></div>
+        <div class="gallery-corner gallery-corner-bottom-left" aria-hidden="true"></div>
+        <div class="gallery-corner gallery-corner-bottom-right" aria-hidden="true"></div>
+        <header class="gallery-intro">
+          <p class="gallery-kicker">2026 · THE PHOTOGRAPHIC RECORD</p>
+          <h1 id="galleryTitle">THE <span>ARCHIVE.</span></h1>
+          <p class="gallery-summary">Every frame holds part of the journey.</p>
+          <a class="gallery-scroll-link" href="#archive">
+            <span id="galleryExploreLabel">EXPLORE THE ARCHIVE</span>
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+        </header>
+        <div class="gallery-feature-wrap">
+          <div class="gallery-feature-heading">
+            <p>SELECTED FRAME</p>
+            <span>
+              <strong id="featuredCurrent">01</strong> /
+              <span data-gallery-total>--</span>
+            </span>
+          </div>
+          <button
+            class="gallery-feature"
+            id="galleryFeature"
+            type="button"
+            aria-label="Open selected photograph"
+          >
+            <img
+              id="featuredImage"
+              src="./images/gallery/competitions/copa_catalunya_absolut_final.JPEG"
+              alt="Levan Gelashvili at Copa Catalunya Absolut"
+              fetchpriority="high"
+            />
+            <span class="gallery-feature-shade" aria-hidden="true"></span>
+            <span class="gallery-feature-open" aria-hidden="true">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <span class="gallery-feature-copy">
+              <strong id="featuredTitle">WHERE THE SEASON BEGAN.</strong>
+              <small id="featuredMeta">COPA CATALUNYA · BARCELONA</small>
+            </span>
+          </button>
+          <div class="gallery-feature-controls">
+            <button id="featuredPrevious" type="button" aria-label="Previous photograph">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            </button>
+            <div class="gallery-reel" id="galleryReel" aria-label="Selected photographs"></div>
+            <button id="featuredNext" type="button" aria-label="Next photograph">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="gallery-archive" id="archive" aria-labelledby="archiveTitle">
+        <header class="archive-header">
+          <div>
+            <p>THE COMPLETE PHOTOGRAPHIC RECORD</p>
+            <h2 id="archiveTitle">
+              <span class="archive-total" data-gallery-total>--</span>
+              <span>FRAMES.</span>
+            </h2>
+          </div>
+          <p class="archive-description">
+            Fights, podiums and the people who gave the season its meaning.
+          </p>
+        </header>
+        <div
+          class="gallery-filters"
+          id="galleryFilters"
+          aria-label="Filter photographs"
+        ></div>
+        <div class="archive-grid" id="archiveGrid"></div>
+      </section>
+    </main>
+    <dialog class="gallery-lightbox" id="galleryLightbox" aria-labelledby="lightboxTitle">
+      <div class="lightbox-shell">
+        <div class="lightbox-topbar">
+          <p>THE ARCHIVE · 2026</p>
+          <span>
+            <strong id="lightboxCurrent">01</strong> /
+            <span data-gallery-total>--</span>
+          </span>
+          <button id="lightboxClose" type="button" aria-label="Close photograph viewer">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="lightbox-stage">
+          <button id="lightboxPrevious" type="button" aria-label="Previous photograph">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <figure>
+            <img id="lightboxImage" src="" alt="" />
+            <figcaption>
+              <strong id="lightboxTitle"></strong>
+              <span id="lightboxMeta"></span>
+            </figcaption>
+          </figure>
+          <button id="lightboxNext" type="button" aria-label="Next photograph">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </dialog>
+    <div id="footer"></div>
+    <script src="./js/components.js"></script>
+    <script src="./js/gallery.js"></script>
+  </body>
+</html>

@@ -12,10 +12,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/main.js" defer></script>
-    <link rel="stylesheet" href=".//css/reset.css" />
-    <link rel="stylesheet" href=".//css/tokens.css" />
-    <link rel="stylesheet" href=".//css/global.css" />
-    <link rel="stylesheet" href=".//css/home.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/home.css" />
     <title>Home | Levan Gelashvili</title>
   </head>
   <body>
@@ -47,8 +47,8 @@
         </h1>
         <div class="hero-line"></div>
         <div class="hero-buttons">
-          <a href="#journey" class="btn-secondary">MY JOURNEY</a>
-          <a href="./partners.html" class="btn-primary"> BECOME A PARTNER </a>
+          <a href="./about.html" class="btn-secondary">READ MY STORY</a>
+          <a href="./contact.html" class="btn-primary">CONTACT</a>
         </div>
       </div>
       <div class="hero-image">
@@ -83,16 +83,28 @@
     <section class="countdown">
       <div id="countdownContainer"></div>
     </section>
-    <section class="gallery">
-      <div class="container">
-        <div class="gallery-header">
-          <h2>COMPETITION GALLERY</h2>
-          <h1>2026</h1>
-          <p>Moments Behind Every Medal.</p>
-        </div>
-        <div class="gallery-grid" id="galleryGrid"></div>
-        <div class="gallery-btn">
-          <a href="./gallery.html">VIEW ALL PICTURES</a>
+    <section class="gallery" aria-labelledby="galleryTitle">
+      <span class="gallery-corner top-left" aria-hidden="true"></span>
+      <span class="gallery-corner top-right" aria-hidden="true"></span>
+      <span class="gallery-corner bottom-left" aria-hidden="true"></span>
+      <span class="gallery-corner bottom-right" aria-hidden="true"></span>
+      <span class="gallery-year" aria-hidden="true">2026</span>
+      <div class="container gallery-container">
+        <div class="gallery-layout">
+          <header class="gallery-header">
+            <h2 id="galleryTitle">
+              COMPETITION
+              <span>GALLERY</span>
+            </h2>
+            <p>MOMENTS BEHIND EVERY MEDAL.</p>
+            <small>2026 ARCHIVE</small>
+          </header>
+          <figure class="gallery-feature" id="galleryFeature"></figure>
+          <span class="gallery-divider" aria-hidden="true"></span>
+          <div class="gallery-grid" id="galleryGrid"></div>
+          <div class="gallery-btn">
+            <a href="./gallery.html">ENTER THE GALLERY</a>
+          </div>
         </div>
       </div>
     </section>

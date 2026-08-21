@@ -138,15 +138,17 @@ body {
   font-family: Oswald, sans-serif;
   letter-spacing: 2px;
   transition: var(--transition);
+  font-size: 1.2rem;
 }
 .btn-primary {
-  background: var(--gold);
-  color: #332768;
-  font-size: 1.4rem;
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
 }
 .btn-primary:hover {
   color: var(--black);
   box-shadow: 0 5px 35px rgb(212 175 55 / 80%);
+  background-color: var(--gold);
 }
 .btn-secondary {
   border: 2px solid var(--white);
@@ -319,7 +321,7 @@ footer .container {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .footer-top {
     grid-template-columns: 1fr;
     gap: 30px;

@@ -244,153 +244,92 @@ if (countdownContainer) {
   observer.observe(document.querySelector(".countdown-wrapper"));
 }
 
-const galleryImages = [
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_quarter_final.jpg",
-    title: "Super Copa De Espana Absolut Jaca Quarter-Final",
-  },
+const galleryFeatureData = {
+  src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_quarter_final.jpg",
+  title: "Super Copa de España Absolut Jaca Quarter-Final",
+};
+
+const galleryPreviewData = [
   {
     src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final.jpg",
-    title: "Super Copa De Espana Absolut Jaca - Bronze Final",
+    title: "Super Copa de España Absolut Jaca Bronze Final",
+    caption: "Emotion.",
+  },
+  {
+    src: "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_1.JPG",
+    title: "Super Copa de España Absolut Valencia",
+    caption: "Respect.",
   },
   {
     src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final.jpg",
-    title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
+    title: "Super Copa de España Ciutat de Barcelona semi-final",
+    caption: "Balance.",
   },
   {
-    src: "./images/gallery/training/teams_pokemon_competition.png",
-    title: "Teams Pokemon Competition",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_2.jpg",
-    title: "Super Copa De Espana Absolut Jaca - Bronze Final",
-  },
-  {
-    src: "./images/gallery/competitions/copa_catalunya_absolut_final.JPEG",
-    title: "Copa Catalunya Absolut Final",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_2.JPG",
-    title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.jpg",
-    title: "Super Copa De Espana Absolut Jaca Team Picture",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_3.jpg",
-    title: "Super Copa De Espana Absolut Jaca - Bronze Final",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_4.jpg",
-    title: "Super Copa De Espana Absolut Jaca - Bronze Final",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_round_1.jpg",
-    title: "Super Copa De Espana Absolut Jaca Round 1",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
-    title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_4.JPG",
-    title: "Super Copa De Espana Ciutat De Barcelona Semi-Final",
-  },
-  {
-    src: "./images/gallery/podiums/copa_catalunya_juniors_podium.JPG",
-    title: "Copa Catalunya Juniors Podium",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.JPG",
-    title: "Super Copa De Espana Absolut Jaca Podium",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_1.jpg",
-    title: "Super Copa De Espana Ciutat De Barcelona Podium",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_2.jpg",
-    title: "Super Copa De Espana Ciutat De Barcelona Podium",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_3.jpg",
-    title: "Super Copa De Espana Ciutat De Barcelona Podium",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_1.jpeg",
-    title: "Super Copa De Espana Juniors Tortosa Podium",
-  },
-  {
-    src: "./images/gallery/podiums/super_copa_de_espana_juniors_tortosa_podium_2.jpeg",
-    title: "Super Copa De Espana Juniors Tortosa Podium",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.JPG",
+    title: "Super Copa de España Ciutat de Barcelona semi-final",
+    caption: "Technique.",
   },
 ];
 
+const gallerySection = document.querySelector(".gallery");
+const galleryFeature = document.getElementById("galleryFeature");
 const galleryGrid = document.getElementById("galleryGrid");
 
-if (galleryGrid) {
-  const previewCount = 7;
+if (gallerySection && galleryFeature && galleryGrid) {
+  galleryFeature.innerHTML = `
+    <img
+      src="${galleryFeatureData.src}"
+      alt="${galleryFeatureData.title}"
+      loading="lazy"
+      decoding="async"
+    >
+  `;
 
-  let html = "";
+  galleryGrid.innerHTML = galleryPreviewData
+    .map(
+      (image, index) => `
+        <a class="gallery-card" href="./gallery.html">
+          <span class="gallery-card-image">
+            <img
+              src="${image.src}"
+              alt="${image.title}"
+              loading="lazy"
+              decoding="async"
+            >
+          </span>
+          <span class="gallery-card-caption">
+            <strong>${String(index + 1).padStart(2, 0)}</strong>
+            <span>${image.caption}</span>
+          </span>
+        </a>
+      `,
+    )
+    .join("");
 
-  galleryImages.slice(0, previewCount).forEach((image) => {
-    html += `
-            <div class="gallery-card">
+  const reducedGalleryMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-                <img
-                    src="${image.src}"
-                    alt="${image.title}"
-                    loading="lazy"
-                >
-
-            </div>
-        `;
-  });
-
-  const remaining = galleryImages.length - previewCount;
-
-  if (remaining > 0) {
-    html += `
-            <a href="./gallery.html" class="gallery-more">
-                <div>
-                    <span class="gallery-number">
-                        +${remaining}
-                    </span>
-                    <span class="gallery-text">
-                        MORE
-                    </span>
-                </div>
-            </a>
-        `;
-  }
-
-  galleryGrid.innerHTML = html;
-
-  const galleryItems = galleryGrid.querySelectorAll(
-    ".gallery-card, .gallery-more",
-  );
-
-  const galleryObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        galleryItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.classList.add("show");
-          }, index * 110);
+  if (reducedGalleryMotion) {
+    gallerySection.classList.add("show");
+  } else {
+    const galleryObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          gallerySection.classList.add("show");
+          galleryObserver.unobserve(entry.target);
         });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -6% 0px",
+      },
+    );
 
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.15,
-      rootMargin: "0px 0px -8% 0px",
-    },
-  );
-  galleryObserver.observe(galleryGrid);
+    galleryObserver.observe(gallerySection);
+  }
 }
 
 const aboutSection = document.querySelector(".about");
