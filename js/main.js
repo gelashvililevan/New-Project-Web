@@ -2,26 +2,26 @@ const analyticsData = [
   {
     title: "Competition Medal Rate",
     percent: 86,
-    value: "6 / 7",
+    value: "7 / 6",
     description: "Six Podiums From Seven Competitions.",
   },
   {
     title: "Overall Win Rate",
     percent: 78,
-    value: "21 / 27",
-    description: "Twenty-One Wins In Official Competition.",
+    value: "27 / 21",
+    description: "Twenty-One Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",
     percent: 90,
-    value: "19 / 21",
+    value: "21 / 19",
     description: "Nineteen Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
     percent: 100,
     value: "8 / 8",
-    description: "Still Undefeated In Junior Competition.",
+    description: "Still Undefeated In Junior Competitions.",
   },
 ];
 const analyticsGrid = document.getElementById("analyticsGrid");
@@ -266,7 +266,7 @@ const galleryPreviewData = [
     caption: "Balance.",
   },
   {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.JPG",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
     title: "Super Copa de España Ciutat de Barcelona semi-final",
     caption: "Technique.",
   },

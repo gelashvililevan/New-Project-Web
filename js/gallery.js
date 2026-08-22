@@ -4,14 +4,7 @@ const galleryImages = [
     title: "Where the season began.",
     meta: "Copa Catalunya · Barcelona · 11.04.2026",
     category: "fight",
-    shape: "wide",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final.jpg",
-    title: "Balance before attack.",
-    meta: "Super Copa de España · Barcelona · 02.05.2026",
-    category: "fight",
-    shape: "portrait",
+    shape: "landscape",
   },
   {
     src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_2.JPG",
@@ -21,17 +14,31 @@ const galleryImages = [
     shape: "landscape",
   },
   {
-    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
-    title: "Trust the preparation.",
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final.jpg",
+    title: "Balance before attack.",
     meta: "Super Copa de España · Barcelona · 02.05.2026",
     category: "fight",
-    shape: "square",
+    shape: "portrait",
   },
   {
     src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_4.JPG",
     title: "Technique under pressure.",
     meta: "Super Copa de España · Barcelona · 02.05.2026",
     category: "fight",
+    shape: "portrait",
+  },
+  {
+    src: "./images/gallery/competitions/super_copa_de_espana_ciutat_de_barcelona_semi_final_3.jpg",
+    title: "Trust the preparation.",
+    meta: "Super Copa de España · Barcelona · 02.05.2026",
+    category: "fight",
+    shape: "portrait",
+  },
+  {
+    src: "./images/gallery/training/teams_pokemon_competition.png",
+    title: "People behind the work.",
+    meta: "Team · Barcelona · 2026",
+    category: "team",
     shape: "portrait",
   },
   {
@@ -56,11 +63,11 @@ const galleryImages = [
     shape: "landscape",
   },
   {
-    src: "./images/gallery/training/teams_pokemon_competition.png",
-    title: "People behind the work.",
-    meta: "Team · Barcelona · 2026",
-    category: "team",
-    shape: "portrait",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final.jpg",
+    title: "The final exchange.",
+    meta: "Bronze contest · Jaca · 30.05.2026",
+    category: "fight",
+    shape: "landscape",
   },
   {
     src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_round_1.jpg",
@@ -75,13 +82,6 @@ const galleryImages = [
     meta: "Super Copa de España · Jaca · 30.05.2026",
     category: "fight",
     shape: "portrait",
-  },
-  {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final.jpg",
-    title: "The final exchange.",
-    meta: "Bronze contest · Jaca · 30.05.2026",
-    category: "fight",
-    shape: "landscape",
   },
   {
     src: "./images/gallery/competitions/super_copa_de_espana_absolut_jaca_bronze_final_2.jpg",
@@ -112,7 +112,7 @@ const galleryImages = [
     shape: "landscape",
   },
   {
-    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.JPG",
+    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.jpg",
     title: "Never built alone.",
     meta: "Team · Jaca · 30.05.2026",
     category: "team",
@@ -262,8 +262,7 @@ function renderArchive(filter = activeFilter) {
   const visibleImages = galleryImages
     .map((image, index) => ({ image, index }))
     .filter(
-      ({ image }) =>
-        activeFilter === "all" || image.category === activeFilter,
+      ({ image }) => activeFilter === "all" || image.category === activeFilter,
     );
 
   const rows = [];

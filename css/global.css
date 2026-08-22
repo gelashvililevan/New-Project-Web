@@ -568,3 +568,10 @@ footer .container {
     font-size: 1.3rem;
   }
 }
+
+button,
+a[class*="button"],
+a[class*="btn"],
+.analytics-btn a {
+  white-space: nowrap;
+}

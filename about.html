@@ -20,6 +20,48 @@
   <body>
     <div id="header"></div>
     <main class="about-page">
+      <nav class="about-chapter-nav" aria-label="Story chapters">
+        <span class="about-chapter-track" aria-hidden="true">
+          <span class="about-chapter-progress"></span>
+        </span>
+        <a
+          class="about-chapter-link is-active"
+          href="#beginning"
+          data-chapter="beginning"
+          aria-label="Chapter 1: Where it started"
+          aria-current="location"
+        >
+          <span class="about-chapter-number">01</span>
+          <span class="about-chapter-name">Where it started</span>
+        </a>
+        <a
+          class="about-chapter-link"
+          href="#what-it-took"
+          data-chapter="what-it-took"
+          aria-label="Chapter 2: What it took"
+        >
+          <span class="about-chapter-number">02</span>
+          <span class="about-chapter-name">What it took</span>
+        </a>
+        <a
+          class="about-chapter-link"
+          href="#the-move"
+          data-chapter="the-move"
+          aria-label="Chapter 3: The move"
+        >
+          <span class="about-chapter-number">03</span>
+          <span class="about-chapter-name">The move</span>
+        </a>
+        <a
+          class="about-chapter-link"
+          href="#where-it-leads"
+          data-chapter="where-it-leads"
+          aria-label="Chapter 4: Where it leads"
+        >
+          <span class="about-chapter-number">04</span>
+          <span class="about-chapter-name">Where it leads</span>
+        </a>
+      </nav>
       <section
         class="about-story about-story-image-left"
         id="beginning"
@@ -27,17 +69,20 @@
       >
         <div class="container about-story-container">
           <div class="about-story-lead">
-            <figure class="about-visual">
-              <div class="about-photo-frame">
-                <img
-                  src="./images/about/first-section.JPG"
-                  alt="Levan Gelashvili as a child running and smiling in Tbilisi"
-                  loading="eager"
-                  decoding="async"
-                />
+            <div class="about-photo-frame">
+              <img
+                src="./images/about/first-section.JPG"
+                alt="Levan Gelashvili as a child running and smiling in Tbilisi"
+                loading="eager"
+                decoding="async"
+              />
+              <div class="about-photo-caption">
+                <span class="about-photo-number">01</span>
+                <span class="about-photo-text">
+                  TBILISI · GEORGIA · BEFORE THE JOURNEY
+                </span>
               </div>
-              <figcaption>TBILISI · GEORGIA · BEFORE THE JOURNEY</figcaption>
-            </figure>
+            </div>
             <article class="about-copy" data-year="2015">
               <p class="about-section-label">01 · WHERE IT STARTED</p>
               <h1 class="about-title" id="beginningTitle">
@@ -62,20 +107,20 @@
                   play, smile, burn off energy and spend time with other
                   children my age. The dojo was the perfect place for that.
                 </p>
+                <p>
+                  For years, that was what judo meant to me. I enjoyed training,
+                  but I wasn’t serious and didn’t yet understand the world
+                  beyond our dojo. Something changed during the COVID break in
+                  2020. I can’t remember one exact moment when I became serious,
+                  but I remember beginning to train alone. Somewhere during that
+                  time, judo stopped being only a place to play and became
+                  something I genuinely wanted to pursue.
+                </p>
               </div>
             </article>
           </div>
           <div class="about-story-continuation">
             <div class="about-text">
-              <p>
-                For years, that was what judo meant to me. I enjoyed training,
-                but I wasn’t serious and didn’t yet understand the world beyond
-                our dojo. Something changed during the COVID break in 2020. I
-                can’t remember one exact moment when I became serious, but I
-                remember beginning to train alone. Somewhere during that time,
-                judo stopped being only a place to play and became something I
-                genuinely wanted to pursue.
-              </p>
               <p>
                 Since then, judo has taught me far more than how to fight. It
                 taught me respect, discipline and patience. It gave me
@@ -126,35 +171,39 @@
                   my first fight through shido and losing the second to the
                   athlete who eventually became champion.
                 </p>
+                <p>
+                  My first medal arrived not long afterward, in a group of four
+                  where almost everyone was going home with something. I
+                  finished second. It meant a lot to me then, but it was not the
+                  beginning of immediate success. For years, around seventy
+                  percent of my competitions ended with me losing the first
+                  fight.
+                </p>
+                <p>
+                  That finally began to change near the end of 2023 and
+                  throughout the 2024 season. I finished fifth at the Georgian
+                  Cadet Championship in the −81 kg category. A few months later,
+                  on 28 April 2024, I entered the Telavi Cadet European Cup.
+                </p>
               </div>
             </article>
-            <figure class="about-visual about-visual-landscape">
-              <div class="about-photo-frame">
-                <img
-                  src="./images/about/section_2.JPG"
-                  alt="Levan Gelashvili receiving bronze at the Telavi Cadet European Cup"
-                  loading="lazy"
-                  decoding="async"
-                />
+            <div class="about-photo-frame">
+              <img
+                src="./images/about/section_2.JPG"
+                alt="Levan Gelashvili receiving bronze at the Telavi Cadet European Cup"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="about-photo-caption">
+                <span class="about-photo-number">02</span>
+                <span class="about-photo-text">
+                  TELAVI · GEORGIA · 28 APRIL 2024
+                </span>
               </div>
-              <figcaption>TELAVI · GEORGIA · 28 APRIL 2024</figcaption>
-            </figure>
+            </div>
           </div>
           <div class="about-story-continuation">
             <div class="about-text">
-              <p>
-                My first medal arrived not long afterward, in a group of four
-                where almost everyone was going home with something. I finished
-                second. It meant a lot to me then, but it was not the beginning
-                of immediate success. For years, around seventy percent of my
-                competitions ended with me losing the first fight.
-              </p>
-              <p>
-                That finally began to change near the end of 2023 and throughout
-                the 2024 season. I finished fifth at the Georgian Cadet
-                Championship in the −81 kg category. A few months later, on 28
-                April 2024, I entered the Telavi Cadet European Cup.
-              </p>
               <p>
                 It was my first European Cup. There were eighteen athletes in my
                 category, and I was the only one with no previous European Cup
@@ -163,8 +212,8 @@
                 months earlier, competing at that level had felt unimaginable.
               </p>
               <p>
-                In the final repechage round, I faced the Georgian champion - the
-                same athlete who had defeated me in the quarterfinal of the
+                In the final repechage round, I faced the Georgian champion -
+                the same athlete who had defeated me in the quarterfinal of the
                 national championship after approximately six minutes of golden
                 score. This time, I beat him in under two minutes.
               </p>
@@ -240,10 +289,11 @@
               <p>
                 I could not train at even half of my normal intensity. I took
                 the final dose of medication on the day of the weigh-in and had
-                to cut approximately six kilograms - the largest weight cut I had
-                ever attempted. I still competed. I won my first fight in around
-                thirty seconds, but lost the second to an athlete who went on to
-                take bronze. It was his final year as a junior. It was my first.
+                to cut approximately six kilograms - the largest weight cut I
+                had ever attempted. I still competed. I won my first fight in
+                around thirty seconds, but lost the second to an athlete who
+                went on to take bronze. It was his final year as a junior. It
+                was my first.
               </p>
               <p>
                 I later finished around seventh at the junior second division.
@@ -327,17 +377,20 @@
       >
         <div class="container about-story-container">
           <div class="about-story-lead">
-            <figure class="about-visual">
-              <div class="about-photo-frame">
-                <img
-                  src="./images/about/section_3.JPG"
-                  alt="Levan Gelashvili looking over Barcelona shortly after moving from Georgia"
-                  loading="lazy"
-                  decoding="async"
-                />
+            <div class="about-photo-frame">
+              <img
+                src="./images/about/section_3.JPG"
+                alt="Levan Gelashvili looking over Barcelona shortly after moving from Georgia"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="about-photo-caption">
+                <span class="about-photo-number">03</span>
+                <span class="about-photo-text">
+                  BARCELONA · FEBRUARY 2026 · THE BEGINNING
+                </span>
               </div>
-              <figcaption>BARCELONA · FEBRUARY 2026 · THE BEGINNING</figcaption>
-            </figure>
+            </div>
             <article class="about-copy" data-year="2026">
               <p class="about-section-label">03 · THE MOVE</p>
               <h2 class="about-title" id="aboutMoveTitle">
@@ -488,8 +541,8 @@
                 If I could speak to my brother and myself on that first
                 exhausted night in Barcelona, I would tell us to stop worrying
                 and get some sleep. I would tell him that he would be proud,
-                that the progress would arrive faster than either of us
-                expected - and that I would miss him more than I knew.
+                that the progress would arrive faster than either of us expected
+                - and that I would miss him more than I knew.
               </p>
             </div>
             <p class="about-closing">
@@ -546,17 +599,20 @@
                 </p>
               </div>
             </article>
-            <figure class="about-visual">
-              <div class="about-photo-frame">
-                <img
-                  src="./images/gallery/training/teams_pokemon_competition.png"
-                  alt="Levan Gelashvili smiling in his judogi during a team competition"
-                  loading="lazy"
-                  decoding="async"
-                />
+            <div class="about-photo-frame">
+              <img
+                src="./images/gallery/training/teams_pokemon_competition.png"
+                alt="Levan Gelashvili smiling in his judogi during a team competition"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="about-photo-caption">
+                <span class="about-photo-number">04</span>
+                <span class="about-photo-text">
+                  THE WORK CONTINUES · THE PERSON REMAINS
+                </span>
               </div>
-              <figcaption>THE WORK CONTINUES · THE PERSON REMAINS</figcaption>
-            </figure>
+            </div>
           </div>
           <div class="about-story-continuation">
             <div class="about-text">
@@ -611,9 +667,9 @@
                 completely to judo. My ideal life is not complicated: wake up,
                 train, eat healthy food, recover properly, sleep well and repeat
                 the process without unnecessary distractions. To some people,
-                that life might appear repetitive. To me, it would be
-                freedom, the opportunity to give everything I have to becoming
-                the athlete I know I can be.
+                that life might appear repetitive. To me, it would be freedom,
+                the opportunity to give everything I have to becoming the
+                athlete I know I can be.
               </p>
               <p>
                 I already train twice a day when circumstances allow it, but I
@@ -635,8 +691,8 @@
                 destinations. I believe that honest work is never wasted. It may
                 not always return in the form you expected, but the discipline,
                 sacrifice and hours eventually become part of you. The more you
-                genuinely put into something, the more it gives back, even if the
-                reward arrives somewhere you did not predict.
+                genuinely put into something, the more it gives back, even if
+                the reward arrives somewhere you did not predict.
               </p>
               <p>
                 Outside judo, web development remains one of my strongest
@@ -687,5 +743,6 @@
     </main>
     <div id="footer"></div>
     <script src="./js/components.js"></script>
+    <script src="./js/about.js"></script>
   </body>
 </html>

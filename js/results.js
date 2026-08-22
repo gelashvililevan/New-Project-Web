@@ -323,13 +323,42 @@ const mobileTimelineQuery = window.matchMedia(
   "(max-width: 768px), (max-width: 1024px) and (max-height: 500px) and (orientation: landscape)",
 );
 
-let journeyAnimationDuration = mobileTimelineQuery.matches ? 9500 : 7000;
+const journeyAnimationStorageKey = "results-journey-animation-v1";
 
+function hasSeenJourneyAnimation() {
+  try {
+    return localStorage.getItem(journeyAnimationStorageKey) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function rememberJourneyAnimation() {
+  try {
+    localStorage.setItem(journeyAnimationStorageKey, "true");
+  } catch {
+    // The animation still works if storage is unavailable.
+  }
+}
+
+const returningJourneyVisitor = hasSeenJourneyAnimation();
+
+function getJourneyAnimationDuration() {
+  if (returningJourneyVisitor) {
+    return mobileTimelineQuery.matches ? 6000 : 4200;
+  }
+
+  return mobileTimelineQuery.matches ? 9500 : 7000;
+}
+
+let journeyAnimationDuration = getJourneyAnimationDuration();
 let roadNodes = [];
 let roadLength = 0;
 let journeyStarted = false;
-let animationStart = null;
+let animationProgress = 0;
+let previousAnimationTimestamp = null;
 let activeNodeIndex = 1;
+let previousScrollY = window.scrollY;
 
 function getPinPositions() {
   const trackRect = track.getBoundingClientRect();
@@ -356,8 +385,8 @@ function buildRoad() {
       .map((pin, index) => `${index === 0 ? "M" : "L"} ${pin.x} ${pin.y}`)
       .join(" "),
   );
-  roadNodes = [...document.querySelectorAll(".journey-pin")];
 
+  roadNodes = [...document.querySelectorAll(".journey-pin")];
   roadLength = path.getTotalLength();
 
   path.style.strokeDasharray = roadLength;
@@ -366,25 +395,21 @@ function buildRoad() {
   glow.setAttribute("cx", pins[0].x);
   glow.setAttribute("cy", pins[0].y);
 }
+
 function buildRoadAtFinalCardPositions() {
   track.classList.add("is-measuring");
-
   track.getBoundingClientRect();
+
   buildRoad();
 
   track.classList.remove("is-measuring");
 }
 
-function animateRoad(timestamp) {
-  if (animationStart === null) {
-    animationStart = timestamp;
-  }
+function renderJourneyProgress(progress) {
+  if (roadLength <= 0) return;
 
-  const elapsedTime = timestamp - animationStart;
-
-  const progress = Math.min(elapsedTime / journeyAnimationDuration, 1);
-
-  const currentRoadLength = roadLength * progress;
+  const safeProgress = Math.min(Math.max(progress, 0), 1);
+  const currentRoadLength = roadLength * safeProgress;
 
   path.style.strokeDashoffset = roadLength - currentRoadLength;
 
@@ -395,20 +420,71 @@ function animateRoad(timestamp) {
 
   while (
     activeNodeIndex < roadNodes.length &&
-    progress >= activeNodeIndex / (roadNodes.length - 1)
+    safeProgress >= activeNodeIndex / (roadNodes.length - 1)
   ) {
     roadNodes[activeNodeIndex].classList.add("active");
-
     journeyCards[activeNodeIndex]?.classList.add("show");
-
     activeNodeIndex += 1;
   }
+}
 
-  if (progress < 1) {
+function finishJourneyAnimation() {
+  animationProgress = 1;
+  renderJourneyProgress(1);
+  path.style.strokeDashoffset = 0;
+  track.classList.remove("is-animating");
+}
+
+function animateRoad(timestamp) {
+  if (previousAnimationTimestamp === null) {
+    previousAnimationTimestamp = timestamp;
+  }
+
+  const frameDuration = Math.min(timestamp - previousAnimationTimestamp, 100);
+
+  previousAnimationTimestamp = timestamp;
+
+  animationProgress = Math.min(
+    animationProgress + frameDuration / journeyAnimationDuration,
+    1,
+  );
+
+  renderJourneyProgress(animationProgress);
+
+  if (animationProgress < 1) {
     requestAnimationFrame(animateRoad);
   } else {
-    path.style.strokeDashoffset = 0;
-    track.classList.remove("is-animating");
+    finishJourneyAnimation();
+  }
+}
+
+function accelerateJourneyOnScroll() {
+  const currentScrollY = window.scrollY;
+  const scrollDistance = Math.abs(currentScrollY - previousScrollY);
+
+  previousScrollY = currentScrollY;
+
+  if (
+    !journeyStarted ||
+    !track.classList.contains("is-animating") ||
+    scrollDistance === 0
+  ) {
+    return;
+  }
+
+  const timelineDistance = Math.max(track.offsetHeight, window.innerHeight);
+
+  const scrollProgress = Math.min(
+    (scrollDistance / timelineDistance) * 0.35,
+    0.04,
+  );
+
+  animationProgress = Math.min(animationProgress + scrollProgress, 1);
+
+  renderJourneyProgress(animationProgress);
+
+  if (animationProgress >= 1) {
+    finishJourneyAnimation();
   }
 }
 
@@ -422,16 +498,18 @@ async function startJourneyAnimation() {
   positionJourneyItems();
   buildRoadAtFinalCardPositions();
 
-  journeyAnimationDuration = mobileTimelineQuery.matches ? 9500 : 7000;
-
-  animationStart = null;
+  journeyAnimationDuration = getJourneyAnimationDuration();
+  animationProgress = 0;
+  previousAnimationTimestamp = null;
   activeNodeIndex = 1;
+  previousScrollY = window.scrollY;
 
   track.classList.add("is-animating");
 
   roadNodes[0].classList.add("active");
   journeyCards[0]?.classList.add("show");
 
+  rememberJourneyAnimation();
   requestAnimationFrame(animateRoad);
 }
 
@@ -444,22 +522,23 @@ const journeyObserver = new IntersectionObserver(
     startJourneyAnimation();
     journeyObserver.disconnect();
   },
-  { threshold: 0.1 },
+  {
+    threshold: 0.1,
+  },
 );
 
 journeyObserver.observe(track);
 
+window.addEventListener("scroll", accelerateJourneyOnScroll, { passive: true });
+
 window.addEventListener("resize", () => {
   positionJourneyItems();
 
-  if (journeyStarted) {
+  const animationIsRunning = track.classList.contains("is-animating");
+
+  if (journeyStarted && (animationIsRunning || animationProgress >= 1)) {
     buildRoad();
-    path.style.strokeDashoffset = 0;
-
-    const finalPoint = path.getPointAtLength(roadLength);
-
-    glow.setAttribute("cx", finalPoint.x);
-    glow.setAttribute("cy", finalPoint.y);
+    renderJourneyProgress(animationIsRunning ? animationProgress : 1);
   } else {
     buildRoadAtFinalCardPositions();
   }
