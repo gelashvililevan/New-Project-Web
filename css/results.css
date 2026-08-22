@@ -165,12 +165,12 @@
 .stat-card-divider::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 51%;
   left: 50%;
   width: 7px;
   height: 7px;
   border: 1px solid var(--gold);
-  background: var(--background);
+  background: var(--gold);
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .medal-breakdown {

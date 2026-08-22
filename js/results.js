@@ -163,7 +163,7 @@ function createJourneyItem(event, index) {
               <strong>${event.matTime}</strong>
             </div>
           </div>
-          <a class="journey-card-button"
+          <a class="site-button journey-card-button"
             href="./competition.html?id=${encodeURIComponent(event.id)}"
             aria-label="View details for ${event.competition}">
             View Details
@@ -210,7 +210,7 @@ function createNextJourneyItem(event, index) {
                 </div>
             </div>
             <a
-  class="journey-card-button"
+  class="site-button journey-card-button"
   href="./competition.html?id=${encodeURIComponent(event.id)}"
 >
   Competition Details

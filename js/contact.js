@@ -276,9 +276,9 @@ function showMissionForm(missionName) {
 
   missionPanel.innerHTML = `
     <div class="mission-form-top">
-      <button class="mission-back" type="button">
-        CHOOSE ANOTHER
-      </button>
+      <button class="site-button mission-back" type="button">
+         CHOOSE ANOTHER
+      </button>s
       <div>
         <span>${mission.label}</span>
         <h3>${mission.title}</h3>
@@ -286,7 +286,7 @@ function showMissionForm(missionName) {
     </div>
     <form class="mission-form">
       ${mission.fields.map(createField).join("")}
-      <button class="mission-submit" type="submit">
+      <button class="site-button mission-submit" type="submit">
         START CONVERSATION
       </button>
       <p class="mission-form-status"></p>

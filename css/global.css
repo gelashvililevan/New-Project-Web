@@ -130,7 +130,23 @@ body {
 .nav-icon {
   display: none;
 }
-
+.site-button {
+  box-sizing: border-box;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  cursor: pointer;
+}
+.site-button:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 5px;
+}
 .btn-primary,
 .btn-secondary {
   padding: 18px 40px;
@@ -567,11 +583,4 @@ footer .container {
   .partner-btn {
     font-size: 1.3rem;
   }
-}
-
-button,
-a[class*="button"],
-a[class*="btn"],
-.analytics-btn a {
-  white-space: nowrap;
 }

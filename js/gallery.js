@@ -112,7 +112,7 @@ const galleryImages = [
     shape: "landscape",
   },
   {
-    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.jpg",
+    src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.JPG",
     title: "Never built alone.",
     meta: "Team · Jaca · 30.05.2026",
     category: "team",
@@ -147,7 +147,7 @@ const galleryImages = [
     shape: "wide",
   },
   {
-    src: "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_2.JPG",
+    src: "./images/gallery/competitions/super_copa_de_espana_absolute_valencia_2.jpg",
     title: "A lesson worth carrying.",
     meta: "Super Copa de España · Valencia · 16.08.2026",
     category: "fight",

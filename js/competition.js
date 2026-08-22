@@ -309,7 +309,7 @@ function renderUpcomingCompetitionPage(competition, content) {
       }
       <div class="container competition-upcoming-hero-container">
         <div class="competition-hero-navigation">
-          <a class="competition-back-link" href="./results.html">
+          <a class="site-button competition-back-link" href="./results.html">
             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
             <span>BACK TO THE ${competition.season} JOURNEY</span>
           </a>
@@ -452,7 +452,7 @@ function renderUpcomingCompetitionPage(competition, content) {
       aria-label="Return to the results journey"
     >
       <div class="container competition-chapter-navigation-container">
-        <a class="competition-return-link" href="./results.html">
+        <a class="site-button competition-return-link" href="./results.html">
           <i class="fa-solid fa-route" aria-hidden="true"></i>
           <span>RETURN TO THE JOURNEY</span>
         </a>
@@ -571,7 +571,7 @@ function renderCompetitionPage(competition, content) {
       <div class="competition-hero-grid" aria-hidden="true"></div>
       <div class="container competition-hero-container">
         <div class="competition-hero-navigation">
-          <a class="competition-back-link" href="./results.html">
+          <a class="site-button competition-back-link" href="./results.html">
             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
             <span>BACK TO THE ${competition.season} JOURNEY</span>
           </a>
@@ -717,7 +717,7 @@ function renderCompetitionPage(competition, content) {
       aria-label="Return to the results journey"
     >
       <div class="container competition-chapter-navigation-container">
-        <a class="competition-return-link" href="./results.html">
+        <a class="site-button competition-return-link" href="./results.html">
           <i class="fa-solid fa-route" aria-hidden="true"></i>
           <span>RETURN TO THE JOURNEY</span>
         </a>
