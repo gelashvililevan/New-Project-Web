@@ -735,7 +735,7 @@ export const competitions = {
     objectives: [
       {
         title: "RESPONSE",
-        text: "Turn the lessons from Valencia into visible changes from the opening Hajime.",
+        text: "Turn the lessons from Valencia into visible changes from the opening exchange.",
       },
       {
         title: "DISCIPLINE",
