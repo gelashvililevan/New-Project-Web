@@ -232,11 +232,14 @@ function createField(field) {
   const fullWidth =
     field.type === "textarea" || field.type === "email" ? " full-width" : "";
 
-  const fieldName = field.label
-    .toLowerCase()
-    .replace(/\s*\(optional\)\s*/g, "")
-    .replace(/[^a-z0-9]+/g, "_")
-    .replace(/^_|_$/g, "");
+  const fieldName =
+    field.type === "email"
+      ? "email"
+      : field.label
+          .toLowerCase()
+          .replace(/\s*\(optional\)\s*/g, "")
+          .replace(/[^a-z0-9]+/g, "_")
+          .replace(/^_|_$/g, "");
 
   const fieldId = `mission-${fieldName}`;
 
@@ -278,13 +281,22 @@ function showMissionForm(missionName) {
     <div class="mission-form-top">
       <button class="site-button mission-back" type="button">
          CHOOSE ANOTHER
-      </button>s
+      </button>
       <div>
         <span>${mission.label}</span>
         <h3>${mission.title}</h3>
       </div>
     </div>
-    <form class="mission-form">
+    <form
+    class="mission-form"
+    action="https://formspree.io/f/mnparrve"
+    method="POST"
+     >
+    <input
+      type="hidden"
+      name="inquiry_type"
+      value="${mission.label}"
+      />
       ${mission.fields.map(createField).join("")}
       <button class="site-button mission-submit" type="submit">
         START CONVERSATION
@@ -311,15 +323,57 @@ if (missionPanel && missionHeading && missionOptions) {
     missionHeading.style.display = "";
     missionOptions.style.display = "";
   });
-
-  missionPanel.addEventListener("submit", (event) => {
+  missionPanel.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const status = missionPanel.querySelector(".mission-form-status");
+    const form = event.target;
 
-    if (status) {
+    if (!form.classList.contains("mission-form")) return;
+
+    const status = form.querySelector(".mission-form-status");
+    const submitButton = form.querySelector(".mission-submit");
+    const originalButtonText = submitButton.textContent;
+
+    status.textContent = "SENDING YOUR MESSAGE...";
+    status.classList.remove("success", "error");
+
+    submitButton.disabled = true;
+    submitButton.textContent = "SENDING...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+
+        const errorMessage =
+          data?.errors?.map((error) => error.message).join(" ") ||
+          "Your message could not be sent. Please try again.";
+
+        throw new Error(errorMessage);
+      }
+
+      form.reset();
+
       status.textContent =
-        "Your form design is ready. We’ll connect delivery next.";
+        "MESSAGE SENT. THANK YOU - I’LL GET BACK TO YOU SOON.";
+      status.classList.add("success");
+
+      submitButton.textContent = "MESSAGE SENT";
+    } catch (error) {
+      status.textContent =
+        error.message || "SOMETHING WENT WRONG. PLEASE TRY AGAIN.";
+
+      status.classList.add("error");
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
     }
   });
 }

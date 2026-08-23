@@ -355,14 +355,6 @@ if (aboutSection) {
 
 const partnersData = [
   {
-    logo: "./images/partners/mizuno.png",
-    name: "MIZUNO",
-    year: "Part Of The Journey Since 2026.",
-    role: "Official Equipment Partner.",
-    button: "VISIT WEBSITE",
-    website: "#",
-  },
-  {
     logo: "./images/partners/question_mark.png",
     name: "NEXT TO STAND HERE",
     year: "The Journey Continues With You.",

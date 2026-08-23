@@ -1239,7 +1239,7 @@
 
 @media (max-height: 650px) and (orientation: landscape) {
   .partners-hero {
-    min-height: 560px;
+    min-height: 260px;
     padding-top: 55px;
   }
 }

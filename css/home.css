@@ -1184,9 +1184,10 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: minmax(0, 580px);
+  justify-content: center;
   gap: 40px;
-  margin: 35px 50px;
+  margin: 35px auto;
 }
 
 .partner-card {
@@ -1559,7 +1560,7 @@
     text-align: center;
   }
 
-  .about-title{
+  .about-title {
     text-align: center;
     font-size: 3rem;
   }
@@ -1596,8 +1597,8 @@
   .analytics-card {
     grid-template-columns: minmax(0, 1fr) 170px;
   }
-  .competition-name{
-    font-size:3.8rem;
+  .competition-name {
+    font-size: 3.8rem;
   }
 }
 

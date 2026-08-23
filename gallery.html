@@ -21,20 +21,30 @@
     <div id="header"></div>
     <main>
       <section class="gallery-hero" aria-labelledby="galleryTitle">
-        <span
-          class="gallery-hero-number"
-          data-gallery-total
+        <span class="gallery-hero-number" data-gallery-total aria-hidden="true"
+          >--</span
+        >
+        <div
+          class="gallery-corner gallery-corner-top-left"
           aria-hidden="true"
-        >--</span>
-        <div class="gallery-corner gallery-corner-top-left" aria-hidden="true"></div>
-        <div class="gallery-corner gallery-corner-top-right" aria-hidden="true"></div>
-        <div class="gallery-corner gallery-corner-bottom-left" aria-hidden="true"></div>
-        <div class="gallery-corner gallery-corner-bottom-right" aria-hidden="true"></div>
+        ></div>
+        <div
+          class="gallery-corner gallery-corner-top-right"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="gallery-corner gallery-corner-bottom-left"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="gallery-corner gallery-corner-bottom-right"
+          aria-hidden="true"
+        ></div>
         <header class="gallery-intro">
           <p class="gallery-kicker">2026 · THE PHOTOGRAPHIC RECORD</p>
           <h1 id="galleryTitle">THE <span>ARCHIVE.</span></h1>
           <p class="gallery-summary">Every frame holds part of the journey.</p>
-          <a class="gallery-scroll-link" href="#archive">
+          <a class="site-button gallery-scroll-link" href="#archive">
             <span id="galleryExploreLabel">EXPLORE THE ARCHIVE</span>
             <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
           </a>
@@ -69,17 +79,33 @@
             </span>
           </button>
           <div class="gallery-feature-controls">
-            <button id="featuredPrevious" type="button" aria-label="Previous photograph">
+            <button
+              id="featuredPrevious"
+              type="button"
+              aria-label="Previous photograph"
+            >
               <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
             </button>
-            <div class="gallery-reel" id="galleryReel" aria-label="Selected photographs"></div>
-            <button id="featuredNext" type="button" aria-label="Next photograph">
+            <div
+              class="gallery-reel"
+              id="galleryReel"
+              aria-label="Selected photographs"
+            ></div>
+            <button
+              id="featuredNext"
+              type="button"
+              aria-label="Next photograph"
+            >
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </div>
       </section>
-      <section class="gallery-archive" id="archive" aria-labelledby="archiveTitle">
+      <section
+        class="gallery-archive"
+        id="archive"
+        aria-labelledby="archiveTitle"
+      >
         <header class="archive-header">
           <div>
             <p>THE COMPLETE PHOTOGRAPHIC RECORD</p>
@@ -100,7 +126,11 @@
         <div class="archive-grid" id="archiveGrid"></div>
       </section>
     </main>
-    <dialog class="gallery-lightbox" id="galleryLightbox" aria-labelledby="lightboxTitle">
+    <dialog
+      class="gallery-lightbox"
+      id="galleryLightbox"
+      aria-labelledby="lightboxTitle"
+    >
       <div class="lightbox-shell">
         <div class="lightbox-topbar">
           <p>THE ARCHIVE · 2026</p>
@@ -108,12 +138,20 @@
             <strong id="lightboxCurrent">01</strong> /
             <span data-gallery-total>--</span>
           </span>
-          <button id="lightboxClose" type="button" aria-label="Close photograph viewer">
+          <button
+            id="lightboxClose"
+            type="button"
+            aria-label="Close photograph viewer"
+          >
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
         </div>
         <div class="lightbox-stage">
-          <button id="lightboxPrevious" type="button" aria-label="Previous photograph">
+          <button
+            id="lightboxPrevious"
+            type="button"
+            aria-label="Previous photograph"
+          >
             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
           </button>
           <figure>
