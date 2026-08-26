@@ -1196,8 +1196,7 @@
   overflow: hidden;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.18);
   cursor: pointer;
   opacity: 0;
   transform: translateY(40px);
@@ -1264,7 +1263,7 @@
   border: 2px solid var(--gold);
   border-radius: 50px;
   color: var(--gold);
-  font: 1rem Oswald;
+  font: 1.15rem Oswald;
   letter-spacing: 3px;
   transform: translateY(35px);
   transition:
@@ -1281,7 +1280,7 @@
 
 .partner-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
   border-radius: 40px;
 }
 
@@ -1304,10 +1303,6 @@
 
 .partner-card:hover .partner-role {
   transition-delay: 0.12s;
-}
-
-.partner-card:hover .partner-link {
-  transition-delay: 0.22s;
 }
 
 .partners-cta {
@@ -1367,7 +1362,7 @@
 }
 
 .partners.show .partners-cta {
-  transition-delay: 1.8s;
+  transition-delay: 0.8s;
 }
 
 .partners.show .partners-line.bottom {
