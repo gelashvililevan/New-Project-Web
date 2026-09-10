@@ -40,6 +40,11 @@
   letter-spacing: 4px;
 }
 
+.hero-weight {
+  color: var(--gold);
+  white-space: nowrap;
+}
+
 .hero-description {
   max-width: 550px;
   color: var(--gray);

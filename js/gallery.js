@@ -28,13 +28,6 @@ const galleryImages = [
     shape: "portrait",
   },
   {
-    src: "./images/gallery/training/teams_pokemon_competition.png",
-    title: "People behind the work.",
-    meta: "Team · Barcelona · 2026",
-    category: "team",
-    shape: "portrait",
-  },
-  {
     src: "./images/gallery/podiums/super_copa_de_espana_ciutat_de_barcelona_podium_3.jpg",
     title: "Another chapter recorded.",
     meta: "Silver · Barcelona · 02.05.2026",
@@ -47,6 +40,13 @@ const galleryImages = [
     meta: "Bronze contest · Jaca · 30.05.2026",
     category: "fight",
     shape: "landscape",
+  },
+  {
+    src: "./images/gallery/training/teams_pokemon_competition.png",
+    title: "People behind the work.",
+    meta: "Team · Barcelona · 2026",
+    category: "team",
+    shape: "portrait",
   },
   {
     src: "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_picture.JPG",
@@ -82,6 +82,13 @@ const galleryImages = [
     meta: "Super Copa de España · Valencia · 16.08.2026",
     category: "fight",
     shape: "wide",
+  },
+  {
+    src: "./images/gallery/podiums/copa_a_espana_juniors_binefar_podium.jpg",
+    title: "The response made visible.",
+    meta: "Gold · Binéfar · 05.09.2026",
+    category: "podium",
+    shape: "landscape",
   },
 ];
 
