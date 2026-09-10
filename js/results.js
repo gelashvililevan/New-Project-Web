@@ -108,13 +108,25 @@ const journeyData = [
     medal: "unplaced",
     result: "9TH",
   },
+  {
+    id: "super-copa-espana-junior-binefar-2026",
+    image: "./images/gallery/podiums/copa_a_espana_juniors_binefar_podium.jpg",
+    competition: "Super Copa De España Junior",
+    date: "05 | 09 | 2026",
+    location: "• BINÉFAR •",
+    weight: "-90 KG",
+    record: "2 - 0",
+    matTime: "01:23",
+    medal: "gold",
+    result: "Gold • 1st Place",
+  },
 ];
 
 const nextCompetition = {
-  id: "super-copa-espana-junior-binefar-2026",
-  title: "Super Copa De España Junior",
-  date: "05 | 09 | 2026",
-  location: "• BINÉFAR •",
+  id: "campeonat-de-catalunya-absolut-2026",
+  title: "Campeonat De Catalunya",
+  date: "19 | 09 | 2026",
+  location: "• BADIA •",
   category: "-90 KG",
 };
 
@@ -336,9 +348,7 @@ function hasSeenJourneyAnimation() {
 function rememberJourneyAnimation() {
   try {
     localStorage.setItem(journeyAnimationStorageKey, "true");
-  } catch {
-    // The animation still works if storage is unavailable.
-  }
+  } catch {}
 }
 
 const returningJourneyVisitor = hasSeenJourneyAnimation();
@@ -547,20 +557,31 @@ window.addEventListener("resize", () => {
 const countdownElement = document.getElementById("competitionCountdown");
 
 if (countdownElement) {
-  const competitionDate = new Date("2026-09-05T09:00:00+02:00");
+  const competitionDay = new Date("2026-09-19T00:00:00+02:00");
+  const dayAfterCompetition = new Date("2026-09-20T00:00:00+02:00");
 
   function updateCountdown() {
-    const difference = competitionDate - new Date();
+    const now = new Date();
 
-    if (difference <= 0) {
+    countdownElement.classList.remove("results-coming");
+
+    if (now >= dayAfterCompetition) {
+      countdownElement.textContent = "RESULTS COMING SOON";
+      countdownElement.classList.add("results-coming");
+      return;
+    }
+
+    if (now >= competitionDay) {
       countdownElement.textContent = "TODAY";
       return;
     }
 
+    const difference = competitionDay - now;
     const days = Math.ceil(difference / (1000 * 60 * 60 * 24));
-    countdownElement.textContent = `${days} DAYS`;
+
+    countdownElement.textContent = `${days} ${days === 1 ? "DAY" : "DAYS"}`;
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  setInterval(updateCountdown, 60000);
 }

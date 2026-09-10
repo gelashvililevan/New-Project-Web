@@ -1,26 +1,26 @@
 const analyticsData = [
   {
     title: "Competition Medal Rate",
-    percent: 86,
-    value: "7 / 6",
-    description: "Six Podiums From Seven Competitions.",
+    percent: 88,
+    value: "8 / 7",
+    description: "Seven Podiums From Eight Competitions.",
   },
   {
     title: "Overall Win Rate",
-    percent: 78,
-    value: "27 / 21",
+    percent: 79,
+    value: "29 / 23",
     description: "Twenty-One Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",
-    percent: 90,
-    value: "21 / 19",
-    description: "Nineteen Victories Finished By Ippon.",
+    percent: 91,
+    value: "23 / 21",
+    description: "Twenty-One Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
     percent: 100,
-    value: "8 / 8",
+    value: "10 / 10",
     description: "Still Undefeated In Junior Competitions.",
   },
 ];
@@ -116,132 +116,171 @@ if (analyticsGrid) {
     analyticsObserver.observe(analyticsSection);
   }
 }
+
 const nextCompetition = {
-  name: "SUPER COPA DE ESPAÑA JUNIOR",
-  location: "BINÉFAR • 5 SEPTEMBER 2026",
-  quote: "THE COMEBACK STARTS HERE",
-  target: "2026-09-05T09:00:00+02:00",
+  name: "CAMPEONAT DE CATALUNYA",
+  location: "BADIA",
+  quote: "THE GOLD WAS NOT THE END OF THE COMEBACK.",
+  target: "2026-09-19T09:00:00+02:00",
+  timeZone: "Europe/Madrid",
 };
+
+function competitionDayKey(date, timeZone) {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  return ["year", "month", "day"]
+    .map((type) => parts.find((part) => part.type === type).value)
+    .join("-");
+}
+
+function competitionState(now, target, timeZone) {
+  const today = competitionDayKey(now, timeZone);
+  const eventDay = competitionDayKey(target, timeZone);
+  return today < eventDay ? "upcoming" : today === eventDay ? "today" : "past";
+}
 
 const countdownContainer = document.getElementById("countdownContainer");
 
 if (countdownContainer) {
+  const targetDate = new Date(nextCompetition.target);
+  const eventDate = new Intl.DateTimeFormat("en-GB", {
+    timeZone: nextCompetition.timeZone,
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
+    .format(targetDate)
+    .toUpperCase();
+  const reducedCountdownMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
   countdownContainer.innerHTML = `
-        <div class="countdown-wrapper">
-            <div class="countdown-line top"></div>
+    <div class="countdown-wrapper">
+      <div class="countdown-line top"></div>
+      <p class="countdown-title"></p>
+      <h2 class="competition-name">${nextCompetition.name}</h2>
+      <div class="countdown-grid"></div>
+      <p class="competition-location"></p>
+      <p class="competition-quote"></p>
+      <div class="countdown-line bottom"></div>
+    </div>
+  `;
 
-            <p class="countdown-title">
-                N E X T&nbsp;&nbsp;C O M P E T I T I O N
-            </p>
-
-            <h2 class="competition-name">
-                ${nextCompetition.name}
-            </h2>
-
-            <div class="countdown-grid">
-
-                <div class="time-box days">
-                    <span id="days">00</span>
-                    <small>DAYS</small>
-                </div>
-
-                <div class="time-box hours">
-                    <span id="hours">00</span>
-                    <small>HOURS</small>
-                </div>
-
-                <div class="time-box minutes">
-                    <span id="minutes">00</span>
-                    <small>MINUTES</small>
-                </div>
-
-                <div class="time-box seconds">
-                    <span id="seconds">00</span>
-                    <small>SECONDS</small>
-                </div>
-
-            </div>
-
-            <p class="competition-location">
-                ${nextCompetition.location}
-            </p>
-
-            <p class="competition-quote">
-                ${nextCompetition.quote}
-            </p>
-
-            <div class="countdown-line bottom"></div>
-        </div>
-    `;
-
-  const targetDate = new Date(nextCompetition.target).getTime();
+  const wrapper = countdownContainer.querySelector(".countdown-wrapper");
+  const title = wrapper.querySelector(".countdown-title");
+  const grid = wrapper.querySelector(".countdown-grid");
+  const location = wrapper.querySelector(".competition-location");
+  const quote = wrapper.querySelector(".competition-quote");
+  let currentState = null;
+  let timer = null;
+  let numberElements = [];
 
   function updateCountdown() {
-    const now = new Date().getTime();
+    const now = new Date();
+    const state = competitionState(now, targetDate, nextCompetition.timeZone);
 
-    const distance = targetDate - now;
+    if (state !== currentState) {
+      currentState = state;
+      wrapper.dataset.state = state;
+      title.textContent =
+        state === "past"
+          ? "L A S T\u00a0\u00a0C O M P E T I T I O N"
+          : "N E X T\u00a0\u00a0C O M P E T I T I O N";
+      if (state === "today")
+        title.textContent = "C O M P E T I T I O N\u00a0\u00a0D A Y";
+      location.textContent =
+        state === "past"
+          ? nextCompetition.location
+          : `${nextCompetition.location} • ${eventDate}`;
+      quote.textContent = nextCompetition.quote;
 
-    if (distance <= 0) return;
+      if (state === "upcoming") {
+        grid.innerHTML = ["days", "hours", "minutes", "seconds"]
+          .map(
+            (unit) => `
+            <div class="time-box ${unit}${wrapper.classList.contains("show") ? " show" : ""}">
+              <span id="${unit}">00</span>
+              <small>${unit.toUpperCase()}</small>
+            </div>
+          `,
+          )
+          .join("");
+        numberElements = [...grid.querySelectorAll(".time-box span")];
+      } else {
+        grid.innerHTML = `
+          <p class="countdown-status" role="status"></p>
+          ${
+            state === "past"
+              ? '<p class="countdown-results-message">RESULTS COMING SOON</p>'
+              : ""
+          }
+        `;
+        grid.querySelector(".countdown-status").textContent =
+          state === "today" ? "TODAY" : eventDate;
+      }
+    }
 
-    document.getElementById("days").textContent = Math.floor(
-      distance / (1000 * 60 * 60 * 24),
-    );
+    if (state === "past") {
+      clearInterval(timer);
+      timer = null;
+      return;
+    }
+    if (state === "today") return;
 
-    document.getElementById("hours").textContent = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-    );
+    const secondsLeft = Math.max(0, Math.floor((targetDate - now) / 1000));
+    const values = [
+      Math.floor(secondsLeft / 86400),
+      Math.floor(secondsLeft / 3600) % 24,
+      Math.floor(secondsLeft / 60) % 60,
+      secondsLeft % 60,
+    ];
 
-    document.getElementById("minutes").textContent = Math.floor(
-      (distance % (1000 * 60 * 60)) / (1000 * 60),
-    );
-
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    const secondElement = document.getElementById("seconds");
-
-    secondElement.classList.remove("tick");
-
-    void secondElement.offsetWidth;
-
-    secondElement.textContent = seconds;
-
-    secondElement.classList.add("tick");
+    numberElements.forEach((element, index) => {
+      const value = String(values[index]);
+      if (element.textContent === value) return;
+      element.textContent = value;
+      if (index === 3 && !reducedCountdownMotion) {
+        element.classList.remove("tick");
+        void element.offsetWidth;
+        element.classList.add("tick");
+      }
+    });
   }
 
   updateCountdown();
+  if (currentState !== "past") timer = setInterval(updateCountdown, 1000);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) updateCountdown();
+  });
 
-  setInterval(updateCountdown, 1000);
+  function revealCountdown() {
+    wrapper.classList.add("show");
+    wrapper.querySelectorAll(".time-box").forEach((box, index) => {
+      if (reducedCountdownMotion) box.classList.add("show");
+      else setTimeout(() => box.classList.add("show"), index * 250);
+    });
+    if (reducedCountdownMotion) wrapper.classList.add("finish");
+    else setTimeout(() => wrapper.classList.add("finish"), 1200);
+  }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const wrapper = entry.target;
-
-        wrapper.classList.add("show");
-
-        const boxes = wrapper.querySelectorAll(".time-box");
-
-        boxes.forEach((box, index) => {
-          setTimeout(() => {
-            box.classList.add("show");
-          }, index * 250);
-        });
-
-        setTimeout(() => {
-          wrapper.classList.add("finish");
-        }, 1200);
-
-        observer.unobserve(wrapper);
-      });
-    },
-    {
-      threshold: 0.1,
-    },
-  );
-
-  observer.observe(document.querySelector(".countdown-wrapper"));
+  if (reducedCountdownMotion) {
+    revealCountdown();
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        revealCountdown();
+        observer.disconnect();
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(wrapper);
+  }
 }
 
 const galleryFeatureData = {
@@ -299,7 +338,7 @@ if (gallerySection && galleryFeature && galleryGrid) {
             >
           </span>
           <span class="gallery-card-caption">
-            <strong>${String(index + 1).padStart(2, 0)}</strong>
+            <strong>${String(index + 1).padStart(2, "0")}</strong>
             <span>${image.caption}</span>
           </span>
         </a>
@@ -357,7 +396,7 @@ const partnersData = [
   {
     logo: "./images/partners/question_mark.png",
     name: "NEXT TO STAND HERE",
-    year: "The Journey Continues With You.",
+    journeyLines: ["The Journey", "Continues", "With You."],
     role: "Become Part Of It.",
     button: "CONTACT",
     website: "./contact.html",
@@ -374,22 +413,29 @@ if (partnersGrid) {
             <a href="${partner.website}" class="partner-card">
                 <img
                     src="${partner.logo}"
-                    alt="${partner.name}"
+                    alt=""
+                    aria-hidden="true"
                     loading="lazy"
                 >
                 <div class="partner-overlay">
-                    <h3 class="partner-name">
-                        ${partner.name}
-                    </h3>
-                    <h2 class="partner-year">
-                        ${partner.year}
-                    </h2>
-                    <p class="partner-role">
-                        ${partner.role}
-                    </p>
-                    <span class="partner-link">
-                        ${partner.button}
-                    </span>
+                    <div class="partner-message">
+                        <h3 class="partner-name">${partner.name.replaceAll(" ", "<br>")}</h3>
+                    </div>
+
+                    <span class="partner-divider" aria-hidden="true"></span>
+
+                    <div class="partner-invite">
+                        <p class="partner-role">${partner.role}</p>
+                        <span class="partner-link">${partner.button}</span>
+                        <p class="partner-year">
+                            ${partner.journeyLines
+                              .map(
+                                (line) =>
+                                  `<span class="partner-year-line">${line}</span>`,
+                              )
+                              .join("")}
+                        </p>
+                    </div>
                 </div>
             </a>
         `;

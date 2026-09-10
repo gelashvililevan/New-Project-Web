@@ -114,7 +114,7 @@ function renderMatches(matches = []) {
             <span class="competition-match-outcome">${match.outcome}</span>
             <span class="competition-match-method">${match.method}</span>
             <span class="competition-match-duration">${match.duration}</span>
-            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            <span class="competition-match-action" aria-hidden="true"></span>
           </button>
           <div
             class="competition-match-details"

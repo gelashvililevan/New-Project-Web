@@ -676,6 +676,7 @@ export const competitions = {
         method: "WAZA-ARI",
         duration: "01:03",
         technique: "Tomoe-Nage",
+        score: "000 – 010",
         note: "I entered the repechage still confident that I could fight my way back to the podium. My opponent repeatedly attacked with Tomoe-nage. After his third attempt, I adjusted by staying close and pulling him toward me, trying to remove the distance he needed to execute the technique. I believed I had brought him too close to attempt it successfully again. I was wrong. Because I believed the position was safe, I was not fully prepared to defend the next attack. He attempted Tomoe-nage for the fourth time, scored a Waza-ari and ended my competition.",
         scores: {
           mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 1 },
@@ -712,42 +713,119 @@ export const competitions = {
   },
   "super-copa-espana-junior-binefar-2026": {
     id: "super-copa-espana-junior-binefar-2026",
-    status: "upcoming",
+    status: "completed",
     chapter: "08",
     season: "2026",
-    competition: "Super Copa de España Junior",
+    competition: " Copa A de España Juniors",
     date: "05 · 09 · 2026",
-    countdownDate: "2026-09-05T00:00:00+02:00",
     location: "Binéfar, Spain",
-    image: null,
+    image: "./images/gallery/podiums/copa_a_espana_juniors_binefar_podium.jpg",
+    medal: "gold",
+    placement: "Gold · 1st Place",
     category: "−90 KG",
-    division: "Junior",
-    level: "National Super Copa",
-    opportunity: {
-      eyebrow: "THE COMEBACK",
+    record: "2–0",
+    totalMatTime: "01:23",
+    ippons: "2",
+    fastestWin: "00:31",
+    competitors: "7",
+    preparation: {
       story:
-        "The next chapter returns to the junior category in Binéfar. It is an opportunity to apply the lessons from Valencia, respond with discipline and begin building momentum again.",
+        "Valencia left me disappointed, but it also gave me direction. With fewer than three weeks before Binéfar, I focused on correcting the mistakes that had cost me, restoring my discipline and rebuilding the mindset I had lost: wanting to win instead of being afraid to lose. The preparation was short, so every training session needed a clear purpose. I did not try to forget Valencia, I used it.",
+    },
+    matches: [
+      createMatch("01", "SEMI-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "00:31",
+        score: "100 – 000",
+        technique: "O-Soto-Gari",
+        note: "Only seven athletes made weight, and as the number one seed, I received a bye into the quarterfinal. My fight was scheduled as contest number 50, which meant waiting for roughly four hours before stepping onto the tatami. It was a long wait, but I maintained my focus and stayed prepared. I entered with a clear plan, found the opening quickly and finished the match with O-Soto-Gari after only 31 seconds.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
+        },
+      }),
+      createMatch("02", "FINAL", "WIN", {
+        method: "IPPON",
+        duration: "00:52",
+        technique: "Drop Sode-Tsurikomi-Goshi",
+        score: "100 – 000",
+        note: "Another wait of approximately one hour followed before the final. This contest was difficult in a different way because I was facing a close friend and teammate. He took a risk in the opening seconds and immediately forced me outside my comfort zone. When he left a small opening, I recognized it and committed to Drop Sode-Tsurikomi-Goshi, scoring Ippon after 52 seconds and winning the gold medal. This result showed how quickly a setback can become a lesson. Never let a loss define you, and never let a victory control you.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
+        },
+      }),
+    ],
+    lessons: [
+      {
+        title: "SETBACKS",
+        text: "Setbacks are part of what makes this sport beautiful. They expose weaknesses, clarify the path forward and make every victory sweeter. Valencia gave me more to confront than another win might have. There are two possible outcomes: you win or you learn. What matters is refusing to let a loss define what comes next..",
+      },
+      {
+        title: "RECOVER",
+        text: "In Valencia, I competed while afraid of losing. In Binéfar, I returned to the tatami wanting to win and that mindset was stronger than before. The loss did not disappear; I changed what it meant. I turned it into direction, motivation and the beginning of the response I had promised myself.",
+      },
+      {
+        title: "FOCUS",
+        text: "Valencia showed me how distractions could fracture my preparation and competitive mindset. Before Binéfar, I removed the disturbances I could control and placed the competition back at the centre of my attention. Nothing around me is worthy of distracting me from the goals I have chosen.",
+      },
+    ],
+    changes: [
+      {
+        before:
+          "Once the draw was confirmed, I learned that only seven competitors had made weight. As the number one seed, I advanced directly into the semifinal, but my contest was number 50 in the schedule. I knew that maintaining my focus throughout the long wait would become the first challenge of the day.",
+        after:
+          "I maintained that focus throughout both waits and entered each fight with a clear plan. Both victories came within the opening minute. The final presented a different emotional challenge because I faced a close friend and teammate. Friendship had to remain outside the tatami during the contest, and everything that happened on the tatami had to remain there afterward.",
+      },
+    ],
+    progression: {
+      eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
+      text: "There is no time to celebrate or rest. In fewer than two weeks, I will compete again—this time at the senior Catalonia Championship in Badia, against some of the strongest athletes in Catalunya. Binéfar restored my momentum. The next test is whether I can carry the same focus into a stronger field.",
+    },
+    navigation: {
+      previous: { id: "super-copa-espana-valencia-2026" },
+      next: { id: "campeonat-de-catalunya-absolut-2026" },
+    },
+  },
+  "campeonat-de-catalunya-absolut-2026": {
+    id: "campeonat-de-catalunya-absolut-2026",
+    status: "upcoming",
+    chapter: "09",
+    season: "2026",
+    competition: "Campeonat de Catalunya",
+    date: "19 · 09 · 2026",
+    countdownDate: "2026-09-19T00:00:00+02:00",
+    location: "Badia, Spain",
+    category: "−90 KG",
+    division: "Senior",
+    level: "Catalonia Championship",
+    opportunity: {
+      eyebrow: "TESTING THE NEXT LEVEL",
+      story:
+        "Although I am still a junior, this competition gives me the opportunity to test my strength against some of the best senior athletes in Catalunya. Badia is not the final destination. It is also an important test before the Super Copa de España Juniors in Valencia on 26 September—one of the most important competitions of my season. Every contest here will show me what is already working and what must become sharper before Valencia.",
     },
     preparation: {
       story:
-        "Preparation for Binéfar is focused on correcting the details exposed in Valencia and returning to competition with a clearer, more aggressive and more disciplined approach.",
+        "My preparation continues in the same direction that brought me back to the top of the podium in Binéfar. I am sharpening my tactics, refining my techniques and preparing myself to recognize every opportunity during a contest. Physically, I feel amazing. Mentally, I feel even stronger—but I still want more. The objective is to remain completely focused and execute whenever an opening appears, even the slightest one.",
     },
     objectives: [
       {
-        title: "RESPONSE",
-        text: "Turn the lessons from Valencia into visible changes from the opening exchange.",
+        title: "MENTALITY",
+        text: "Enter every contest with an even stronger mindset than before. I want to compete with the desire to win, remain composed under pressure and never allow the result to control the way I fight.",
       },
       {
-        title: "DISCIPLINE",
-        text: "Follow the plan, control the distance and remain composed in every exchange.",
+        title: "EXECUTION",
+        text: "Recognize and use every opening, even the smallest one. I want to trust my preparation, commit fully to my techniques and execute without hesitation when the opportunity appears.",
       },
       {
-        title: "MOMENTUM",
-        text: "Compete to win again and begin the next part of the season with purpose.",
+        title: "RESULT",
+        text: "The goal is the gold medal, as it always is. Winning here would show that the loss in Valencia made me stronger than another victory ever could have.",
       },
     ],
     navigation: {
-      previous: { id: "super-copa-espana-valencia-2026" },
+      previous: {
+        id: "super-copa-espana-junior-binefar-2026",
+      },
       next: null,
     },
   },
