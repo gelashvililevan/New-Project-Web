@@ -9,7 +9,7 @@ const analyticsData = [
     title: "Overall Win Rate",
     percent: 79,
     value: "29 / 23",
-    description: "Twenty-One Wins In Official Competitions.",
+    description: "Twenty-Three Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",

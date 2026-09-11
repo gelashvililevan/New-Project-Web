@@ -345,7 +345,7 @@ export const competitions = {
     date: "30 · 05 · 2026",
     location: "Jaca, Spain",
     image:
-      "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
+      "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_pic.jpg",
     medal: "bronze",
     placement: "Bronze · 3rd Place",
     category: "−90 KG",

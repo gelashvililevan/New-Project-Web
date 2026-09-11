@@ -60,7 +60,7 @@ const journeyData = [
   {
     id: "super-copa-espana-jaca-2026",
     image:
-      "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_podium.jpg",
+      "./images/gallery/podiums/super_copa_de_espana_absolut_jaca_team_pic.jpg",
     competition: "Super Copa De Espana Absolut",
     date: "30 | 05 | 2026",
     location: "• JACA •",
