@@ -789,42 +789,137 @@ export const competitions = {
   },
   "campeonat-de-catalunya-absolut-2026": {
     id: "campeonat-de-catalunya-absolut-2026",
-    status: "upcoming",
+    status: "completed",
     chapter: "09",
     season: "2026",
     competition: "Campeonat de Catalunya",
     date: "19 · 09 · 2026",
-    countdownDate: "2026-09-19T00:00:00+02:00",
     location: "Badia, Spain",
+    image: "./images/gallery/competitions/campeonato_de_catalunya_final.jpg",
+    medal: "silver",
+    placement: "Silver · 2nd Place",
     category: "−90 KG",
-    division: "Senior",
-    level: "Catalonia Championship",
-    opportunity: {
-      eyebrow: "TESTING THE NEXT LEVEL",
-      story:
-        "Although I am still a junior, this competition gives me the opportunity to test my strength against some of the best senior athletes in Catalunya. Badia is not the final destination. It is also an important test before the Super Copa de España Juniors in Valencia on 26 September—one of the most important competitions of my season. Every contest here will show me what is already working and what must become sharper before Valencia.",
-    },
+    record: "2–1",
+    totalMatTime: "05:42",
+    ippons: "2",
+    fastestWin: "00:50",
+    competitors: "9",
+
     preparation: {
       story:
-        "My preparation continues in the same direction that brought me back to the top of the podium in Binéfar. I am sharpening my tactics, refining my techniques and preparing myself to recognize every opportunity during a contest. Physically, I feel amazing. Mentally, I feel even stronger—but I still want more. The objective is to remain completely focused and execute whenever an opening appears, even the slightest one.",
+        "There were only two weeks between this competition and Binéfar, so I focused mainly on sharpening my tactics and techniques. I was the number one seed again and came in with a clear plan. This was also an important test before the junior Super Copa in Valencia, one of the biggest competitions of my season.",
     },
+
+    matches: [
+      createMatch("01", "QUARTER-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "00:51",
+        score: "100 – 000",
+        technique: "De-Ashi-Barai",
+        note: "The competition was split into two sessions, and my category was in the second. I waited almost three hours for weigh-in and then another hour for my first match. Once I stepped onto the mat, I followed my plan and scored with a well-timed De-Ashi-Barai in the opening minute.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: null },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
+        },
+      }),
+
+      createMatch("02", "SEMI-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "00:50",
+        score: "100 – 000",
+        technique: "O-Goshi",
+        note: "After a short wait, I entered the semifinal. My opponent established a strong grip, but neither of us was able to attack, and the referee gave us both a shido for passivity. When the match restarted, I stayed composed, found the opening and scored ippon with O-Goshi.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 1 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 1 },
+        },
+      }),
+
+      createMatch("03", "FINAL", "LOSS", {
+        method: "YUKO",
+        duration: "04:00",
+        score: "001 – 003",
+        technique: "De-Ashi-Barai",
+        note: "In the final, I faced an opponent I had beaten in the Barcelona Super Copa semifinal. I started strongly and scored a yuko with De-Ashi-Barai, but I could not maintain the control I wanted. He scored twice to take the lead. In the final seconds, I increased the pressure and took a risk to try to turn the match around. He used that opening to score again. Losing the final hurt, but it also showed me what I need to improve.",
+        scores: {
+          mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 3, shidos: 1 },
+        },
+      }),
+    ],
+
+    lessons: [
+      {
+        title: "WEIGHT",
+        text: "Since moving into the −90 kg category, my weight has not been consistent. At some competitions I have weighed only 85–86 kg; at others, I have had to cut 5–6 kg to make weight. I want to find a steadier place around 88–89 kg so I can prepare more consistently and feel stronger against opponents who may be heavier on competition day.",
+      },
+      {
+        title: "PERSPECTIVE",
+        text: "After the final, I was angry with myself. Gold has become my standard, and silver did not feel like enough. But when I thought about the person who arrived in Barcelona in February, I realized how much has changed. There was a time when winning even one match at a competition was difficult for me. Now I reach the podium regularly and leave disappointed because I believe I can win it all. I can keep aiming higher without forgetting how far I have already come.",
+      },
+    ],
+
+    changes: [
+      {
+        before:
+          "Being the number one seed gave me confidence, and I entered with a clear plan and one goal: gold. I felt ready, but a competition does not always follow the plan you bring into it.",
+        after:
+          "I left the final frustrated. Later, I took a step back and looked at the whole journey. I still want gold, and I will work for it, but this result cannot erase the progress I have made. Some things that feel normal in my life today were things I prayed for not so long ago. I do not want to forget that.",
+      },
+    ],
+
+    progression: {
+      eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
+      text: "In one week, I return to Valencia for the junior Super Copa. This competition gave me two quick wins, a difficult final and a clearer idea of what to work on. I will take the lesson, prepare properly and go there with the same goal: gold.",
+    },
+
+    navigation: {
+      previous: { id: "super-copa-espana-junior-binefar-2026" },
+      next: { id: "super-copa-espana-valencia-junior-2026" },
+    },
+  },
+  "super-copa-espana-valencia-junior-2026": {
+    id: "super-copa-espana-valencia-junior-2026",
+    status: "upcoming",
+    chapter: "10",
+    season: "2026",
+    competition: "Super Copa de España Junior",
+    date: "26 · 09 · 2026",
+    countdownDate: "2026-09-26T00:00:00+02:00",
+    location: "Valencia, Spain",
+    category: "−90 KG",
+    division: "Junior",
+    level: "National Junior Super Cup",
+
+    opportunity: {
+      eyebrow: "RETURNING TO VALENCIA",
+      story:
+        "My last competition in Valencia was difficult, but it showed me what I needed to improve. Now I return for the junior Super Copa with more experience and a clearer direction. I cannot change what happened last time. I can show what I have learned from it.",
+    },
+
+    preparation: {
+      story:
+        "There is only one week between Badia and Valencia. My focus is on recovering well, keeping my weight steady and sharpening the techniques I want to use. I want to arrive with a clear mind, trust my preparation and take every opportunity I create.",
+    },
+
     objectives: [
       {
-        title: "MENTALITY",
-        text: "Enter every contest with an even stronger mindset than before. I want to compete with the desire to win, remain composed under pressure and never allow the result to control the way I fight.",
+        title: "CONTROL",
+        text: "Stay composed and keep fighting my way, even when a match does not follow the plan.",
       },
       {
         title: "EXECUTION",
-        text: "Recognize and use every opening, even the smallest one. I want to trust my preparation, commit fully to my techniques and execute without hesitation when the opportunity appears.",
+        text: "Recognize openings and commit to my attacks without hesitation.",
       },
       {
-        title: "RESULT",
-        text: "The goal is the gold medal, as it always is. Winning here would show that the loss in Valencia made me stronger than another victory ever could have.",
+        title: "GOLD",
+        text: "Go after the gold medal, one match at a time.",
       },
     ],
+
     navigation: {
       previous: {
-        id: "super-copa-espana-junior-binefar-2026",
+        id: "campeonat-de-catalunya-absolut-2026",
       },
       next: null,
     },

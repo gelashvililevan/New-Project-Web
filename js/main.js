@@ -1,21 +1,21 @@
 const analyticsData = [
   {
     title: "Competition Medal Rate",
-    percent: 88,
-    value: "8 / 7",
-    description: "Seven Podiums From Eight Competitions.",
+    percent: 89,
+    value: "9 / 8",
+    description: "Eight Podiums From Nine Competitions.",
   },
   {
     title: "Overall Win Rate",
-    percent: 79,
-    value: "29 / 23",
-    description: "Twenty-Three Wins In Official Competitions.",
+    percent: 78,
+    value: "32 / 25",
+    description: "Twenty-Five Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",
-    percent: 91,
-    value: "23 / 21",
-    description: "Twenty-One Victories Finished By Ippon.",
+    percent: 92,
+    value: "25 / 23",
+    description: "Twenty-Three Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
@@ -118,10 +118,10 @@ if (analyticsGrid) {
 }
 
 const nextCompetition = {
-  name: "CAMPEONAT DE CATALUNYA",
-  location: "BADIA",
-  quote: "THE GOLD WAS NOT THE END OF THE COMEBACK.",
-  target: "2026-09-19T09:00:00+02:00",
+  name: "SUPER COPA DE ESPANA",
+  location: "VALENCIA",
+  quote: "VALENCIA GAVE ME A LESSON. NOW I RETURN TO PUT IT TO WORK.",
+  target: "2026-09-26T09:00:00+02:00",
   timeZone: "Europe/Madrid",
 };
 

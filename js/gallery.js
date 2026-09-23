@@ -90,6 +90,41 @@ const galleryImages = [
     category: "podium",
     shape: "landscape",
   },
+  {
+    src: "./images/gallery/competitions/campeonato_de_catalunya_quarterfinal.JPG",
+    title: "The first step forward.",
+    meta: "Quarterfinal · Badia · 19.09.2026",
+    category: "fight",
+    shape: "landscape",
+  },
+  {
+    src: "./images/gallery/competitions/campeonato_de_catalunya_semifinal.JPG",
+    title: "A moment of commitment.",
+    meta: "Semifinal · Badia · 19.09.2026",
+    category: "fight",
+    shape: "landscape",
+  },
+  {
+    src: "./images/gallery/competitions/campeonato_de_catalunya_semifinal_2.JPG",
+    title: "The fight in motion.",
+    meta: "Semifinal · Badia · 19.09.2026",
+    category: "fight",
+    shape: "landscape",
+  },
+  {
+    src: "./images/gallery/competitions/campeonato_de_catalunya_final.JPG",
+    title: "One more final, one more lesson.",
+    meta: "Final · Badia · 19.09.2026",
+    category: "fight",
+    shape: "landscape",
+  },
+  {
+    src: "./images/gallery/competitions/campeonato_de_catalunya_final_2.JPG",
+    title: "Fighting through the final.",
+    meta: "Final · Badia · 19.09.2026",
+    category: "fight",
+    shape: "landscape",
+  },
 ];
 
 const automaticShapes = [
