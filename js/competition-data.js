@@ -716,7 +716,7 @@ export const competitions = {
     status: "completed",
     chapter: "08",
     season: "2026",
-    competition: " Copa A de España Juniors",
+    competition: "Super Copa De España Juniors",
     date: "05 · 09 · 2026",
     location: "Binéfar, Spain",
     image: "./images/gallery/podiums/copa_a_espana_juniors_binefar_podium.jpg",
@@ -795,7 +795,7 @@ export const competitions = {
     competition: "Campeonat de Catalunya",
     date: "19 · 09 · 2026",
     location: "Badia, Spain",
-    image: "./images/gallery/competitions/campeonato_de_catalunya_final.jpg",
+    image: "./images/gallery/competitions/campeonato_de_catalunya_final.JPG",
     medal: "silver",
     placement: "Silver · 2nd Place",
     category: "−90 KG",
@@ -878,50 +878,149 @@ export const competitions = {
       next: { id: "super-copa-espana-valencia-junior-2026" },
     },
   },
-  "super-copa-espana-valencia-junior-2026": {
-    id: "super-copa-espana-valencia-junior-2026",
-    status: "upcoming",
-    chapter: "10",
-    season: "2026",
-    competition: "Super Copa de España Junior",
-    date: "26 · 09 · 2026",
-    countdownDate: "2026-09-26T00:00:00+02:00",
-    location: "Valencia, Spain",
-    category: "−90 KG",
-    division: "Junior",
-    level: "National Junior Super Cup",
+    "super-copa-espana-valencia-junior-2026": {
+      id: "super-copa-espana-valencia-junior-2026",
+      status: "completed",
+      chapter: "10",
+      season: "2026",
+      competition: "Super Copa De España Juniors",
+      date: "26 · 09 · 2026",
+      location: "Valencia, Spain",
+      image: "./images/gallery/podiums/super_copa_espana_valencia_juniors.jpg",
+      medal: "bronze",
+      placement: "Bronze · 3rd Place",
+      category: "−90 KG",
+      record: "3–1",
+      totalMatTime: "04:27",
+      ippons: "2",
+      fastestWin: "00:51",
+      competitors: "12",
 
-    opportunity: {
-      eyebrow: "RETURNING TO VALENCIA",
-      story:
-        "My last competition in Valencia was difficult, but it showed me what I needed to improve. Now I return for the junior Super Copa with more experience and a clearer direction. I cannot change what happened last time. I can show what I have learned from it.",
+      preparation: {
+        story:
+          "There were only a few days between the Catalonia Championship and this competition. It was not enough time to change everything, but I could recover, stay in shape and work on the small mistakes I had noticed. Overnight, the schedule changed and the −90 kg category was moved to the second session, starting at noon. I found out when I woke up.",
+      },
+
+      matches: [
+        createMatch("01", "QUARTER-FINAL", "LOSS", {
+          method: "IPPON",
+          duration: "01:51",
+          score: "000 – 101",
+          technique: "Sumi-Gaeshi",
+          note: "I was seeded third and waited about an hour after the second session began. I had watched my opponent's first fight and had a clear plan. For the opening minute, I was able to close down his opportunities, even though his height made him uncomfortable to fight. Then I lost my focus and stopped following the plan. He secured his grip and scored a yuko with Sumi-Gaeshi. I had a brief chance to defend in ne-waza, but I reacted too slowly. He established a hold-down and won the match.",
+          scores: {
+            mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
+            opponent: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 1 },
+          },
+        }),
+
+        createMatch("02", "REPECHAGE R1", "WIN", {
+          method: "IPPON",
+          duration: "00:51",
+          score: "100 – 000",
+          technique: "Sumi-Gaeshi",
+          note: "The quarter-final was hard to accept, but I still had a chance to reach the podium. Early in the match, I got the grip I wanted and attacked with Uchi-Mata, which my opponent defended well. When I found the same grip again, I showed him Uchi-Mata, switched to Sumi-Gaeshi and finished the match in the first minute.",
+          scores: {
+            mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+            opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+          },
+        }),
+
+        createMatch("03", "REPECHAGE R2", "WIN", {
+          method: "YUKO",
+          duration: "00:52",
+          score: "001 – 000",
+          technique: "De-Ashi-Barai",
+          note: "After the first repechage win, I felt the anger from the loss beginning to settle. My next opponent kept moving backward and seemed to be waiting for me to follow. When we took similar sleeve grips, I pulled him toward me. As he resisted and moved back, I used De-Ashi-Barai to sweep him. The yuko decided the match and put me into the bronze fight.",
+          scores: {
+            mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 0 },
+            opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+          },
+        }),
+
+        createMatch("04", "BRONZE FINAL", "WIN", {
+          method: "IPPON",
+          duration: "00:53",
+          score: "100 – 000",
+          technique: "Seoi-Otoshi",
+          note: "After a short break, I watched my opponent's previous fights and made a plan. I began with a foot attack that brought him to his knees and left an opening for Juji-Gatame. I came close to finishing it, but he escaped. I could see that he liked to push forward, so I waited for that movement. When he came toward me again, I committed to Seoi-Otoshi and won the bronze medal in the first minute.",
+          scores: {
+            mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+            opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+          },
+        }),
+      ],
+
+      lessons: [
+        {
+          title: "CONTROL",
+          text: "In the past, an early loss could stay with me for the rest of the competition. This one hurt, and I was angry with myself. But I still had a path to the podium. I went to my bag, changed into my blue judogi and waited for the next fight. I did not suddenly feel better; I chose not to let that loss decide the matches that followed. Finding my focus again, while I was still upset, is something I am proud of.",
+        },
+      ],
+
+      changes: [
+        {
+          before:
+            "I came to Valencia aiming for gold. The late change to the schedule frustrated me because I had woken up early and expected to compete sooner. I settled into the wait, but in the quarter-final I lost focus for a moment, and the match was over before I could recover.",
+          after:
+            "I could not change the schedule or the result of that fight. I could decide what I did next. I was still disappointed, but I returned to the tatami with a clear mind and won three matches to take bronze. I wanted gold, yet I can also recognise how much it meant to keep going.",
+        },
+      ],
+
+      progression: {
+        eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
+        text: "Valencia has been a difficult place for me this year. In August, I lost my podium streak at the senior Super Copa. This time, I lost my unbeaten junior record, but I fought back to earn bronze. It was not the result I came for, though it moved me from number eight to number six in the junior ranking. Next is the senior Super Copa in Madrid. I have almost a month to prepare, work on what went wrong and carry forward the focus I found in those last three fights.",
+      },
+
+      navigation: {
+        previous: { id: "campeonat-de-catalunya-absolut-2026" },
+        next: { id: "super-copa-espana-madrid-absolut-2026" },
+      },
     },
+    "super-copa-espana-madrid-absolut-2026": {
+      id: "super-copa-espana-madrid-absolut-2026",
+      status: "upcoming",
+      chapter: "11",
+      season: "2026",
+      competition: "Super Copa de España Absoluta de Madrid",
+      date: "24 · 10 · 2026",
+      countdownDate: "2026-10-24T00:00:00+02:00",
+      location: "Getafe, Madrid, Spain",
+      category: "−90 KG",
+      division: "Senior",
+      level: "National Super Cup",
 
-    preparation: {
-      story:
-        "There is only one week between Badia and Valencia. My focus is on recovering well, keeping my weight steady and sharpening the techniques I want to use. I want to arrive with a clear mind, trust my preparation and take every opportunity I create.",
+      opportunity: {
+        eyebrow: "BACK IN THE SENIOR DIVISION",
+        story:
+          "Madrid is my next chance to test myself in the senior division. Valencia did not go the way I hoped, but the three fights I won afterward showed me that I can regain my focus when it matters. I want to take that focus into Madrid from the first match, not only after a setback.",
+      },
+
+      preparation: {
+        story:
+          "I have almost a month between Valencia and Madrid. That gives me time to recover, look honestly at the quarter-final and work on the moments when I lose my focus. I want to sharpen my grips, make clearer decisions in each exchange and arrive ready for the pace of senior competition.",
+      },
+
+      objectives: [
+        {
+          title: "FOCUS",
+          text: "Stay present from the first exchange to the last, whatever happens in the match.",
+        },
+        {
+          title: "EXECUTION",
+          text: "Recognize the openings I create and commit to my attacks without hesitation.",
+        },
+        {
+          title: "GOLD",
+          text: "Go to Madrid to compete for gold, while taking each fight as it comes.",
+        },
+      ],
+
+      navigation: {
+        previous: {
+          id: "super-copa-espana-valencia-junior-2026",
+        },
+        next: null,
+      },
     },
-
-    objectives: [
-      {
-        title: "CONTROL",
-        text: "Stay composed and keep fighting my way, even when a match does not follow the plan.",
-      },
-      {
-        title: "EXECUTION",
-        text: "Recognize openings and commit to my attacks without hesitation.",
-      },
-      {
-        title: "GOLD",
-        text: "Go after the gold medal, one match at a time.",
-      },
-    ],
-
-    navigation: {
-      previous: {
-        id: "campeonat-de-catalunya-absolut-2026",
-      },
-      next: null,
-    },
-  },
 };

@@ -122,7 +122,7 @@ const journeyData = [
   },
   {
     id: "campeonat-de-catalunya-absolut-2026",
-    image: "./images/gallery/competitions/campeonato_de_catalunya_final.jpg",
+    image: "./images/gallery/competitions/campeonato_de_catalunya_final.JPG",
     competition: "Campeonato De Catalunya",
     date: "19 | 09 | 2026",
     location: "• BADIA •",
@@ -132,13 +132,25 @@ const journeyData = [
     medal: "silver",
     result: "Silver • 2nd Place",
   },
+  {
+    id: "super-copa-espana-valencia-junior-2026",
+    image: "./images/gallery/podiums/super_copa_espana_valencia_juniors.jpg",
+    competition: "Super Copa De España Junior",
+    date: "26 | 09 | 2026",
+    location: "• VALENCIA •",
+    weight: "-90 KG",
+    record: "3 - 1",
+    matTime: "04:39",
+    medal: "bronze",
+    result: "Bronze • 3rd Place",
+  },
 ];
 
 const nextCompetition = {
-  id: "super-copa-espana-valencia-junior-2026",
+  id: "super-copa-espana-madrid-absolut-2026",
   title: "Super Copa De España",
-  date: "26 | 09 | 2026",
-  location: "• VALENCIA •",
+  date: "24 | 10 | 2026",
+  location: "• MADRID •",
   category: "-90 KG",
 };
 
@@ -569,8 +581,8 @@ window.addEventListener("resize", () => {
 const countdownElement = document.getElementById("competitionCountdown");
 
 if (countdownElement) {
-  const competitionDay = new Date("2026-09-26T00:00:00+02:00");
-  const dayAfterCompetition = new Date("2026-09-27T00:00:00+02:00");
+  const competitionDay = new Date("2026-10-24T00:00:00+02:00");
+  const dayAfterCompetition = new Date("2026-10-25T00:00:00+02:00");
 
   function updateCountdown() {
     const now = new Date();

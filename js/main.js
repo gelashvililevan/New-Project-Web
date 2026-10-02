@@ -1,27 +1,27 @@
 const analyticsData = [
   {
     title: "Competition Medal Rate",
-    percent: 89,
-    value: "9 / 8",
-    description: "Eight Podiums From Nine Competitions.",
+    percent: 90,
+    value: "10 / 9",
+    description: "Nine Podiums From Ten Competitions.",
   },
   {
     title: "Overall Win Rate",
     percent: 78,
-    value: "32 / 25",
-    description: "Twenty-Five Wins In Official Competitions.",
+    value: "36 / 28",
+    description: "Twenty-Eight Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",
-    percent: 92,
-    value: "25 / 23",
-    description: "Twenty-Three Victories Finished By Ippon.",
+    percent: 90,
+    value: "28 / 25",
+    description: "Twenty-Five Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
-    percent: 100,
-    value: "10 / 10",
-    description: "Still Undefeated In Junior Competitions.",
+    percent: 93,
+    value: "14 / 13",
+    description: "Thirteen Wins In Fourteen Junior Matches.",
   },
 ];
 const analyticsGrid = document.getElementById("analyticsGrid");
@@ -119,9 +119,9 @@ if (analyticsGrid) {
 
 const nextCompetition = {
   name: "SUPER COPA DE ESPANA",
-  location: "VALENCIA",
-  quote: "VALENCIA GAVE ME A LESSON. NOW I RETURN TO PUT IT TO WORK.",
-  target: "2026-09-26T09:00:00+02:00",
+  location: "MADRID",
+  quote: "IN MADRID, FOCUSED FROM THE FIRST BOW.",
+  target: "2026-10-24T09:00:00+02:00",
   timeZone: "Europe/Madrid",
 };
 
