@@ -581,8 +581,8 @@ window.addEventListener("resize", () => {
 const countdownElement = document.getElementById("competitionCountdown");
 
 if (countdownElement) {
-  const competitionDay = new Date("2026-10-24T00:00:00+02:00");
-  const dayAfterCompetition = new Date("2026-10-25T00:00:00+02:00");
+  const competitionDay = new Date("2026-10-17T00:00:00+02:00");
+  const dayAfterCompetition = new Date("2026-10-18T00:00:00+02:00");
 
   function updateCountdown() {
     const now = new Date();
