@@ -118,10 +118,10 @@ if (analyticsGrid) {
 }
 
 const nextCompetition = {
-  name: "SUPER COPA DE ESPANA",
-  location: "MADRID",
-  quote: "IN MADRID, FOCUSED FROM THE FIRST BOW.",
-  target: "2026-10-24T09:00:00+02:00",
+  name: "COPA CATALUNYA 2nd",
+  location: "BADIA",
+  quote: "FOCUSED FROM THE FIRST BOW.",
+  target: "2026-10-17T09:00:00+02:00",
   timeZone: "Europe/Madrid",
 };
 

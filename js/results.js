@@ -147,10 +147,10 @@ const journeyData = [
 ];
 
 const nextCompetition = {
-  id: "super-copa-espana-madrid-absolut-2026",
-  title: "Super Copa De España",
-  date: "24 | 10 | 2026",
-  location: "• MADRID •",
+  id: "copa-catalunya-2a-absolut-2026",
+  title: "Copa Catalunya 2nd",
+  date: "17 | 10 | 2026",
+  location: "• BADIA •",
   category: "-90 KG",
 };
 

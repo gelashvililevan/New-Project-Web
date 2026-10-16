@@ -974,31 +974,31 @@ export const competitions = {
 
       navigation: {
         previous: { id: "campeonat-de-catalunya-absolut-2026" },
-        next: { id: "super-copa-espana-madrid-absolut-2026" },
+        next: { id: "copa-catalunya-2a-absolut-2026" },
       },
     },
-    "super-copa-espana-madrid-absolut-2026": {
-      id: "super-copa-espana-madrid-absolut-2026",
+    "copa-catalunya-2a-absolut-2026": {
+      id: "copa-catalunya-2a-absolut-2026",
       status: "upcoming",
       chapter: "11",
       season: "2026",
-      competition: "Super Copa de España Absoluta de Madrid",
-      date: "24 · 10 · 2026",
-      countdownDate: "2026-10-24T00:00:00+02:00",
-      location: "Getafe, Madrid, Spain",
+      competition: "Copa Catalunya 2nd Absoluta",
+      date: "17 · 10 · 2026",
+      countdownDate: "2026-10-17T00:00:00+02:00",
+      location: "Badia, Spain",
       category: "−90 KG",
       division: "Senior",
-      level: "National Super Cup",
+      level: "Local Cup",
 
       opportunity: {
         eyebrow: "BACK IN THE SENIOR DIVISION",
         story:
-          "Madrid is my next chance to test myself in the senior division. Valencia did not go the way I hoped, but the three fights I won afterward showed me that I can regain my focus when it matters. I want to take that focus into Madrid from the first match, not only after a setback.",
+          "My next chance to test myself in the senior division. Valencia did not go the way I hoped, but the three fights I won afterward showed me that I can regain my focus when it matters. I want to take that focus from the first match, not only after a setback.",
       },
 
       preparation: {
         story:
-          "I have almost a month between Valencia and Madrid. That gives me time to recover, look honestly at the quarter-final and work on the moments when I lose my focus. I want to sharpen my grips, make clearer decisions in each exchange and arrive ready for the pace of senior competition.",
+          "I have almost a month between Valencia and This competition. That gives me time to recover, look honestly at the quarter-final and work on the moments when I lose my focus. I want to sharpen my grips, make clearer decisions in each exchange and arrive ready for the pace of senior competition.",
       },
 
       objectives: [
@@ -1012,7 +1012,7 @@ export const competitions = {
         },
         {
           title: "GOLD",
-          text: "Go to Madrid to compete for gold, while taking each fight as it comes.",
+          text: "Go to Badia to compete for gold, while taking each fight as it comes.",
         },
       ],
 
