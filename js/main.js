@@ -1,27 +1,27 @@
 const analyticsData = [
   {
     title: "Competition Medal Rate",
-    percent: 90,
-    value: "10 / 9",
-    description: "Nine Podiums From Ten Competitions.",
+    percent: 92,
+    value: "12 / 11",
+    description: "Eleven Podiums From Twelve Competitions.",
   },
   {
     title: "Overall Win Rate",
-    percent: 78,
-    value: "36 / 28",
-    description: "Twenty-Eight Wins In Official Competitions.",
+    percent: 82,
+    value: "44 / 36",
+    description: "Thirty-Six Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",
-    percent: 90,
-    value: "28 / 25",
-    description: "Twenty-Five Victories Finished By Ippon.",
+    percent: 89,
+    value: "36 / 32",
+    description: "Thirty-Two Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
-    percent: 93,
-    value: "14 / 13",
-    description: "Thirteen Wins In Fourteen Junior Matches.",
+    percent: 94,
+    value: "17 / 16",
+    description: "Sixteen Wins In Seventeen Junior Matches.",
   },
 ];
 const analyticsGrid = document.getElementById("analyticsGrid");
@@ -118,10 +118,10 @@ if (analyticsGrid) {
 }
 
 const nextCompetition = {
-  name: "COPA CATALUNYA 2nd",
-  location: "BADIA",
-  quote: "FOCUSED FROM THE FIRST BOW.",
-  target: "2026-10-17T09:00:00+02:00",
+  name: "SUPER COPA DE ESPAÑA",
+  location: "MADRID, SPAIN",
+  quote: "ANOTHER COMPETITION, ANOTHER OPPORTUNITY.",
+  target: "2026-11-14T09:00:00+02:00",
   timeZone: "Europe/Madrid",
 };
 

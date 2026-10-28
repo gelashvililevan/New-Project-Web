@@ -878,149 +878,348 @@ export const competitions = {
       next: { id: "super-copa-espana-valencia-junior-2026" },
     },
   },
-    "super-copa-espana-valencia-junior-2026": {
-      id: "super-copa-espana-valencia-junior-2026",
-      status: "completed",
-      chapter: "10",
-      season: "2026",
-      competition: "Super Copa De España Juniors",
-      date: "26 · 09 · 2026",
-      location: "Valencia, Spain",
-      image: "./images/gallery/podiums/super_copa_espana_valencia_juniors.jpg",
-      medal: "bronze",
-      placement: "Bronze · 3rd Place",
-      category: "−90 KG",
-      record: "3–1",
-      totalMatTime: "04:27",
-      ippons: "2",
-      fastestWin: "00:51",
-      competitors: "12",
+  "super-copa-espana-valencia-junior-2026": {
+    id: "super-copa-espana-valencia-junior-2026",
+    status: "completed",
+    chapter: "10",
+    season: "2026",
+    competition: "Super Copa De España Juniors",
+    date: "26 · 09 · 2026",
+    location: "Valencia, Spain",
+    image: "./images/gallery/podiums/super_copa_espana_valencia_juniors.jpg",
+    medal: "bronze",
+    placement: "Bronze · 3rd Place",
+    category: "−90 KG",
+    record: "3–1",
+    totalMatTime: "04:27",
+    ippons: "2",
+    fastestWin: "00:51",
+    competitors: "12",
 
-      preparation: {
-        story:
-          "There were only a few days between the Catalonia Championship and this competition. It was not enough time to change everything, but I could recover, stay in shape and work on the small mistakes I had noticed. Overnight, the schedule changed and the −90 kg category was moved to the second session, starting at noon. I found out when I woke up.",
-      },
-
-      matches: [
-        createMatch("01", "QUARTER-FINAL", "LOSS", {
-          method: "IPPON",
-          duration: "01:51",
-          score: "000 – 101",
-          technique: "Sumi-Gaeshi",
-          note: "I was seeded third and waited about an hour after the second session began. I had watched my opponent's first fight and had a clear plan. For the opening minute, I was able to close down his opportunities, even though his height made him uncomfortable to fight. Then I lost my focus and stopped following the plan. He secured his grip and scored a yuko with Sumi-Gaeshi. I had a brief chance to defend in ne-waza, but I reacted too slowly. He established a hold-down and won the match.",
-          scores: {
-            mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
-            opponent: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 1 },
-          },
-        }),
-
-        createMatch("02", "REPECHAGE R1", "WIN", {
-          method: "IPPON",
-          duration: "00:51",
-          score: "100 – 000",
-          technique: "Sumi-Gaeshi",
-          note: "The quarter-final was hard to accept, but I still had a chance to reach the podium. Early in the match, I got the grip I wanted and attacked with Uchi-Mata, which my opponent defended well. When I found the same grip again, I showed him Uchi-Mata, switched to Sumi-Gaeshi and finished the match in the first minute.",
-          scores: {
-            mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
-            opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
-          },
-        }),
-
-        createMatch("03", "REPECHAGE R2", "WIN", {
-          method: "YUKO",
-          duration: "00:52",
-          score: "001 – 000",
-          technique: "De-Ashi-Barai",
-          note: "After the first repechage win, I felt the anger from the loss beginning to settle. My next opponent kept moving backward and seemed to be waiting for me to follow. When we took similar sleeve grips, I pulled him toward me. As he resisted and moved back, I used De-Ashi-Barai to sweep him. The yuko decided the match and put me into the bronze fight.",
-          scores: {
-            mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 0 },
-            opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
-          },
-        }),
-
-        createMatch("04", "BRONZE FINAL", "WIN", {
-          method: "IPPON",
-          duration: "00:53",
-          score: "100 – 000",
-          technique: "Seoi-Otoshi",
-          note: "After a short break, I watched my opponent's previous fights and made a plan. I began with a foot attack that brought him to his knees and left an opening for Juji-Gatame. I came close to finishing it, but he escaped. I could see that he liked to push forward, so I waited for that movement. When he came toward me again, I committed to Seoi-Otoshi and won the bronze medal in the first minute.",
-          scores: {
-            mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
-            opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
-          },
-        }),
-      ],
-
-      lessons: [
-        {
-          title: "CONTROL",
-          text: "In the past, an early loss could stay with me for the rest of the competition. This one hurt, and I was angry with myself. But I still had a path to the podium. I went to my bag, changed into my blue judogi and waited for the next fight. I did not suddenly feel better; I chose not to let that loss decide the matches that followed. Finding my focus again, while I was still upset, is something I am proud of.",
-        },
-      ],
-
-      changes: [
-        {
-          before:
-            "I came to Valencia aiming for gold. The late change to the schedule frustrated me because I had woken up early and expected to compete sooner. I settled into the wait, but in the quarter-final I lost focus for a moment, and the match was over before I could recover.",
-          after:
-            "I could not change the schedule or the result of that fight. I could decide what I did next. I was still disappointed, but I returned to the tatami with a clear mind and won three matches to take bronze. I wanted gold, yet I can also recognise how much it meant to keep going.",
-        },
-      ],
-
-      progression: {
-        eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
-        text: "Valencia has been a difficult place for me this year. In August, I lost my podium streak at the senior Super Copa. This time, I lost my unbeaten junior record, but I fought back to earn bronze. It was not the result I came for, though it moved me from number eight to number six in the junior ranking. Next is the senior Super Copa in Madrid. I have almost a month to prepare, work on what went wrong and carry forward the focus I found in those last three fights.",
-      },
-
-      navigation: {
-        previous: { id: "campeonat-de-catalunya-absolut-2026" },
-        next: { id: "copa-catalunya-2a-absolut-2026" },
-      },
+    preparation: {
+      story:
+        "There were only a few days between the Catalonia Championship and this competition. It was not enough time to change everything, but I could recover, stay in shape and work on the small mistakes I had noticed. Overnight, the schedule changed and the −90 kg category was moved to the second session, starting at noon. I found out when I woke up.",
     },
-    "copa-catalunya-2a-absolut-2026": {
-      id: "copa-catalunya-2a-absolut-2026",
-      status: "upcoming",
-      chapter: "11",
-      season: "2026",
-      competition: "Copa Catalunya 2nd Absoluta",
-      date: "17 · 10 · 2026",
-      countdownDate: "2026-10-17T00:00:00+02:00",
-      location: "Badia, Spain",
-      category: "−90 KG",
-      division: "Senior",
-      level: "Local Cup",
 
-      opportunity: {
-        eyebrow: "BACK IN THE SENIOR DIVISION",
-        story:
-          "My next chance to test myself in the senior division. Valencia did not go the way I hoped, but the three fights I won afterward showed me that I can regain my focus when it matters. I want to take that focus from the first match, not only after a setback.",
+    matches: [
+      createMatch("01", "QUARTER-FINAL", "LOSS", {
+        method: "IPPON",
+        duration: "01:51",
+        score: "000 – 101",
+        technique: "Sumi-Gaeshi",
+        note: "I was seeded third and waited about an hour after the second session began. I had watched my opponent's first fight and had a clear plan. For the opening minute, I was able to close down his opportunities, even though his height made him uncomfortable to fight. Then I lost my focus and stopped following the plan. He secured his grip and scored a yuko with Sumi-Gaeshi. I had a brief chance to defend in ne-waza, but I reacted too slowly. He established a hold-down and won the match.",
+        scores: {
+          mine: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
+          opponent: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 1 },
+        },
+      }),
+
+      createMatch("02", "REPECHAGE R1", "WIN", {
+        method: "IPPON",
+        duration: "00:51",
+        score: "100 – 000",
+        technique: "Sumi-Gaeshi",
+        note: "The quarter-final was hard to accept, but I still had a chance to reach the podium. Early in the match, I got the grip I wanted and attacked with Uchi-Mata, which my opponent defended well. When I found the same grip again, I showed him Uchi-Mata, switched to Sumi-Gaeshi and finished the match in the first minute.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+
+      createMatch("03", "REPECHAGE R2", "WIN", {
+        method: "YUKO",
+        duration: "00:52",
+        score: "001 – 000",
+        technique: "De-Ashi-Barai",
+        note: "After the first repechage win, I felt the anger from the loss beginning to settle. My next opponent kept moving backward and seemed to be waiting for me to follow. When we took similar sleeve grips, I pulled him toward me. As he resisted and moved back, I used De-Ashi-Barai to sweep him. The yuko decided the match and put me into the bronze fight.",
+        scores: {
+          mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+
+      createMatch("04", "BRONZE FINAL", "WIN", {
+        method: "IPPON",
+        duration: "00:53",
+        score: "100 – 000",
+        technique: "Seoi-Otoshi",
+        note: "After a short break, I watched my opponent's previous fights and made a plan. I began with a foot attack that brought him to his knees and left an opening for Juji-Gatame. I came close to finishing it, but he escaped. I could see that he liked to push forward, so I waited for that movement. When he came toward me again, I committed to Seoi-Otoshi and won the bronze medal in the first minute.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+    ],
+
+    lessons: [
+      {
+        title: "CONTROL",
+        text: "In the past, an early loss could stay with me for the rest of the competition. This one hurt, and I was angry with myself. But I still had a path to the podium. I went to my bag, changed into my blue judogi and waited for the next fight. I did not suddenly feel better; I chose not to let that loss decide the matches that followed. Finding my focus again, while I was still upset, is something I am proud of.",
       },
+    ],
 
-      preparation: {
-        story:
-          "I have almost a month between Valencia and This competition. That gives me time to recover, look honestly at the quarter-final and work on the moments when I lose my focus. I want to sharpen my grips, make clearer decisions in each exchange and arrive ready for the pace of senior competition.",
+    changes: [
+      {
+        before:
+          "I came to Valencia aiming for gold. The late change to the schedule frustrated me because I had woken up early and expected to compete sooner. I settled into the wait, but in the quarter-final I lost focus for a moment, and the match was over before I could recover.",
+        after:
+          "I could not change the schedule or the result of that fight. I could decide what I did next. I was still disappointed, but I returned to the tatami with a clear mind and won three matches to take bronze. I wanted gold, yet I can also recognise how much it meant to keep going.",
       },
+    ],
 
-      objectives: [
-        {
-          title: "FOCUS",
-          text: "Stay present from the first exchange to the last, whatever happens in the match.",
-        },
-        {
-          title: "EXECUTION",
-          text: "Recognize the openings I create and commit to my attacks without hesitation.",
-        },
-        {
-          title: "GOLD",
-          text: "Go to Badia to compete for gold, while taking each fight as it comes.",
-        },
-      ],
-
-      navigation: {
-        previous: {
-          id: "super-copa-espana-valencia-junior-2026",
-        },
-        next: null,
-      },
+    progression: {
+      eyebrow: "ACT 07 · PUTTING INTO PRACTICE",
+      text: "Valencia has been a difficult place for me this year. In August, I lost my podium streak at the senior Super Copa. This time, I lost my unbeaten junior record, but I fought back to earn bronze. It was not the result I came for, though it moved me from number eight to number six in the junior ranking. Next is the senior Super Copa in Madrid. I have almost a month to prepare, work on what went wrong and carry forward the focus I found in those last three fights.",
     },
+
+    navigation: {
+      previous: { id: "campeonat-de-catalunya-absolut-2026" },
+      next: { id: "copa-catalunya-2a-absolut-2026" },
+    },
+  },
+
+  "copa-catalunya-2a-absolut-2026": {
+    id: "copa-catalunya-2a-absolut-2026",
+    status: "completed",
+    chapter: "11",
+    season: "2026",
+    competition: "Copa Catalunya Absolut",
+    date: "17 · 10 · 2026",
+    location: "Badia, Spain",
+    image: "./images/gallery/podiums/copa_catalunya_2_absolut.jpeg",
+    medal: "gold",
+    placement: "Gold · 1st Place",
+    category: "−90 KG",
+    record: "5–0",
+    totalMatTime: "10:27",
+    ippons: "4",
+    fastestWin: "01:06",
+    competitors: "8",
+
+    preparation: {
+      story:
+        "I had three weeks between competitions to recover, work on the small details and put together a clear game plan. I wanted to arrive fresh, focused and ready to win gold.",
+    },
+
+    matches: [
+      createMatch("01", "ROUND 1", "WIN", {
+        method: "YUKO",
+        duration: "04:17",
+        score: "001 – 000",
+        technique: "Uchi-Mata",
+        note: "My first opponent was a former junior national team member, with strong dropping techniques such as kata-guruma, tomoe-nage and drop seoi-nage. I knew my usual approach could suit him, so I adjusted my game plan to limit those opportunities. It was a tactical fight, and I felt in control throughout. He entered golden score with two shidos and had to take more risks. When he attempted kata-guruma, I saw my opening and countered with uchi-mata to win by yuko.",
+        scores: {
+          mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: null },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 2 },
+        },
+      }),
+
+      createMatch("02", "ROUND 2", "WIN", {
+        method: "IPPON",
+        duration: "01:24",
+        score: "100 – 001",
+        technique: "Uchi-Mata",
+        note: "My opponent started strongly, scoring yuko with sumi-gaeshi and holding me down for four seconds before I escaped. I was frustrated, but this time I stayed focused instead of rushing through my grips. My coach reminded me that there was still plenty of time, even though I wanted to finish quickly. I secured a good grip, and he received a shido for avoiding the exchange. When I established that grip again, I committed to uchi-mata and won by ippon in under 90 seconds.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 1 },
+        },
+      }),
+
+      createMatch("03", "ROUND 3", "WIN", {
+        method: "IPPON",
+        duration: "01:27",
+        score: "101 – 000",
+        technique: "Ko-Soto-Gake",
+        note: "This opponent was physically very strong and kept looking for a deep grip on my back. As he reached for it, I noticed an opening at his leg. I committed to ko-soto-gake and finished the match by ippon.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+
+      createMatch("04", "SEMI-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "02:13",
+        score: "101 – 001",
+        technique: "Ko-Uchi-Gari",
+        note: "In the semi-final, I faced an opponent I had beaten three times before, so he knew my style well. He scored yuko in the opening seconds, but I kept applying pressure and felt my conditioning make a difference as the fight continued. When he attempted ura-nage, I countered with ko-uchi-gari and followed him into a hold-down to win the match.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 1 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 1 },
+        },
+      }),
+
+      createMatch("05", "FINAL", "WIN", {
+        method: "IPPON",
+        duration: "01:06",
+        score: "100 – 000",
+        technique: "Uchi-Mata Sukashi",
+        note: "My opponent in the final was someone I had beaten twice before. He is strong, prefers deep grips and close exchanges, and usually starts aggressively. I focused on controlling his grips and keeping him from settling into his preferred position. When he attacked with uchi-mata, I countered with uchi-mata sukashi to win the match and the gold medal.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+    ],
+
+    lessons: [
+      {
+        title: "MENTALITY",
+        text: "In the past, falling behind could make my thoughts turn towards everything that might go wrong. This time, even when I was down in two fights, losing never crossed my mind. I stayed focused on what I needed to do next. That change meant much more to me than the result.",
+      },
+    ],
+
+    changes: [
+      {
+        before:
+          "I arrived with a clear game plan and the goal of winning gold. I trusted my preparation and knew I could win if I stayed focused and followed my plan.",
+        after:
+          "Not every fight followed the plan, and I had to make adjustments along the way. I stayed clear-headed, found other solutions and finished the day with gold.",
+      },
+    ],
+
+    progression: {
+      eyebrow: "ACT 07 · ADAPTING TO WIN",
+      text: "The junior Catalunya Championship was only a week away. My focus was on recovering properly and refining the small details I wanted to carry into the next competition.",
+    },
+
+    navigation: {
+      previous: { id: "super-copa-espana-valencia-junior-2026" },
+      next: { id: "campeonat-de-catalunya-juniors-2026" },
+    },
+  },
+
+  "campeonat-de-catalunya-juniors-2026": {
+    id: "campeonat-de-catalunya-juniors-2026",
+    status: "completed",
+    chapter: "12",
+    season: "2026",
+    competition: "Campeonat de Catalunya",
+    date: "24 · 10 · 2026",
+    location: "Barcelona, Spain",
+    image: "./images/gallery/podiums/campeonat_de_catalunya_juniors.jpeg",
+    medal: "gold",
+    placement: "Gold · 1st Place",
+    category: "−90 KG",
+    record: "3–0",
+    totalMatTime: "03:37",
+    ippons: "3",
+    fastestWin: "00:45",
+    competitors: "10",
+
+    preparation: {
+      story:
+        "With only a week since the previous competition, recovery came first. I used the remaining sessions to sharpen my techniques and stay mentally ready. The goal was clear: win gold again and put some new ideas into practice.",
+    },
+
+    matches: [
+      createMatch("01", "QUARTER-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "01:51",
+        score: "101 – 000",
+        technique: "Harai-Goshi",
+        note: "My opponent defended my attacks well. He was not creating many attacks of his own, but finding a way through his defence was frustrating. I kept increasing the pressure until I found the opening for a harai-goshi that I was really happy with, finishing the match by ippon.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 1, shidos: null },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: null },
+        },
+      }),
+
+      createMatch("02", "SEMI-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "01:01",
+        score: "100 – 000",
+        technique: "O-Goshi",
+        note: "Before stepping onto the mat, I noticed my opponent's coach explaining how to defend against my grips. I decided to change my approach and began from a right-handed stance. That gave me more room to switch back to my left grip later. The adjustment worked, and I scored ippon with o-goshi just over a minute into the fight.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+
+      createMatch("03", "FINAL", "WIN", {
+        method: "IPPON",
+        duration: "00:45",
+        score: "101 – 000",
+        technique: "Juji-Gatame",
+        note: "In the final, I faced the opponent who had beaten my friend earlier in the competition. I had watched his style and had a clear plan. Around 30 seconds in, I scored yuko with de-ashi-barai. As he landed, I still had control of his arm and saw the chance to move straight into juji-gatame. I took the opportunity and finished the match to win gold.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 1, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+    ],
+
+    lessons: [
+      {
+        title: "NE-WAZA",
+        text: "Since I moved here, my coach has kept pushing me to improve my groundwork. Five years ago, more than half of my competition wins came through juji-gatame, but I had spent less time training it since then and stopped using it as often. Finishing the final this way reminded me that it is still a strength I need to keep developing.",
+      },
+    ],
+
+    changes: [
+      {
+        before:
+          "The goal was simple: win gold and test some new ideas in competition.",
+        after:
+          "I left as Catalunya champion, with another gold medal and more confidence in the adjustments I had been working on.",
+      },
+    ],
+
+    progression: {
+      eyebrow: "ACT 07 · BUILDING MOMENTUM",
+      text: "The next challenge is the junior Super Cup in Madrid. I have three weeks to recover, work on the mistakes I noticed and keep improving my tactics and techniques.",
+    },
+
+    navigation: {
+      previous: { id: "copa-catalunya-2a-absolut-2026" },
+      next: { id: "super-copa-espana-madrid-junior-2026" },
+    },
+  },
+
+  "super-copa-espana-madrid-junior-2026": {
+    id: "super-copa-espana-madrid-junior-2026",
+    status: "upcoming",
+    chapter: "13",
+    season: "2026",
+    competition: "Super Copa de España Junior",
+    date: "14 · 11 · 2026",
+    countdownDate: "2026-11-14T00:00:00+01:00",
+    location: "Madrid, Spain",
+    category: "−90 KG",
+    division: "Junior",
+    level: "National Super Cup",
+
+    opportunity: {
+      eyebrow: "TAKING THE MOMENTUM TO MADRID",
+      story:
+        "After two gold medals in Catalunya, Madrid is my next test in the junior division. I want to carry that confidence into a national Super Cup, face strong opponents and show the progress I have made. The goal is gold, but I know I have to earn it one fight at a time.",
+    },
+
+    preparation: {
+      story:
+        "I have three weeks after the Catalunya Championship to recover and prepare. I am working on sharper grips, quicker decisions and the small details I noticed in my last two competitions. I also want to keep developing my groundwork and stay ready to adapt when a fight does not follow my plan.",
+    },
+
+    objectives: [
+      {
+        title: "ADAPTATION",
+        text: "Read each opponent, test the ideas I have been developing and adjust when the fight calls for it.",
+      },
+      {
+        title: "EXECUTION",
+        text: "Recognise the openings I create and commit to my attacks without hesitation, standing or on the ground.",
+      },
+      {
+        title: "GOLD",
+        text: "Gold is the goal. Stay focused on each fight and do the work needed to earn it.",
+      },
+    ],
+
+    navigation: {
+      previous: { id: "campeonat-de-catalunya-juniors-2026" },
+      next: null,
+    },
+  },
 };
