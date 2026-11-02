@@ -647,7 +647,7 @@
   margin-top: 5px;
   color: var(--white);
   font: 100 0.7rem Oswald;
-  letter-spacing: 14px;
+  letter-spacing: 4px;
   opacity: 0;
   transition: 1.2s ease;
 }
@@ -1713,12 +1713,29 @@
   }
 
   .hero-stats {
+    width: min(395px, calc(100% - 20px));
     margin-inline: auto;
   }
 
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 5rem);
+    line-height: 1.15;
+    letter-spacing: clamp(0.5px, 0.2vw, 2px);
+    white-space: nowrap;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
   .hero-buttons {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+  }
+
+  .hero-buttons .site-button {
+    width: auto;
+    margin: 0;
   }
 
   .hero-image {
@@ -1787,10 +1804,6 @@
 
   .hero-container {
     border-radius: 0 0 20px 20px;
-  }
-
-  .hero-title {
-    font-size: 4rem;
   }
 
   .hero-description {
@@ -2097,6 +2110,11 @@
     padding: 62px 16px;
   }
 
+  .hero-line{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   .analytics::before,
   .analytics::after {
     right: 26px;
@@ -2218,18 +2236,21 @@
 }
 
 @media (max-width: 576px) {
-  .hero-title {
-    font-size: 3rem;
-    letter-spacing: 2px;
+  .hero-subtitle {
+    font-size: clamp(0.7rem, 3.7vw, 1rem);
+    letter-spacing: clamp(0.5px, 0.25vw, 1.4px);
+    white-space: nowrap;
   }
 
-  .hero-subtitle,
+  .hero-description {
+    max-width: none;
+    font-size: clamp(0.625rem, 3.1vw, 1.25rem);
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
   .countdown-title {
     letter-spacing: 6px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
   }
 
   .competition-name {
@@ -2315,6 +2336,18 @@
   .quote {
     font-size: 0.5rem;
     letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-buttons .site-button {
+    width: 85%;
   }
 }
 

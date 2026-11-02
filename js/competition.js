@@ -729,20 +729,59 @@ function renderCompetitionPage(competition, content) {
   initializeMatchDetails(content);
 }
 
+function updateCompetitionMetadata(competition) {
+  const canonicalUrl = new URL("https://levangelashvili.com/competition.html");
+  canonicalUrl.searchParams.set("id", competition.id);
+  const title = `${competition.competition} — ${competition.location} | Levan Gelashvili`;
+  const description = [
+    `${competition.competition}, ${competition.location}, ${competition.date}.`,
+    competition.status === "upcoming"
+      ? `Levan Gelashvili's ${competition.category} preparation and goals.`
+      : `${competition.placement}. Levan Gelashvili's ${competition.category} match results and competition story.`,
+  ].join(" ");
+
+  function setMeta(selector, attribute, value) {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute(attribute, value);
+  }
+
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+  canonical.href = canonicalUrl.href;
+  document.title = title;
+  setMeta('meta[name="description"]', "content", description);
+  setMeta('meta[property="og:title"]', "content", title);
+  setMeta('meta[property="og:description"]', "content", description);
+  setMeta('meta[property="og:url"]', "content", canonicalUrl.href);
+  setMeta('meta[name="twitter:title"]', "content", title);
+  setMeta('meta[name="twitter:description"]', "content", description);
+}
+
 function initializeCompetitionPage() {
   const content = document.getElementById("competitionContent");
   const loading = document.getElementById("competitionLoading");
   const error = document.getElementById("competitionError");
   if (!content || !loading || !error) return;
   const competitionId = new URLSearchParams(window.location.search).get("id");
-  const competition = competitions[competitionId];
+  const competition = Object.hasOwn(competitions, competitionId)
+    ? competitions[competitionId]
+    : null;
   loading.hidden = true;
   if (!competition) {
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex";
+    document.head.appendChild(robots);
     error.hidden = false;
     return;
   }
   error.hidden = true;
   renderCompetitionPage(competition, content);
+  updateCompetitionMetadata(competition);
 }
 
 initializeCompetitionPage();
