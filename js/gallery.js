@@ -125,6 +125,27 @@ const galleryImages = [
     category: "fight",
     shape: "landscape",
   },
+  {
+    src: "./images/gallery/competitions/super_copa_de_espana_madrid_semif.JPG",
+    title: "Pressure on the tatami.",
+    meta: "Super Copa de España Junior · Madrid · 14.11.2026",
+    category: "fight",
+    shape: "landscape",
+  },
+  {
+    src: "./images/gallery/competitions/super_copa_de_espana_madrid_semi.JPG",
+    title: "Respect after the fight.",
+    meta: "Super Copa de España Junior · Madrid · 14.11.2026",
+    category: "fight",
+    shape: "landscape",
+  },
+  {
+    src: "./images/gallery/podiums/super_copa_de_espana_podium.JPG",
+    title: "Gold in Madrid.",
+    meta: "Gold · Madrid · 14.11.2026",
+    category: "podium",
+    shape: "landscape",
+  },
 ];
 
 const automaticShapes = [

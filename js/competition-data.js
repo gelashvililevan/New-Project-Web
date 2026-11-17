@@ -215,7 +215,7 @@ export const competitions = {
     ],
     lessons: [
       {
-        title: "ENDURANCE",
+        title: "CARDIO",
         text: "The semifinal showed me that I could remain focused and follow my game plan deep into golden score. Even after falling behind, receiving two shidos and suffering an injury, my endurance kept me in the match long enough to find the winning score.",
       },
       {
@@ -1180,45 +1180,143 @@ export const competitions = {
 
   "super-copa-espana-madrid-junior-2026": {
     id: "super-copa-espana-madrid-junior-2026",
-    status: "upcoming",
+    status: "completed",
     chapter: "13",
     season: "2026",
-    competition: "Super Copa de España Junior",
+    competition: "Super Copa De España",
     date: "14 · 11 · 2026",
-    countdownDate: "2026-11-14T00:00:00+01:00",
     location: "Madrid, Spain",
+    image:
+      "./images/gallery/competitions/super_copa_de_espana_madrid_semi.jpg",
+    medal: "gold",
+    placement: "Gold · 1st Place",
     category: "−90 KG",
-    division: "Junior",
-    level: "National Super Cup",
-
-    opportunity: {
-      eyebrow: "TAKING THE MOMENTUM TO MADRID",
-      story:
-        "After two gold medals in Catalunya, Madrid is my next test in the junior division. I want to carry that confidence into a national Super Cup, face strong opponents and show the progress I have made. The goal is gold, but I know I have to earn it one fight at a time.",
-    },
+    record: "4–0",
+    totalMatTime: "11:44",
+    ippons: "3",
+    fastestWin: "01:45",
+    competitors: "16",
 
     preparation: {
       story:
-        "I have three weeks after the Catalunya Championship to recover and prepare. I am working on sharper grips, quicker decisions and the small details I noticed in my last two competitions. I also want to keep developing my groundwork and stay ready to adapt when a fight does not follow my plan.",
+        "Preparing for Madrid meant more than training. I was travelling alone, and for almost a week I struggled to find accommodation near the venue. I wanted to stay close so I would not spend competition morning travelling across the city and using energy I needed on the tatami.",
     },
 
-    objectives: [
+    matches: [
+      createMatch("01", "ROUND 1", "WIN", {
+        method: "IPPON",
+        duration: "01:45",
+        score: "111 – 001",
+        technique: "Drop Seoi-Nage",
+        note: "I was not fully focused in the opening seconds, and my opponent scored yuko with drop seoi-nage. My nose hit the tatami hard as I tried to defend. I was frustrated, but I stayed composed rather than rushing to throw him immediately. When he attacked with uchi-mata, I countered with uchi-mata-sukashi for waza-ari, then held him for five seconds to add a yuko. Soon afterwards, I found another opening and finished the fight with drop seoi-nage.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 1, yuko: 1, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 0 },
+        },
+      }),
+
+      createMatch("02", "QUARTER-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "01:51",
+        score: "100 – 000",
+        technique: "O-Soto-Gari",
+        note: "After my first match, I stayed beside the tatami to watch my potential opponents. The athlete I would face was taller than me and also left-handed, so I made a plan to prevent him from establishing his deep grip. Once I secured the grips I wanted, he attempted o-soto-gari from a position that favoured me. I countered with o-soto-gari and won by ippon in under two minutes.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 0 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+
+      createMatch("03", "SEMI-FINAL", "WIN", {
+        method: "IPPON",
+        duration: "03:45",
+        score: "100 – 000",
+        technique: "Harai-Makikomi",
+        note: "I faced an experienced opponent with national and international medals. His strength and low stance made him difficult to throw, so I stayed patient and kept working through my grips. As the fight went on, I could feel my endurance making a difference. In the closing stages, as he prepared another drop seoi-nage, I saw an opening for harai-makikomi and scored ippon.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 1 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 0 },
+        },
+      }),
+      createMatch("04", "FINAL", "WIN", {
+        method: "YUKO",
+        duration: "04:00",
+        score: "001 – 000",
+        technique: "Ko-Uchi-Gari",
+        note: "In the final, I faced this year's Spanish junior silver medallist. He was taller and also left-handed, so controlling the grips was important. I kept applying pressure and could feel him tiring as the fight progressed. An o-goshi attack came just after the referee called mate, so it did not count. I stayed patient. With around 45 seconds remaining, he attempted ura-nage and I countered with ko-uchi-gari to score yuko. I then managed the remaining time, maintained control and held the lead without receiving another shido to win gold.",
+        scores: {
+          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 1 },
+          opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 2 },
+        },
+      }),
+    ],
+
+    lessons: [
       {
-        title: "ADAPTATION",
-        text: "Read each opponent, test the ideas I have been developing and adjust when the fight calls for it.",
+        title: "ENDURANCE",
+        text: "Endurance made a real difference in the semi-final and final. As the fights went on, I could maintain my pace while my opponents began to tire, especially in the gripping exchanges. That gave me time to think clearly, adapt and increase the pressure when an opening appeared. Over the last few months, it has become one of the strongest parts of my judo, and Madrid showed me how much it can influence a close fight.",
       },
       {
-        title: "EXECUTION",
-        text: "Recognise the openings I create and commit to my attacks without hesitation, standing or on the ground.",
-      },
-      {
-        title: "GOLD",
-        text: "Gold is the goal. Stay focused on each fight and do the work needed to earn it.",
+        title: "FOCUS",
+        text: "The first fight showed me what still needs attention. I was not fully focused in the opening seconds and conceded a yuko. I recovered and won, but against another opponent that opening could have ended my competition. I want to understand why it takes me time to settle in and learn to bring the same focus to the first exchange that I find later in the day.",
       },
     ],
 
+    changes: [
+      {
+        before:
+          "Madrid tested me before I even stepped onto the tatami. Finding accommodation, travelling alone and figuring out the city’s transport took more effort than I expected. I managed to get everything done on time, and that experience gave me more confidence in handling competitions independently.",
+        after:
+          "I left Madrid satisfied with the gold medal, the way I fought and the experience of managing the trip myself. There is still plenty to improve, but this competition gave me clear evidence that I am moving forward.",
+      },
+    ],
+
+    progression: {
+      eyebrow: "ACT 07 · BUILDING MOMENTUM",
+      text: "My next competition is the second junior round of the Copa Catalunya in Barcelona, only seven days after Madrid. The priority is to recover properly, keep the momentum and work on being fully focused from the first exchange.",
+    },
+
     navigation: {
       previous: { id: "campeonat-de-catalunya-juniors-2026" },
+      next: { id: "copa-catalunya-junior-2a-2026" },
+    },
+  },
+
+  "copa-catalunya-junior-2a-2026": {
+    id: "copa-catalunya-junior-2a-2026",
+    status: "upcoming",
+    chapter: "14",
+    season: "2026",
+    competition: "Copa Catalunya Junior 2A",
+    date: "21 · 11 · 2026",
+    countdownDate: "2026-11-21T00:00:00+01:00",
+    location: "Barcelona, Spain",
+    category: "−90 KG",
+    division: "Junior",
+    level: "Regional Cup",
+    opportunity: {
+      eyebrow: "KEEPING THE MOMENTUM",
+      story: "Only seven days after winning gold in Madrid, I return to the junior circuit in Catalunya. I want to carry that confidence into another competition, keep testing my progress and earn another gold medal.",
+    },
+    preparation: {
+      story: "With only a week between competitions, recovery comes first. I want to arrive fresh, maintain the tactics and endurance that worked in Madrid, and sharpen my focus so I am ready from the first exchange.",
+    },
+    objectives: [
+      {
+        title: "FOCUS",
+        text: "Start the first fight with the same concentration I found later in Madrid. Be ready from the opening grip.",
+      },
+      {
+        title: "CONTROL",
+        text: "Establish my grips, stay patient and adapt to each opponent. Keep the pressure without rushing the opportunities.",
+      },
+      {
+        title: "GOLD",
+        text: "The goal is another gold medal. Approach each fight properly and earn the result one match at a time.",
+      },
+    ],
+    navigation: {
+      previous: { id: "super-copa-espana-madrid-junior-2026" },
       next: null,
     },
   },

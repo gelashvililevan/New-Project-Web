@@ -812,7 +812,7 @@
 }
 .competition-change-side small {
   color: var(--competition-muted);
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 4px;
 }
@@ -931,16 +931,17 @@
   justify-content: center;
   gap: 13px;
   color: var(--event-accent);
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   line-height: 1.5;
   letter-spacing: 4px;
 }
 .competition-progression-direction i {
+  font-size: 1rem;
   transition: transform 0.4s ease;
 }
 .competition-progression-link small {
   color: var(--competition-muted);
-  font-size: 0.52rem;
+  font-size: 0.75rem;
   line-height: 1.5;
   letter-spacing: 4px;
 }
@@ -953,7 +954,7 @@
 }
 .competition-progression-result {
   color: var(--event-accent);
-  font-size: 0.58rem;
+  font-size: 0.8rem;
   line-height: 1.5;
   letter-spacing: 3px;
 }
@@ -1802,34 +1803,23 @@
   }
   .competition-change-arrow {
     width: 100%;
-    height: 55px;
+    height: 35px;
   }
-  .competition-change-arrow i {
-    transform: rotate(90deg);
-  }
-  .competition-change-arrow::before,
-  .competition-change-arrow::after {
-    top: 50%;
-    width: 34%;
-    height: 1px;
-    transform: none;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(var(--event-accent-rgb), 0.25)
-    );
+  .competition-change-arrow i,
+  .competition-change-arrow svg {
+    display: none;
   }
   .competition-change-arrow::before {
-    right: auto;
+    top: 50%;
     left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    transform: none;
+    background: linear-gradient(90deg, transparent, rgba(var(--event-accent-rgb), 0.5), transparent);
   }
   .competition-change-arrow::after {
-    right: 0;
-    left: auto;
-    transform: rotate(180deg);
-  }
-  .competition-change:hover .competition-change-arrow i {
-    transform: rotate(90deg) translateX(5px);
+    content: none;
   }
   .competition-change:hover .competition-change-before p,
   .competition-change:hover .competition-change-after p {

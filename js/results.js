@@ -168,13 +168,25 @@ const journeyData = [
     medal: "gold",
     result: "Gold • 1st Place",
   },
+    {
+    id: "super-copa-espana-madrid-junior-2026",
+    image: "./images/gallery/competitions/super_copa_de_espana_madrid_semi.jpg",
+    competition: "Super Copa De España Juniors",
+    date: "14 | 11 | 2026",
+    location: "• MADRID •",
+    weight: "-90 KG",
+    record: "4 - 0",
+    matTime: "11:44",
+    medal: "gold",
+    result: "Gold • 1st Place",
+  },
 ];
 
 const nextCompetition = {
-  id: "super-copa-espana-madrid-junior-2026",
-  title: "SUPER COPA DE ESPAÑA",
-  date: "14 | 11 | 2026",
-  location: "• MADRID •",
+  id: "copa-catalunya-junior-2a-2026",
+  title: "COPA CATALUNYA JUNIOR",
+  date: "21 | 11 | 2026",
+  location: "• BARCELONA •",
   category: "-90 KG",
 };
 
@@ -605,8 +617,8 @@ window.addEventListener("resize", () => {
 const countdownElement = document.getElementById("competitionCountdown");
 
 if (countdownElement) {
-  const competitionDay = new Date("2026-11-14T00:00:00+02:00");
-  const dayAfterCompetition = new Date("2026-11-15T00:00:00+02:00");
+  const competitionDay = new Date("2026-11-21T00:00:00+02:00");
+  const dayAfterCompetition = new Date("2026-11-22T00:00:00+02:00");
 
   function updateCountdown() {
     const now = new Date();

@@ -2,26 +2,26 @@ const analyticsData = [
   {
     title: "Competition Medal Rate",
     percent: 92,
-    value: "12 / 11",
-    description: "Eleven Podiums From Twelve Competitions.",
+    value: "13 / 12",
+    description: "Twelve Podiums From Thirteen Competitions.",
   },
   {
     title: "Overall Win Rate",
-    percent: 82,
-    value: "44 / 36",
-    description: "Thirty-Six Wins In Official Competitions.",
+    percent: 83,
+    value: "48 / 40",
+    description: "Forty Wins In Official Competitions.",
   },
   {
     title: "Wins By Ippon",
-    percent: 89,
-    value: "36 / 32",
-    description: "Thirty-Two Victories Finished By Ippon.",
+    percent: 88,
+    value: "40 / 35",
+    description: "Thirty-Five Victories Finished By Ippon.",
   },
   {
     title: "Junior Win Rate",
-    percent: 94,
-    value: "17 / 16",
-    description: "Sixteen Wins In Seventeen Junior Matches.",
+    percent: 95,
+    value: "21 / 20",
+    description: "Twenty Wins In Twenty-One Junior Matches.",
   },
 ];
 const analyticsGrid = document.getElementById("analyticsGrid");
@@ -118,10 +118,11 @@ if (analyticsGrid) {
 }
 
 const nextCompetition = {
-  name: "SUPER COPA DE ESPAÑA",
-  location: "MADRID, SPAIN",
+  id: "copa-catalunya-junior-2a-2026",
+  name: "COPA CATALUNYA JUNIOR 2A",
+  location: "BARCELONA, SPAIN",
   quote: "ANOTHER COMPETITION, ANOTHER OPPORTUNITY.",
-  target: "2026-11-14T09:00:00+02:00",
+  target: "2026-11-21T09:00:00+02:00",
   timeZone: "Europe/Madrid",
 };
 
@@ -167,6 +168,7 @@ if (countdownContainer) {
       <div class="countdown-grid"></div>
       <p class="competition-location"></p>
       <p class="competition-quote"></p>
+      <a class="countdown-details" href="./competition.html?id=${encodeURIComponent(nextCompetition.id)}">MORE DETAILS</a>
       <div class="countdown-line bottom"></div>
     </div>
   `;
