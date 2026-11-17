@@ -170,7 +170,7 @@ const journeyData = [
   },
     {
     id: "super-copa-espana-madrid-junior-2026",
-    image: "./images/gallery/competitions/super_copa_de_espana_madrid_semi.jpg",
+    image: "./images/gallery/competitions/super_copa_de_espana_madrid_semi.JPG",
     competition: "Super Copa De España Juniors",
     date: "14 | 11 | 2026",
     location: "• MADRID •",

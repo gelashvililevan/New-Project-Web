@@ -1187,7 +1187,7 @@ export const competitions = {
     date: "14 · 11 · 2026",
     location: "Madrid, Spain",
     image:
-      "./images/gallery/competitions/super_copa_de_espana_madrid_semi.jpg",
+      "./images/gallery/competitions/super_copa_de_espana_madrid_semi.JPG",
     medal: "gold",
     placement: "Gold · 1st Place",
     category: "−90 KG",
