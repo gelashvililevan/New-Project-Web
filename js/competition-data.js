@@ -1186,8 +1186,7 @@ export const competitions = {
     competition: "Super Copa De España",
     date: "14 · 11 · 2026",
     location: "Madrid, Spain",
-    image:
-      "./images/gallery/competitions/super_copa_de_espana_madrid_semi.JPG",
+    image: "./images/gallery/competitions/super_copa_de_espana_madrid_semi.JPG",
     medal: "gold",
     placement: "Gold · 1st Place",
     category: "−90 KG",
@@ -1245,7 +1244,7 @@ export const competitions = {
         technique: "Ko-Uchi-Gari",
         note: "In the final, I faced this year's Spanish junior silver medallist. He was taller and also left-handed, so controlling the grips was important. I kept applying pressure and could feel him tiring as the fight progressed. An o-goshi attack came just after the referee called mate, so it did not count. I stayed patient. With around 45 seconds remaining, he attempted ura-nage and I countered with ko-uchi-gari to score yuko. I then managed the remaining time, maintained control and held the lead without receiving another shido to win gold.",
         scores: {
-          mine: { ippon: 1, wazaAri: 0, yuko: 0, shidos: 1 },
+          mine: { ippon: 0, wazaAri: 0, yuko: 1, shidos: 1 },
           opponent: { ippon: 0, wazaAri: 0, yuko: 0, shidos: 2 },
         },
       }),
@@ -1296,10 +1295,12 @@ export const competitions = {
     level: "Regional Cup",
     opportunity: {
       eyebrow: "KEEPING THE MOMENTUM",
-      story: "Only seven days after winning gold in Madrid, I return to the junior circuit in Catalunya. I want to carry that confidence into another competition, keep testing my progress and earn another gold medal.",
+      story:
+        "Only seven days after winning gold in Madrid, I return to the junior circuit in Catalunya. I want to carry that confidence into another competition, keep testing my progress and earn another gold medal.",
     },
     preparation: {
-      story: "With only a week between competitions, recovery comes first. I want to arrive fresh, maintain the tactics and endurance that worked in Madrid, and sharpen my focus so I am ready from the first exchange.",
+      story:
+        "With only a week between competitions, recovery comes first. I want to arrive fresh, maintain the tactics and endurance that worked in Madrid, and sharpen my focus so I am ready from the first exchange.",
     },
     objectives: [
       {

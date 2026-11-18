@@ -381,14 +381,17 @@
 
 .journey-item.gold {
   --medal-color: #ffd700;
+  --button-color: var(--gold);
 }
 
 .journey-item.silver {
   --medal-color: #c0c0c0;
+  --button-color: var(--medal-color);
 }
 
 .journey-item.bronze {
   --medal-color: #cd7f32;
+  --button-color: var(--medal-color);
 }
 
 .journey-item.unplaced {
@@ -396,6 +399,7 @@
 }
 
 .journey-item {
+  --button-color: var(--white);
   position: absolute;
   z-index: 2;
   width: var(--journey-card-width);
@@ -444,6 +448,7 @@
 
 .journey-item.next {
   --medal-color: var(--gold);
+  --button-color: var(--gold);
 }
 
 .journey-item.show .journey-pin {
@@ -552,9 +557,10 @@
   transform: translate(-15px, -10px) rotate(-2deg);
 }
 
-.journey-track:not(.is-animating) .journey-item:hover .journey-card-button {
-  background: var(--gold);
-  color: var(--black);
+.journey-track:not(.is-animating) .journey-item:hover .journey-card-button,
+.journey-card-button:focus-visible {
+  background: transparent;
+  color: var(--button-color, var(--white));
   letter-spacing: 4px;
 }
 
@@ -679,26 +685,26 @@
   margin: 5px auto 0;
   padding: 8px 10px;
   border-radius: 14px;
-  border: 1px solid var(--gold);
-  background: none;
-  color: var(--gold);
-  font: 1.2rem Oswald;
+  border: 0.18rem solid var(--button-color, var(--white));
+  background: var(--button-color, var(--white));
+  color: var(--black);
+  font: 1.3rem Oswald;
   letter-spacing: 3px;
   cursor: pointer;
   transform: translateY(20px) scale(0.95);
-  transition: 0.7s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .journey-item.show .journey-card-button {
   opacity: 1;
   transform: none;
   transition:
-    opacity 0.4s,
-    transform 0.4s,
-    background-color 0.5s,
-    color 0.5s,
-    letter-spacing 0.5s;
-  transition-delay: 1.05s, 1.05s, 0s, 0s, 0s;
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    letter-spacing 0.25s ease;
+  transition-delay: 0.7s, 0.7s, 0s, 0s, 0s;
 }
 .journey-item.next {
   height: auto;
